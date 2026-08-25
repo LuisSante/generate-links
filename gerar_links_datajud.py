@@ -1,7 +1,6 @@
 import json, time, argparse, sys
 import requests
 
-# Chave pública publicada pelo CNJ (Wiki DataJud). Somente leitura.
 APIKEY = "cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw=="
 
 # Assuntos CNJ ligados a cartão de crédito / consignado (TJBA confirmado):
