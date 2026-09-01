@@ -98,3 +98,9 @@ Note: DataJud returns the case number and metadata, not the contract itself. To 
 the case files, each case is consulted on the portal where it lives (in TJBA, credit
 card cases are in Eproc ~80% and PJe ~20%, not Projudi), and the public consultation
 requires a CAPTCHA per case.
+
+
+```
+python3 gerar_links_datajud.py --system Eproc --out eproc.jsonl
+python3 gerar_links_datajud.py --system PJe   --out pje.jsonl
+```
