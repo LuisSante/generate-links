@@ -1,0 +1,10 @@
+[
+  {
+    "form_action": "https://projudi.tjba.jus.br/projudi/buscas/ProcessosParte",
+    "form_method": "post",
+    "input_name": "numeroProcesso",
+    "input_maxlength": "25",
+    "captcha_input": "captcha",
+    "captcha_img": "https://projudi.tjba.jus.br/projudi/captcha.jpg"
+  }
+]

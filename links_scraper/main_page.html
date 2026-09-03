@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+
+
+ <head>
+
+  <title>PROJUDI - TJBA</title>
+
+  <link rel="stylesheet" type="text/css" href="padraoCSS.css"/>
+  
+   <meta Http-Equiv="Cache-Control" Content="no-cache">    
+   <meta Http-Equiv="Pragma" Content="no-cache">    
+   <meta Http-Equiv="Expires" Content="0"> 
+
+  <script type="text/javascript" language="javascript" src="scripts/default.js"></script>
+  <script language="JavaScript1.2" src="/projudi/imagens/tips.js"></script>
+  <script language="JavaScript1.2" src="/projudi/imagens/ajudas/ajudas.js"></script>
+  
+  
+
+ </head>
+
+
+
+
+
+ <script type="text/javascript">
+  function reload() {
+    document.getElementById("idImg").src = "/projudi/captcha.jpg?" + parseInt(Math.random()*100);    
+    document.getElementById("tipoUsuario").checked = false;       
+  }
+
+  function trocaLabel(){
+   if(document.getElementById("tipoUsuario").checked) {
+    document.getElementById("user").innerHTML = "<td name=''user'' id=''user'' width=''59'' title=''CPF/CNPJ:''>CPF/CNPJ:</td>";
+   } else {
+    document.getElementById("user").innerHTML = "<td name=''user'' id=''user'' width=''59'' title=''Usu&aacute;rio:''>Usu&aacute;rio:</td>";
+    
+   }   
+  }
+
+  function submeter(event){
+   if(event == 'consulta'){
+    if (document.getElementById('numeroProcesso').value == ''){
+     alert('Informe o N\xFAmero do Processo.');
+	  return;
+	} else if(document.getElementById('captcha').value == ''){
+	 alert('Informe a Imagem.');
+	  return;
+	} 
+	 //submete o formul�rio de consulta
+	 document.formConsultaPublica.submit(); 
+	 
+   } else if(event == 'acesso'){
+     if (document.getElementById('login').value == ''){
+	  alert('Informe o Login.');
+	   return;
+	 } else if (document.getElementById('senha').value == ''){
+	  alert('Informe a Senha.');
+	   return;
+	 }		 
+     
+	  if (document.getElementById("tipoUsuario").checked) {
+		document.getElementById('login').name = "cpfCnpj";
+		document.formLogin.action = "/projudi/LogonParte";
+	  }else{
+		document.formLogin.action = "/projudi/Logon";
+	  }
+
+	  captchaShow();	  
+   } else if(event == 'alvara'){
+      if (document.getElementById('codigoValidator').value == ''){
+       alert('Informe o N\xFAmero do Alvar\xE1.');
+	   return; 
+      }
+	  document.formConsultaAlvara.submit();
+    }  else if(event == 'acessoPublico'){
+        if (document.getElementById('codigoHash').value == ''){
+            alert('Informe o C\xF3digo Individual de Acesso.');
+     	   return; 
+           }
+     	  document.formAcessoPublico.submit();
+     }else if(event == 'validaDocumento'){
+         if (document.getElementById('codigoHashDoc').value == ''){
+             alert('Informe o C\xF3digo do Documento.');
+      	   return; 
+            }
+      	  document.formValidaDocumento.submit();
+      }else if(event == 'lotacaoAudiencia'){
+          if (document.getElementById('numeroProcessoAudiencia').value == ''){
+              alert('Informe o N�mero do Processo.');
+       	   return; 
+             }
+       	  document.formConsultaLotacao.submit();
+      }
+   
+   }
+
+  
+	  function onSubmit(token) {
+		  document.formLogin.token.value = token;
+		  document.formLogin.submit();
+	  }
+  
+
+  //forca submeter form pela tecla enter
+  function submeterEnter() {
+	  if (window.event.key == "Enter") {
+		  return submeter('acesso');
+	  }
+  }
+  //onsubmit="return false;" no form serve para impedir o browser de submeter. O h-captha tem funcao de callback.
+  //o browser submte form dando  by pass em submeter('acesso');
+
+</script>
+
+<script language="JavaScript1.2" src="https://ca.turing.captcha.qcloud.com/TCaptcha-global.js"></script><script language="JavaScript1.2" src="/projudi/scripts/captcha/tcentCaptcha.js" data-captcha-id="189907471"></script>
+
+<style>
+
+.tiledBackgroundAutismo {
+  background-image: url(imagens/faixa_autismo_repetivel.png);
+  background-size: 70px;
+  width: 100%;
+  height: 30px;
+  color: white;
+  z-index: 1;
+}
+</style>
+
+<body>
+ 
+ <div class="hconteudo" align="left" width="1200px">
+ <div class="cont_principal" style="width: 600px;height: 370px;float: left;	padding-right: 20px;">
+  
+
+
+  <div class="tit_not">Comunicados</div>
+   Fique ciente de todas as mudan&ccedil;as no PROJUDI <br />
+    <img src="/projudi/imagens/linha.jpg" width="600" height="18" />
+
+   
+    <div class="noticia">
+     <div class="tit"><a href="/projudi/listagens/Comunicado?codComunicado=298" target="blank">&#128226; COMUNICADO IMPORTANTE AOS SERVIDORES - Implanta��o das Ferramentas de Audi�ncias nas unidades que utilizam o PROJUDI</a></div>
+     <div class="date">01/09/2026</div>
+	</div>
+   
+    <div class="noticia">
+     <div class="tit"><a href="/projudi/listagens/Comunicado?codComunicado=297" target="blank">&#128226; COMUNICADO IMPORTANTE �S PARTES, ADVOGADOS, DEFENSORIA E MINISTERIO PUBLICO SOBRE AUDI�NCIAS</a></div>
+     <div class="date">31/08/2026</div>
+	</div>
+   
+    <div class="noticia">
+     <div class="tit"><a href="/projudi/listagens/Comunicado?codComunicado=232" target="blank">Parte do Tipo Pessoa F�sica - Como se cadastrar no PROJUDI-BA</a></div>
+     <div class="date">31/07/2026</div>
+	</div>
+   
+    <div class="noticia">
+     <div class="tit"><a href="/projudi/listagens/Comunicado?codComunicado=22" target="blank">Ajuizamento de a��es com partes sem CPF/CNPJ</a></div>
+     <div class="date">21/07/2026</div>
+	</div>
+   
+    <div class="noticia">
+     <div class="tit"><a href="/projudi/listagens/Comunicado?codComunicado=130" target="blank">Orienta��es de cadastro no Sistema PROJUDI aos novos advogados</a></div>
+     <div class="date">06/07/2026</div>
+	</div>
+   
+    <div class="noticia">
+     <div class="tit"><a href="/projudi/listagens/Comunicado?codComunicado=226" target="blank">MANUAIS/SERVI�OS (Pessoas F�sicas e Jur�dicas, Advogados, MP, Delegacias, Cartas Precat�rias, Ju�zes Leigos, Conciliadores, Servidores e Magistrados)</a></div>
+     <div class="date">06/07/2026</div>
+	</div>
+   
+    <div class="noticia">
+     <div class="tit"><a href="/projudi/listagens/Comunicado?codComunicado=278" target="blank">GUIA F�CIL PARA DISTRIBUIR A��ES NOS JUIZADOS ESPECIAIS DA BAHIA</a></div>
+     <div class="date">06/07/2026</div>
+	</div>
+   
+
+
+
+
+ 
+  
+ </div>
+  
+  <div class="cont_acesso"><img src="imagens/tit_acesso.jpg" width="200" height="30" alt="acesso" /><br />
+   <form method="post" name="formLogin" id="formLogin" action="/projudi/Logon" onkeypress="submeterEnter()" onsubmit="return false;">
+   <table width="100%" border="0" cellspacing="3" cellpadding="0">
+	<tr>
+     <td colspan="2">
+     	<input type="checkbox" name="tipoUsuario" id="tipoUsuario" onClick="javascript:trocaLabel();"/> Sou parte do processo <a href="#" onMouseOver="stm(ajudaLoginParteProcesso,estiloajuda)" onmouseout="htm()"><img src="/projudi/imagens/botoes/pro-botao1.gif" width="15" height="15"></a>
+	  </td> 
+    </tr>
+	<tr>
+	 <td name="user" id="user" width="59">Usu&aacute;rio:</td>
+	 <td><input type="text" name="login" id="login" maxlength="25" size="25" autofocus="autofocus" title="Usu�rio"/></td>
+	</tr>	 	
+	<tr>
+  	 <td>Senha:</td>
+  	 <td><input type="password" name="senha" id="senha" size="25" maxlength="25" title="Senha"/></td>
+    </tr>
+    <tr>
+    <td colspan="100%">
+   	  
+		 <input type="hidden" id="token" name="token"/>
+		 
+  	  
+    </td>
+    </tr>
+	<tr>
+	 <td colspan="2" style="color:#AA1C1C" align="center"></td>
+	</tr>
+  	<tr>
+	<td></td>
+     <td >
+      <a href="javascript:submeter('acesso');"><img src="imagens/bt_entrar.jpg" alt="entrar"/></a> 
+	  <input type="submit" style="display:none;" >
+     </td>	
+    </tr>
+  	<tr>
+  	 <td colspan="2" align="center"><br/>
+  	 <a href="EsqueciSenha">N&atilde;o consegue acessar o sistema?</a>
+  	 <a href="AutoCadastraAdvogado">Advogado - primeiro acesso</a></td>
+    </tr>
+   </table>
+   </form>
+  </div>
+  <div class="cont_consulta"><div style="background-color: rgb(170,28,27)"><img src="imagens/tit_consulta.jpg" width="200" height="30" alt="consulta" /></div>
+   <table width="100%" border="0" cellspacing="3" cellpadding="0">
+    <form method="post" name="formConsultaPublica" id="formConsultaPublica" action="/projudi/buscas/ProcessosParte">
+    <tr>
+     <td>Processo:</td>
+  	 <td><input type="text" name="numeroProcesso" id="numeroProcesso" size="25" maxlength="25"/><input name="nome" type="hidden" title="Numero Processo para Consulta P�blica"/></td>
+    </tr>
+ 	<tr>
+  	 <td>Valida&ccedil;&atilde;o:</td>
+  	  <td width="100%" >
+	   <div id="idCapcha" name="idCapcha"><img id="idImg" name="idImg" src="/projudi/captcha.jpg" alt="Captcha" width="70" height="30"/>
+	    <a href="javascript:reload()"><img src="imagens/bt_reloading.png" alt="alterarCaptcha"/></a>	    
+	   </div>	
+	  </td>
+    </tr>
+  	<tr>
+  	 <td>C&oacute;digo:</td>
+  	 <td><input type="text" name="captcha" id="captcha" size="9" maxlength="10"/></td>
+    </tr>
+  	<tr>
+	 <td></td>
+  	 <td>
+	  <a href="javascript:submeter('consulta');"><img src="imagens/bt_consultar.jpg" alt="consultar"/></a>
+	  <input type="submit" style="display:none;"> 
+	 </td> 
+    </tr>
+	</form>
+  	<tr>
+  	 <td colspan="2" align="center"><a href="/projudi/interno.jsp?endereco=/projudi/buscas/ProcessosParte">Consulta Avan&ccedil;ada</a></td>
+    </tr>
+   </table>
+  </div>
+  	
+  <div class="clear"></div>
+  <div>
+  <!-- <div class="serv"><p class="serv_tit_001">Servi&ccedil;os</p>
+    Preencha os campos ao lado para ter acesso as informa&ccedil;&otilde;es do Teor de
+    Processos e para valida&ccedil;&atilde;o de Alvar&aacute;.</div> -->
+  <div class="serv"><p class="serv_tit_90">Servi&ccedil;os</p></div>
+  <div class="serv_lotacao"><p class="serv_tit_001">Endere�o de Sala de Audi�ncia</p>
+    Digite o n&uacute;mero do Processo cuja sala de audi�ncia deseja consultar.<br /><br />
+   <form method="post" name="formConsultaLotacao" id="formConsultaLotacao" action="/projudi/VerLotacaoAudiencia">  	
+    <input type="text" name="numeroProcessoAudiencia" id="numeroProcessoAudiencia" value="" title="N�mero Processo Para Consulta de Sala de Audi�ncia"/>
+  	<a href="javascript:submeter('lotacaoAudiencia');"><img src="imagens/bt_consultar.jpg" width="85" height="18" alt="consultarLotacao"/></a>
+   </form> 
+  </div>
+  <div class="serv_teor"><p class="serv_tit_001">Teor do Processo</p>
+    Informe o C&oacute;digo Individual de Acesso para consultar o teor do processo.<br />
+   <form method="post" name="formAcessoPublico" id="formAcessoPublico" action="/projudi/AcessoPublico"> 
+    <input type="text" name="codigoHash" id="codigoHash" value="" title="C�digo de Teor do Processo para Consulta"/>
+    <a href="javascript:submeter('acessoPublico');"><img src="imagens/bt_consultar.jpg" width="85" height="18" alt="consultarTeor"/></a>       
+   </form>
+  </div>
+  <div class="serv_validar"><p class="serv_tit_001">Validar Alvar&aacute;</p>
+    Digite o n&uacute;mero do Alvar&aacute; que deseja validar.<br /><br />
+   <form method="post" name="formConsultaAlvara" id="formConsultaAlvara" action="/projudi/ValidarAlvara">  	
+    <input type="text" name="codigoValidator" id="codigoValidator" value="" title="C�digo de Alvara para Consulta"/>
+  	<a href="javascript:submeter('alvara');"><img src="imagens/bt_consultar.jpg" width="85" height="18" alt="consultarAlvara"/></a>
+   </form>
+   </div>
+  <div class="serv_validarDoc"><p class="serv_tit_001">Validar/Acessar Documento</p>
+    Digite o c&oacute;digo do documento que deseja validar.<br /><br />
+   <form method="post" name="formValidaDocumento" id="formValidaDocumento" action="/projudi/ValidarArquivoDocumento"> 
+    <input type="text" name="codigoHashDoc" id="codigoHashDoc" value="" title="C�digo de Documento do Processo para Consulta"/>
+    <a href="javascript:submeter('validaDocumento');"><img src="imagens/bt_consultar.jpg" width="85" height="18" alt="consultarDocumento" name="Consultar" /></a>       
+   </form>
+     <div id="versao" align="right" style="color:#ddd"> Vers&atilde;o 01/09/2026 16:56 </div>
+  </div>
+  </div>    
+ </body> 
+  
+ 
+</html>
