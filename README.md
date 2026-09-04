@@ -41,7 +41,7 @@ python3 deduplicar.py ../2_filtrar/pje_activos.jsonl
 
 ## Environment
 
-Managed with [uv](https://docs.astral.sh/uv/) (`pyproject.toml` + `uv.lock`); Scrapy project in `links_scraper/`.
+Managed with [uv](https://docs.astral.sh/uv/) (`pyproject.toml` + `uv.lock`); Scrapy project in `spider_links/`.
 Setup commands: [docs/setup.md](docs/setup.md).
 
 Public CNJ API key: https://datajud-wiki.cnj.jus.br/api-publica/acesso

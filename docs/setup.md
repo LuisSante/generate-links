@@ -33,12 +33,12 @@ uv run scrapy version
 
 ```bash
 # create the Scrapy project
-uv run scrapy startproject links_scraper
+uv run scrapy startproject spider_links
 ```
 
 ```bash
 # generate a spider
-cd links_scraper
+cd spider_links
 uv run scrapy genspider example example.com
 ```
 

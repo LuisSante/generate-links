@@ -1,4 +1,4 @@
-# Scrapy settings for links_scraper project
+# Scrapy settings for spider_links project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,16 +7,16 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "links_scraper"
+BOT_NAME = "spider_links"
 
-SPIDER_MODULES = ["links_scraper.spiders"]
-NEWSPIDER_MODULE = "links_scraper.spiders"
+SPIDER_MODULES = ["spider_links.spiders"]
+NEWSPIDER_MODULE = "spider_links.spiders"
 
 ADDONS = {}
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "links_scraper (+http://www.yourdomain.com)"
+#USER_AGENT = "spider_links (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -41,13 +41,13 @@ DOWNLOAD_DELAY = 1
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "links_scraper.middlewares.LinksScraperSpiderMiddleware": 543,
+#    "spider_links.middlewares.SpiderLinksSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "links_scraper.middlewares.LinksScraperDownloaderMiddleware": 543,
+#    "spider_links.middlewares.SpiderLinksDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -59,7 +59,7 @@ DOWNLOAD_DELAY = 1
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "links_scraper.pipelines.LinksScraperPipeline": 300,
+#    "spider_links.pipelines.SpiderLinksPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

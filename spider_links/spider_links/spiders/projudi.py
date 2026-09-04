@@ -1,9 +1,7 @@
 from pathlib import Path
-from PIL import Image
-from io import BytesIO
 from dotenv import load_dotenv
 
-import pytesseract
+from paddleocr import PaddleOCR
 import scrapy
 import os
 
@@ -13,6 +11,14 @@ class LegalSpider(scrapy.Spider):
     name = os.getenv("name")
     allowed_domains = [os.getenv("allowed_domains")]
     start_urls = [os.getenv("legal_url")]
+
+    ocr = PaddleOCR(
+        engine="paddle",
+        device="gpu:0",
+        use_doc_orientation_classify=False,
+        use_doc_unwarping=False,
+        use_textline_orientation=False,
+    )
 
     def parse(self, response):
         main_src = response.xpath('//frame[@name="mainFrame"]/@src').get()
@@ -43,26 +49,42 @@ class LegalSpider(scrapy.Spider):
             response.css("#idImg").attrib["src"]
         )
 
-        yield scrapy.Request(
-            legal_img,
-            callback=self.parse_captcha,
-            meta={
-                "legal_img": legal_img,
-                "form_action": response.urljoin(form.attrib["action"]),
-                "input_name": numero_input.attrib["name"],
-            },
-        )
+        for i in range(100):
+            yield scrapy.Request(
+                legal_img,
+                callback=self.parse_legal_image,
+                meta={
+                    "legal_img": legal_img,
+                    "form_action": response.urljoin(form.attrib["action"]),
+                    "input_name": numero_input.attrib["name"],
+                    "iteration": i + 1,
+                },
+                dont_filter=True,
+            )
 
-    def parse_captcha(self, response):
-        image = Image.open(BytesIO(response.body))
+    def parse_legal_image(self, response):
+        image_url = os.getenv("complete_legal_url")
+        iteration = response.meta["iteration"]
+        result = self.ocr.predict(image_url)
 
-        # text = pytesseract.image_to_string(image, config="--psm 8")
-        # text = pytesseract.image_to_string(image, config="--psm 8 --oem 3 -c tessedit_char_whitelist=0123456789")
-        # text = pytesseract.image_to_string(image, config="--psm 8 --oem 3 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-        # text = pytesseract.image_to_string(image, config="--psm 8 --oem 3 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-        text = pytesseract.image_to_string(image)
+        text = ""
+
+        for res in result:
+            texts = res["rec_texts"]
+
+            if texts:
+                text = "".join(texts)
+
+        text = "".join(text.split())
+
+        print()
+        print("=" * 60)
+        print(f"Imagen: {image_url}")
+        print(f"Texto:  {text}")
+        print("=" * 60)
 
         yield {
+            "iteration": iteration,
             "legal_img": response.meta["legal_img"],
-            "captcha_text": text.strip(),
+            "extract_text_to_image": text,
         }
