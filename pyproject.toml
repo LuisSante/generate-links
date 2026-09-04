@@ -1,9 +1,22 @@
 [project]
 name = "links"
 version = "0.1.0"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
+    "paddleocr>=3.7.0",
+    "paddlepaddle-gpu>=3.3.1",
     "pillow>=12.3.0",
     "pytesseract>=0.3.13",
+    "python-dotenv>=1.2.3",
     "scrapy>=2.18.0",
 ]
+
+# PaddlePaddle 3.x GPU wheels are not on PyPI: each CUDA build has its own
+# index. cu126 is the safe pick for this Turing card (Quadro RTX 5000, sm_75).
+[[tool.uv.index]]
+name = "paddle-cu126"
+url = "https://www.paddlepaddle.org.cn/packages/stable/cu126/"
+explicit = true
+
+[tool.uv.sources]
+paddlepaddle-gpu = { index = "paddle-cu126" }

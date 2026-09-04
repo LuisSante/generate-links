@@ -1,15 +1,18 @@
 from pathlib import Path
 from PIL import Image
 from io import BytesIO
+from dotenv import load_dotenv
+
 import pytesseract
-
 import scrapy
+import os
 
+load_dotenv()
 
-class ProjudiSpider(scrapy.Spider):
-    name = "projudi"
-    allowed_domains = ["projudi.tjba.jus.br"]
-    start_urls = ["https://projudi.tjba.jus.br/projudi/"]
+class LegalSpider(scrapy.Spider):
+    name = os.getenv("name")
+    allowed_domains = [os.getenv("allowed_domains")]
+    start_urls = [os.getenv("legal_url")]
 
     def parse(self, response):
         main_src = response.xpath('//frame[@name="mainFrame"]/@src').get()
@@ -26,8 +29,8 @@ class ProjudiSpider(scrapy.Spider):
             "form_method": form.attrib["method"],
             "input_name": numero_input.attrib["name"],
             "input_maxlength": numero_input.attrib["maxlength"],
-            "captcha_input": form.css("input#captcha").attrib["name"],
-            "captcha_img": response.urljoin(
+            "legal_input": form.css("input#captcha").attrib["name"],
+            "legal_img": response.urljoin(
                 response.css("#idImg").attrib["src"]
             ),
         }
@@ -36,15 +39,15 @@ class ProjudiSpider(scrapy.Spider):
         form = response.css("form#formConsultaPublica")
         numero_input = form.css("input#numeroProcesso")
 
-        bck_img = response.urljoin(
+        legal_img = response.urljoin(
             response.css("#idImg").attrib["src"]
         )
 
         yield scrapy.Request(
-            bck_img,
+            legal_img,
             callback=self.parse_captcha,
             meta={
-                "bck_img": bck_img,
+                "legal_img": legal_img,
                 "form_action": response.urljoin(form.attrib["action"]),
                 "input_name": numero_input.attrib["name"],
             },
@@ -60,6 +63,6 @@ class ProjudiSpider(scrapy.Spider):
         text = pytesseract.image_to_string(image)
 
         yield {
-            "bck_img": response.meta["bck_img"],
+            "legal_img": response.meta["legal_img"],
             "captcha_text": text.strip(),
         }
