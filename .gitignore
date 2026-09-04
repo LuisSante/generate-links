@@ -33,3 +33,6 @@ htmlcov/
 .vscode/
 .idea/
 .DS_Store
+
+# Projudi captcha images
+captchas/
