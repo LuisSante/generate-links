@@ -6,6 +6,7 @@ from paddleocr import PaddleOCR
 import numpy as np
 import scrapy
 import json
+import re
 import cv2
 import os
 
@@ -20,8 +21,13 @@ class LegalSpider(scrapy.Spider):
     html_dir = Path("html_group")
     saved = 0
 
-    def __init__(self, limite=None, **kwargs):
+    def __init__(self, limite=None, proceso=None, test=None, **kwargs):
         super().__init__(**kwargs)
+
+        self.proceso = proceso
+
+        if test:
+            self.html_dir = self.html_dir / test
 
         if limite is not None:
             limite = str(limite).lower()
@@ -60,6 +66,9 @@ class LegalSpider(scrapy.Spider):
         }
 
     def read_json(self, response):
+        if self.proceso:
+            return [self.proceso]
+
         list_process = []
         with open("../3_dedup/eproc_activos_dedup.jsonl", "r", encoding="utf-8") as f:
             for line in f:
@@ -166,6 +175,48 @@ class LegalSpider(scrapy.Spider):
             dont_filter=True,
         )
 
+    def read_download(self, response):
+        href = response.css(
+            'a[href^="javascript:chamaDownloadProcesso"]::attr(href)'
+        ).get()
+
+        if not href:
+            return None
+
+        match = re.search(r"\((\d+)\)", href)
+
+        if not match:
+            return None
+
+        return {
+            "cod_processo": match.group(1),
+            "url": response.urljoin(
+                f"/projudi/acoes/DownloadProcesso?numeroProcesso={match.group(1)}"
+            ),
+        }
+
+    def read_arquivos(self, response):
+        bloqueados = response.text.count(
+            "cadastrados no sistema podem acess"
+        )
+        livres = len(
+            response.css('a[href*="DownloadArquivo?arquivo="]')
+        )
+
+        return {"bloqueados": bloqueados, "livres": livres}
+
+    def read_cod(self, response):
+        href = response.css(
+            'a[href*="listagens/DadosProcesso"]::attr(href)'
+        ).get()
+
+        if not href:
+            return None
+
+        match = re.search(r"numeroProcesso=(\d+)", href)
+
+        return match.group(1) if match else None
+
     def read_messages(self, response):
         messages = []
 
@@ -227,13 +278,14 @@ class LegalSpider(scrapy.Spider):
 
         return path
 
-    def discard(self, response, kind, messages):
+    def discard(self, response, kind, messages, motivo):
         record = {
             "process_number": response.meta["process_number"],
             "iteration": response.meta["iteration"],
             "attempt": response.meta["attempt"],
             "status": response.status,
             "tipo": kind,
+            "motivo": motivo,
             "mensagens": messages,
         }
 
@@ -264,7 +316,35 @@ class LegalSpider(scrapy.Spider):
             )
             return
 
-        html = self.save_html(response, kind)
+        download = self.read_download(response)
+        arquivos = self.read_arquivos(response)
+        cod = self.read_cod(response)
+
+        if (
+            kind == "dados_processo"
+            and not download
+            and cod
+            and not response.meta.get("detalle")
+        ):
+            print(f"[{iteration}] {process_number} -> DadosProcesso({cod})")
+
+            yield scrapy.Request(
+                response.urljoin(
+                    f"/projudi/listagens/DadosProcesso?numeroProcesso={cod}"
+                ),
+                callback=self.result,
+                priority=60,
+                meta={**response.meta, "detalle": True},
+                dont_filter=True,
+            )
+            return
+
+        grupo = kind
+
+        if kind == "dados_processo" and not arquivos["bloqueados"]:
+            grupo = "sem_login"
+
+        html = self.save_html(response, grupo)
 
         print()
         print("=" * 60)
@@ -274,6 +354,8 @@ class LegalSpider(scrapy.Spider):
         print(f"captcha: {captcha}")
         print(f"status: {response.status}")
         print(f"tipo: {kind}")
+        print(f"download: {download['url'] if download else 'NO'}")
+        print(f"arquivos: {arquivos['livres']} livres / {arquivos['bloqueados']} bloqueados")
         for message in messages:
             print(f"  [{message['tipo']}] {message['texto']}")
         print(f"html: {html}")
@@ -286,9 +368,13 @@ class LegalSpider(scrapy.Spider):
                 "url": response.url,
                 "html": str(html),
                 "mensagens": messages,
+                "cod_processo": cod,
+                "grupo": grupo,
+                "arquivos": arquivos,
+                "download": download,
             }
         else:
-            self.discard(response, kind, messages)
+            self.discard(response, kind, messages, kind)
 
         if self.max_saved and self.saved >= self.max_saved:
             raise CloseSpider(f"limite de {self.max_saved} html alcanzado")

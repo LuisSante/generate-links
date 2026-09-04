@@ -1,0 +1,3839 @@
+
+
+
+
+
+
+
+
+
+
+<script src="/projudi/dwr/engine.js"></script>
+<script src="/projudi/dwr/util.js"></script>
+
+
+<script type="text/javascript" src="/projudi/scripts/subModal/subModal.js"></script> 
+<script type="text/javascript" src="/projudi/dwr/interface/Pesquisa.js"></script>
+<script type="text/javascript" src="/projudi/scripts/tabelasProcessuais/tabelasProcessuais.js"></script>
+
+
+<html>
+ 
+   <head>
+	  <link type="text/css" rel="stylesheet" href="/projudi/scripts/calendar/dhtmlgoodies_calendar.css" media="screen"></link>
+      <link href="/projudi/estilo.css" rel="stylesheet" type="text/css">
+   	
+   <script type="text/javascript" src="/projudi/scripts/calendar/dhtmlgoodies_calendar.js"></script>
+   <script type="text/javascript" type="text/javascript" src="/projudi/scripts/default.js"></script>
+   <script type="text/javascript" src="/projudi/scripts/mascara.js"></script>
+   <script type="text/javascript" src="/projudi/scripts/criminal/cadastroDadosProcessoCriminal.js"></script>
+   
+   <script type="text/javascript" src="/projudi/scripts/ajaxPopulate.js"></script>
+   <script type="text/javascript" src="/projudi/imagens/chainedselects.js"></script>
+   
+   <script src='/projudi/dwr/interface/FacadeAjax.js'></script>
+   <script src='/projudi/dwr/engine.js'></script>
+
+	
+
+   <script language="JavaScript1.2" src="https://ca.turing.captcha.qcloud.com/TCaptcha-global.js"></script><script language="JavaScript1.2" src="/projudi/scripts/captcha/tcentCaptcha.js" data-captcha-id="189907471"></script>
+
+   <script>
+
+   		  function atualizaCombos(idCombo){
+            select = document.getElementById(idCombo);
+             //se ja houver um item selecionado no primeiro combo
+             if(select.value!=-1){
+              //gera evento para que os combos dependentes sejam atualizados
+               fireEvent(select,'change');
+             }
+           }
+
+          
+	          function submeter() {
+	        	  captchaShow();
+	        	  return false;
+	          }
+	          
+	    	  function onSubmit(token) {
+	    		  document.busca.token.value = token;
+	    		  document.busca.submit();
+	    	  }
+      	  
+              
+   </script>         
+      
+   <script language="JavaScript1.2" src="https://ca.turing.captcha.qcloud.com/TCaptcha-global.js"></script><script language="JavaScript1.2" src="/projudi/scripts/captcha/tcentCaptcha.js" data-captcha-id="189907471"></script>
+   
+   </head>	
+      
+    <body>
+	    
+        
+        
+        
+        
+        <div align="center" class="tituloPagina">BUSCA POR PROCESSOS</div>
+        <!-- <font color='RED'><strong><p></p></strong></font>-->
+        
+
+
+
+
+
+
+<link href="/projudi/estilo.css" rel="stylesheet" type="text/css">
+
+
+    <div class="erro">
+        <strong>Verifique os seguintes erros:</strong>
+        <ul>
+            
+                <li>
+                    Processo não encontrado.
+                </li>
+                            
+        </ul>
+    </div>
+    <br/>
+
+
+
+ 
+        <form method="post" name="busca" onsubmit='javascript:return submeter()'  >
+          
+            <p>
+            <table width="97%" border="0" align="center" cellspacing="0" bordercolor="#000000">
+                <tr class="primeiraLinha">
+                    <td colspan="2">&nbsp; </td>
+                </tr>
+                <tr class="tCinza">
+                    <td><strong>N&uacute;mero Processo</strong></td>
+                    <td><input name="numeroProcesso" value="" type="text" id="numeroProcesso" size="35" maxlength="28"></td>
+                </tr>
+				 
+                 <tr class="tBranca">
+                    <td><strong>Nome da Parte</strong></td>
+                    <td>
+                        <input name="nome" type="text"  size="50" maxlength="200" >
+                        <input name="sentencaInteira" type="checkbox" id="sentencaInteira" value="true" >
+                        <font>Busca pelo Nome Completo</font>
+                    </td>
+                </tr>
+				 
+                <tr class="tCinza">
+                    <td><strong>CPF/CNPJ</strong></td>
+                    <td>
+                      <input name="cpfCnpj" type="text" id="cpfCnpj" size="20">
+                      <input name="parteSemCPFCNPJ" type="checkbox" id="parteSemCPFCNPJ" value="true" />
+                      <font>Parte sem CPF/CNPJ</font>
+                    </td>
+                </tr>
+				  
+                <tr class="tBranca">
+                    <td><strong>N&uacute;mero da OAB</strong></td>
+                    <td><input name="oab" type="text" id="oab" size="20" maxlength="20">
+                    
+                    <select name="complementoOAB" id="complementoOAB">
+                       <option value=""></option>
+                     
+                        <option value="O"> O</option>
+                          
+                      
+                        <option value="D"> D</option>
+                          
+                      
+                        <option value="E"> E</option>
+                          
+                      
+                        <option value="N"> N</option>
+                          
+                      
+                        <option value="P"> P</option>
+                          
+                      
+                        <option value="A"> A</option>
+                          
+                      
+                        <option value="B"> B</option>
+                          
+                      
+                     </select>
+                    (n&uacute;mero)               
+                      <select name="estadoOAB" id="estadoOAB" >
+                      <option selected></option>
+                       <option>AC</option>
+                       <option>AL</option>
+                       <option>AM</option>
+                       <option>AP</option>
+                       <option>BA</option>
+                       <option>CE</option>
+                       <option>DF</option>
+                       <option>ES</option>
+                       <option>GO</option>
+                       <option>MA</option>
+                       <option>MG</option>
+                       <option>MS</option>
+                       <option>MT</option>
+                       <option>PA</option>
+                       <option>PB</option>
+                       <option>PE</option>
+                       <option>PI</option>
+                       <option>PR</option>
+                       <option>RJ</option>
+                       <option>RN</option>
+                       <option>RO</option>
+                       <option>RR</option>
+                       <option>RS</option>
+                       <option>SC</option>
+                       <option>SE</option>
+                       <option>SP</option>
+                       <option>TO</option>
+                       
+                      </select>
+                     (Estado)                                
+                                                                           
+                   </td>            
+                </tr>
+				 
+                <tr class="tCinza">
+                    <td><strong>Tipo de Parte</strong></td>
+                    <td>
+                        
+                        <select name="tipoParteProcesso" id="tipoParteProcesso">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                                <option value="5">
+                                    Acusado
+                                </option>
+                            
+                                <option value="7">
+                                    Adolescente
+                                </option>
+                            
+                                <option value="8">
+                                    Agravado
+                                </option>
+                            
+                                <option value="9">
+                                    Agravante
+                                </option>
+                            
+                                <option value="10">
+                                    Apelado
+                                </option>
+                            
+                                <option value="11">
+                                    Apelante
+                                </option>
+                            
+                                <option value="13">
+                                    Arguente
+                                </option>
+                            
+                                <option value="12">
+                                    Arguído
+                                </option>
+                            
+                                <option value="72">
+                                    Aut. Coatora
+                                </option>
+                            
+                                <option value="14">
+                                    Autor
+                                </option>
+                            
+                                <option value="16">
+                                    Autor do Fato
+                                </option>
+                            
+                                <option value="17">
+                                    Autoridade
+                                </option>
+                            
+                                <option value="19">
+                                    Comunicado
+                                </option>
+                            
+                                <option value="20">
+                                    Comunicante
+                                </option>
+                            
+                                <option value="21">
+                                    Corrigente
+                                </option>
+                            
+                                <option value="22">
+                                    Corrigido
+                                </option>
+                            
+                                <option value="23">
+                                    De Cujus
+                                </option>
+                            
+                                <option value="24">
+                                    Denunciado
+                                </option>
+                            
+                                <option value="74">
+                                    Deprecado
+                                </option>
+                            
+                                <option value="73">
+                                    Deprecante
+                                </option>
+                            
+                                <option value="25">
+                                    Embargado
+                                </option>
+                            
+                                <option value="26">
+                                    Embargante
+                                </option>
+                            
+                                <option value="27">
+                                    Excepto
+                                </option>
+                            
+                                <option value="28">
+                                    Excipiente
+                                </option>
+                            
+                                <option value="29">
+                                    Executado
+                                </option>
+                            
+                                <option value="30">
+                                    Exequente
+                                </option>
+                            
+                                <option value="31">
+                                    Expropriado
+                                </option>
+                            
+                                <option value="32">
+                                    Expropriante
+                                </option>
+                            
+                                <option value="33">
+                                    Impetrado
+                                </option>
+                            
+                                <option value="34">
+                                    Impetrante
+                                </option>
+                            
+                                <option value="35">
+                                    Impugnado
+                                </option>
+                            
+                                <option value="36">
+                                    Impugnante
+                                </option>
+                            
+                                <option value="37">
+                                    Indiciado
+                                </option>
+                            
+                                <option value="38">
+                                    Infrator
+                                </option>
+                            
+                                <option value="39">
+                                    Interessado
+                                </option>
+                            
+                                <option value="41">
+                                    Interpelado
+                                </option>
+                            
+                                <option value="42">
+                                    Interpelante
+                                </option>
+                            
+                                <option value="43">
+                                    Investigado
+                                </option>
+                            
+                                <option value="45">
+                                    Juízo
+                                </option>
+                            
+                                <option value="44">
+                                    Jusrogante
+                                </option>
+                            
+                                <option value="70">
+                                    Litisconsorte
+                                </option>
+                            
+                                <option value="52">
+                                    Não Consta
+                                </option>
+                            
+                                <option value="46">
+                                    Noticiado
+                                </option>
+                            
+                                <option value="47">
+                                    Noticiante
+                                </option>
+                            
+                                <option value="48">
+                                    Notificado
+                                </option>
+                            
+                                <option value="49">
+                                    Notificante
+                                </option>
+                            
+                                <option value="50">
+                                    Nunciado
+                                </option>
+                            
+                                <option value="51">
+                                    Nunciante
+                                </option>
+                            
+                                <option value="53">
+                                    Opoente
+                                </option>
+                            
+                                <option value="54">
+                                    Oposto
+                                </option>
+                            
+                                <option value="71">
+                                    Paciente
+                                </option>
+                            
+                                <option value="1">
+                                    Promovente
+                                </option>
+                            
+                                <option value="0">
+                                    Promovido
+                                </option>
+                            
+                                <option value="55">
+                                    Querelado
+                                </option>
+                            
+                                <option value="56">
+                                    Querelante
+                                </option>
+                            
+                                <option value="57">
+                                    Reclamado
+                                </option>
+                            
+                                <option value="58">
+                                    Reclamante
+                                </option>
+                            
+                                <option value="59">
+                                    Recorrente
+                                </option>
+                            
+                                <option value="60">
+                                    Recorrido
+                                </option>
+                            
+                                <option value="61">
+                                    Representado
+                                </option>
+                            
+                                <option value="62">
+                                    Representante
+                                </option>
+                            
+                                <option value="63">
+                                    Requerente
+                                </option>
+                            
+                                <option value="65">
+                                    Requerido
+                                </option>
+                            
+                                <option value="66">
+                                    Requisitante
+                                </option>
+                            
+                                <option value="67">
+                                    Réu
+                                </option>
+                            
+                                <option value="68">
+                                    Suscitado
+                                </option>
+                            
+                                <option value="69">
+                                    Suscitante
+                                </option>
+                            
+                                <option value="2">
+                                    Terceiro
+                                </option>
+                            
+                                <option value="3">
+                                    Testemunha
+                                </option>
+                            
+                                <option value="4">
+                                    Vítima
+                                </option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				 
+                  
+			  <input id="codTipoJustica" name="codTipoJustica" type="hidden" value="" />				
+  			  <tr class="tBranca">
+               <td><strong>Vara</strong></td>
+               <td>
+                <select name="codVara" id="codVara">
+                 <option value="-1">Selecione Para Busca</option>
+                      <option value="999"  > JUIZO DISTRIBUIDOR</option>
+                  
+                      <option value="2001"  >CEJUSC RESTAURATIVO IMBUÍ</option>
+                  
+                      <option value="2000"  >CEJUSC RESTAURATIVO LAPINHA</option>
+                  
+                      <option value="310"  >Juizado Esp. Cível de Apoio-ALAGOINHAS</option>
+                  
+                      <option value="342"  >Juizado Esp. Cível de Apoio-BARREIRAS</option>
+                  
+                      <option value="71"  >Juizado Esp. Cível de Apoio-CAMAÇARI</option>
+                  
+                      <option value="120"  >Juizado Esp. Cível de Apoio-EUNÁPOLIS</option>
+                  
+                      <option value="53"  >Juizado Esp. Cível de Apoio-FEIRA DE SANTANA</option>
+                  
+                      <option value="83"  >Juizado Esp. Cível de Apoio-ILHÉUS</option>
+                  
+                      <option value="103"  >Juizado Esp. Cível de Apoio-ITABUNA</option>
+                  
+                      <option value="362"  >Juizado Esp. Cível de Apoio-JEQUIÉ</option>
+                  
+                      <option value="232"  >Juizado Esp. Cível de Apoio-JUAZEIRO</option>
+                  
+                      <option value="92"  >Juizado Esp. Cível de Apoio-LAURO DE FREITAS</option>
+                  
+                      <option value="222"  >Juizado Esp. Cível de Apoio-PORTO SEGURO</option>
+                  
+                      <option value="271"  >Juizado Esp. Cível de Apoio-SANTO ANTÔNIO DE JESUS</option>
+                  
+                      <option value="142"  >Juizado Esp. Cível de Apoio-TEIXEIRA DE FREITAS</option>
+                  
+                      <option value="62"  >Juizado Esp. Cível de Apoio-VITÓRIA DA CONQUISTA</option>
+                  
+                      <option value="240"  >Juizado Especial Adjunto Cível/Criminal - COARACI</option>
+                  
+                      <option value="15"  >Juizado Especial Cível de Apoio-BARRA</option>
+                  
+                      <option value="17"  >Juizado Especial Cível de Apoio-CAJAZEIRAS</option>
+                  
+                      <option value="41"  >Juizado Especial Cível de Apoio-ESTAÇÃO PITUAÇÚ</option>
+                  
+                      <option value="13"  >Juizado Especial Cível de Apoio-INSTITUTO DO CACAU</option>
+                  
+                      <option value="18"  >Juizado Especial Cível de Apoio-PERIPERI</option>
+                  
+                      <option value="2002"  >Juizado Especial Cível de Apoio-RODOVIÁRIA</option>
+                  
+                      <option value="5"  >Juizado Especial Cível de Apoio-SALVADOR SHOPPING</option>
+                  
+                      <option value="460"  >Vara do Sist dos Juizados - LIVRAMENTO DE N SRA</option>
+                  
+                      <option value="450"  >Vara do Sist dos Juizados - Luís Eduardo Magalhães</option>
+                  
+                      <option value="311"  >Vara do Sistema dos Juizados - ALAGOINHAS</option>
+                  
+                      <option value="380"  >Vara do Sistema dos Juizados - BOM JESUS DA LAPA</option>
+                  
+                      <option value="370"  >Vara do Sistema dos Juizados - BRUMADO</option>
+                  
+                      <option value="250"  >Vara do Sistema dos Juizados - CANAVIEIRAS</option>
+                  
+                      <option value="390"  >Vara do Sistema dos Juizados - CÍCERO DANTAS</option>
+                  
+                      <option value="440"  >Vara do Sistema dos Juizados - EUCLIDES DA CUNHA</option>
+                  
+                      <option value="130"  >Vara do Sistema dos Juizados - GANDU</option>
+                  
+                      <option value="150"  >Vara do Sistema dos Juizados - IPIAÚ</option>
+                  
+                      <option value="111"  >Vara do Sistema dos Juizados - IPIRÁ</option>
+                  
+                      <option value="200"  >Vara do Sistema dos Juizados - ITABERABA</option>
+                  
+                      <option value="290"  >Vara do Sistema dos Juizados - ITAMARAJU</option>
+                  
+                      <option value="430"  >Vara do Sistema dos Juizados - RIACHÃO DO JACUÍPE</option>
+                  
+                      <option value="320"  >Vara do Sistema dos Juizados - SANTO ESTEVÃO</option>
+                  
+                      <option value="350"  >Vara do Sistema dos Juizados - SENHOR DO BONFIM</option>
+                  
+                      <option value="280"  >Vara do Sistema dos Juizados - VALENÇA</option>
+                  
+                      <option value="270"  >Vara do Sistema dos Juizados-STO ANTÔNIO DE JESUS</option>
+                  
+                      <option value="330"  >Vara do Sistema Juizados - SANTA MARIA DA VITÓRIA</option>
+                  
+                      <option value="340"  >1ª Vara do Sistema dos Juizados - BARREIRAS</option>
+                  
+                      <option value="70"  >1ª Vara do Sistema dos Juizados - CAMAÇARI</option>
+                  
+                      <option value="122"  >1ª Vara do Sistema dos Juizados - EUNÁPOLIS</option>
+                  
+                      <option value="52"  >1ª Vara do Sistema dos Juizados - FEIRA DE SANTANA</option>
+                  
+                      <option value="170"  >1ª Vara do Sistema dos Juizados - GUANAMBI</option>
+                  
+                      <option value="80"  >1ª Vara do Sistema dos Juizados - ILHÉUS</option>
+                  
+                      <option value="160"  >1ª Vara do Sistema dos Juizados - IRECÊ</option>
+                  
+                      <option value="102"  >1ª Vara do Sistema dos Juizados - ITABUNA (VESP)</option>
+                  
+                      <option value="190"  >1ª Vara do Sistema dos Juizados - ITAPETINGA</option>
+                  
+                      <option value="180"  >1ª Vara do Sistema dos Juizados - JACOBINA</option>
+                  
+                      <option value="360"  >1ª Vara do Sistema dos Juizados - JEQUIÉ</option>
+                  
+                      <option value="230"  >1ª Vara do Sistema dos Juizados - JUAZEIRO</option>
+                  
+                      <option value="90"  >1ª Vara do Sistema dos Juizados - LAURO DE FREITAS</option>
+                  
+                      <option value="410"  >1ª Vara do Sistema dos Juizados - PAULO AFONSO</option>
+                  
+                      <option value="220"  >1ª Vara do Sistema dos Juizados - PORTO SEGURO</option>
+                  
+                      <option value="300"  >1ª Vara do Sistema dos Juizados - SERRINHA</option>
+                  
+                      <option value="63"  >1ª Vara do Sistema dos Juizados- VIT. DA CONQUISTA</option>
+                  
+                      <option value="210"  >1ª Vara do Sistema Juizados - CONCEIÇÃO DO COITÉ</option>
+                  
+                      <option value="140"  >1ª Vara do Sistema Juizados - Teixeira de Freitas</option>
+                  
+                      <option value="260"  >1ª Vara Sistema Juizados Especiais - Simões Filho</option>
+                  
+                      <option value="37"  >1ª VSJE CRIMINAL (NAZARÉ MATUTINO)</option>
+                  
+                      <option value="28"  >1ª VSJE DE CAUSAS COMUNS (MATUTINO)</option>
+                  
+                      <option value="1016"  >1ª VSJE DE TRÂNSITO (MATUTINO)</option>
+                  
+                      <option value="1004"  >1ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="1015"  >10ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="1000"  >11ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="1010"  >12ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="1001"  >13ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="1011"  >14ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="1006"  >15ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="1008"  >16ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="1007"  >17ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="1009"  >18ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="1019"  >19ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="343"  >2ª Vara do Sistema dos Juizados - BARREIRAS</option>
+                  
+                      <option value="72"  >2ª Vara do Sistema dos Juizados - CAMAÇARI</option>
+                  
+                      <option value="123"  >2ª Vara do Sistema dos Juizados - EUNÁPOLIS</option>
+                  
+                      <option value="50"  >2ª Vara do Sistema dos Juizados - FEIRA DE SANTANA</option>
+                  
+                      <option value="81"  >2ª Vara do Sistema dos Juizados - ILHÉUS</option>
+                  
+                      <option value="161"  >2ª Vara do Sistema dos Juizados - IRECÊ</option>
+                  
+                      <option value="100"  >2ª Vara do Sistema dos Juizados - ITABUNA (MAT)</option>
+                  
+                      <option value="182"  >2ª Vara do Sistema dos Juizados - JACOBINA</option>
+                  
+                      <option value="363"  >2ª Vara do Sistema dos Juizados - JEQUIÉ</option>
+                  
+                      <option value="231"  >2ª Vara do Sistema dos Juizados - JUAZEIRO</option>
+                  
+                      <option value="91"  >2ª Vara do Sistema dos Juizados - LAURO DE FREITAS</option>
+                  
+                      <option value="411"  >2ª Vara do Sistema dos Juizados - PAULO AFONSO</option>
+                  
+                      <option value="223"  >2ª Vara do Sistema dos Juizados - PORTO SEGURO</option>
+                  
+                      <option value="302"  >2ª Vara do Sistema dos Juizados - SERRINHA</option>
+                  
+                      <option value="61"  >2ª Vara do Sistema dos Juizados- VIT. DA CONQUISTA</option>
+                  
+                      <option value="211"  >2ª Vara do Sistema Juizados - CONCEIÇÃO DO COITÉ</option>
+                  
+                      <option value="143"  >2ª Vara do Sistema Juizados - Teixeira de Freitas</option>
+                  
+                      <option value="38"  >2ª VSJE CRIMINAL (NAZARÉ VESPERTINO)</option>
+                  
+                      <option value="29"  >2ª VSJE DE CAUSAS COMUNS (VESPERTINO)</option>
+                  
+                      <option value="1003"  >2ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="1020"  >20ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="51"  >3ª Vara do Sistema dos Juizados - FEIRA DE SANTANA</option>
+                  
+                      <option value="82"  >3ª Vara do Sistema dos Juizados - ILHÉUS</option>
+                  
+                      <option value="101"  >3ª Vara do Sistema dos Juizados - ITABUNA (MAT)</option>
+                  
+                      <option value="60"  >3ª Vara do Sistema dos Juizados- VIT. DA CONQUISTA</option>
+                  
+                      <option value="39"  >3ª VSJE CRIMINAL (MATUTINO)</option>
+                  
+                      <option value="26"  >3ª VSJE DE CAUSAS COMUNS (MATUTINO)</option>
+                  
+                      <option value="1005"  >3ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="54"  >4ª Vara do Sistema dos Juizados - FEIRA DE SANTANA</option>
+                  
+                      <option value="40"  >4ª VSJE CRIMINAL (VESPERTINO)</option>
+                  
+                      <option value="30"  >4ª VSJE DE CAUSAS COMUNS (VESPERTINO)</option>
+                  
+                      <option value="1002"  >4ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="55"  >5ª Vara do Sistema dos Juizados - FEIRA DE SANTANA</option>
+                  
+                      <option value="35"  >5ª VSJE CRIMINAL (MATUTINO)</option>
+                  
+                      <option value="33"  >5ª VSJE DE CAUSAS COMUNS (MATUTINO)</option>
+                  
+                      <option value="1"  >5ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="36"  >6ª VSJE CRIMINAL (VESPERTINO)</option>
+                  
+                      <option value="34"  >6ª VSJE DE CAUSAS COMUNS (VESPERTINO)</option>
+                  
+                      <option value="2"  >6ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="31"  >7ª VSJE DE CAUSAS COMUNS (MATUTINO)</option>
+                  
+                      <option value="1012"  >7ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                      <option value="32"  >8ª VSJE DE CAUSAS COMUNS (VESPERTINO)</option>
+                  
+                      <option value="1013"  >8ª VSJE DO CONSUMIDOR (VESPERTINO)</option>
+                  
+                      <option value="1014"  >9ª VSJE DO CONSUMIDOR (MATUTINO)</option>
+                  
+                 </select>
+                </td>
+              </tr>
+              
+                 
+              <tr class="tCinza">
+                <td><strong>Competência</strong></td>
+                <td>
+                 <select name="codAreaDeVara" id="codAreaDeVara" disabled></select>
+               </td>
+              </tr>
+		 	   
+                <tr class="tBranca">
+                    <td width="30%"><strong> Objeto da A&ccedil;&atilde;o</strong></td>
+                    <td width="70%">
+                        <select name="codObjetoPedido" id="codObjetoPedido">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                            <option value="3">COBRANCA - TITULO SEM FUNDOS</option>
+                            
+                            <option value="0">No Cadastrado.</option>
+                            
+                            <option value="1">TELEFONIA - ASSINATURA MENSAL</option>
+                            
+                            <option value="2">TELEFONIA - PULSOS TELEFONICOS</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				  
+                <tr class="tCinza">
+                    <td><strong>Fase Processual</strong></td>
+                    <td>
+                        <select name="codFaseProcessual" id="codFaseProcessual">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                            <option value="1">CONHECIMENTO</option>
+                            
+                            <option value="2">EXECUÇÃO</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				   
+                <tr class="tBranca">
+                    <td><strong>Classe (anterior à resolução 46)</strong></td>
+                    <td>
+                        <select name="tipoAcao" id="tipoAcao" style="width:250px;">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                            <option value="102139">AÇÃO DE COBRANÇA</option>
+                            
+                            <option value="105439">AÇÃO INIBITÓRIA</option>
+                            
+                            <option value="100015">AÇÃO INOMINADA</option>
+                            
+                            <option value="100014">AÇÃO MONITÓRIA</option>
+                            
+                            <option value="101099">ADJUDICAÇÃO</option>
+                            
+                            <option value="104226">ADJUDICAÇÃO COMPULSÓRIA</option>
+                            
+                            <option value="102253">ANULAÇÃO DE CONTRATO</option>
+                            
+                            <option value="102931">ANULATÓRIA</option>
+                            
+                            <option value="100018">ARBITRAMENTO DE FIANÇA</option>
+                            
+                            <option value="100802">ARBITRAMENTO DE HONORARIOS</option>
+                            
+                            <option value="100653">ATENTADO</option>
+                            
+                            <option value="100604">CANCELAMENTO DE PROTESTO</option>
+                            
+                            <option value="102089">CARTA DE ORDEM</option>
+                            
+                            <option value="100992">CARTA DE SENTENÇA</option>
+                            
+                            <option value="100109">CARTA PRECATÓRIA</option>
+                            
+                            <option value="100117">CARTA ROGATÓRIA</option>
+                            
+                            <option value="100019">CAUTELAR</option>
+                            
+                            <option value="103293">COBRANCA DE ALUGUEL</option>
+                            
+                            <option value="105132">COBRANCA DE HONORÁRIOS</option>
+                            
+                            <option value="102980">COMINATÓRIA</option>
+                            
+                            <option value="102170">CONTRA-PROTESTO</option>
+                            
+                            <option value="100020">CONTRAVENÇÃO PENAL</option>
+                            
+                            <option value="100021">COREIÇÃO PARCIAL</option>
+                            
+                            <option value="100022">CRIME CONTRA A ADMINISTRAÇÃO PÚBLICA</option>
+                            
+                            <option value="100024">CRIME CONTRA A ECONOMIA POPULAR</option>
+                            
+                            <option value="100025">CRIME CONTRA A FAMÍLIA</option>
+                            
+                            <option value="100026">CRIME CONTRA A FÉ PÚBLICA</option>
+                            
+                            <option value="100027">CRIME CONTRA A INCOLUMIDADE PÚBLICA</option>
+                            
+                            <option value="100031">CRIME CONTRA A PAZ PÚBLICA</option>
+                            
+                            <option value="100032">CRIME CONTRA A PESSOA</option>
+                            
+                            <option value="100029">CRIME CONTRA AS ORGANIZAÇÕES DO TRABALHO</option>
+                            
+                            <option value="100028">CRIME CONTRA O MEIO AMBIENTE</option>
+                            
+                            <option value="100030">CRIME CONTRA O PATRIMÔNIO</option>
+                            
+                            <option value="100034">CRIME CONTRA O SENTIMENTO RELIGIOSO</option>
+                            
+                            <option value="100023">CRIME CONTRA OS COSTUMES</option>
+                            
+                            <option value="100033">CRIME CONTRA PROPRIEDADE IMATERIAL</option>
+                            
+                            <option value="100035">CRIME DA LEGISLAÇÃO COMPLEMENTAR</option>
+                            
+                            <option value="100036">CRIME DE TÓXICO</option>
+                            
+                            <option value="100038">CRIME DE TÓXICO</option>
+                            
+                            <option value="100037">CRIME DE TRÂNSITO - CTB</option>
+                            
+                            <option value="100039">CRIME PORTE ILEGAL DE ARMA</option>
+                            
+                            <option value="100040">CRIME RELAÇÃO DE CONSUMO</option>
+                            
+                            <option value="101339">DECLARATORIA</option>
+                            
+                            <option value="104671">DESCONSTITUIÇÃO DE TÍTULOS</option>
+                            
+                            <option value="101222">DESPEJO</option>
+                            
+                            <option value="101180">EMBARGOS - DEVEDOR</option>
+                            
+                            <option value="103426">EMBARGOS À ADJUDICAÇÃO</option>
+                            
+                            <option value="103459">EMBARGOS À PENHORA</option>
+                            
+                            <option value="105769">EMBARGOS ARREMATAÇÃO</option>
+                            
+                            <option value="100661">EMBARGOS DE RETENÇÃO</option>
+                            
+                            <option value="101172">EMBARGOS DE TERCEIRO</option>
+                            
+                            <option value="104259">ENRIQUECIMENTO ILÍCITO</option>
+                            
+                            <option value="102386">EVICÇÃO</option>
+                            
+                            <option value="101206">EXECUÇÃO</option>
+                            
+                            <option value="101727">EXECUÇÃO DE ACORDO</option>
+                            
+                            <option value="101636">EXECUÇÃO DE ALIMENTOS</option>
+                            
+                            <option value="106205">EXECUÇÃO DE SENTENÇA</option>
+                            
+                            <option value="100011">EXECUÇÃO DE TÍTULO EXTRAJUDICIAL</option>
+                            
+                            <option value="100646">EXECUÇÃO FORÇADA</option>
+                            
+                            <option value="105371">EXECUCAO PENA MULTA</option>
+                            
+                            <option value="101958">EXECUCAO PROVISORIA</option>
+                            
+                            <option value="101719">EXIBIÇÃO</option>
+                            
+                            <option value="100844">EXIBIÇÃO DE DOCUMENTOS</option>
+                            
+                            <option value="104739">EXIBIÇÃO DE LIVROS</option>
+                            
+                            <option value="101214">EXTINÇÃO DE OBRIGAÇÕES</option>
+                            
+                            <option value="100497">HOMOLOGAÇÃO DE ACORDO</option>
+                            
+                            <option value="102584">IMISSÃO NA POSSE</option>
+                            
+                            <option value="101065">IMPUGNAÇÃO</option>
+                            
+                            <option value="100041">INCIDENTE PROCESSUAL</option>
+                            
+                            <option value="103566">INCLUSÃO DE CLÁUSULA CONTRATUAL</option>
+                            
+                            <option value="100307">INDENIZAÇÃO POR DANOS MATERIAIS</option>
+                            
+                            <option value="103269">INDENIZAÇÃO POR DANOS MORAIS</option>
+                            
+                            <option value="101271">INDENIZAÇÃO POR DANOS MORAIS E MATERIAIS</option>
+                            
+                            <option value="104283">INEXEGIBILIDADE DE OBRIGAÇÃO</option>
+                            
+                            <option value="105546">LOCUPLETAMENTO ILÍCITO</option>
+                            
+                            <option value="100016">MANDADO DE SEGURANÇA</option>
+                            
+                            <option value="105751">MANUTENÇÃO DE POSSE</option>
+                            
+                            <option value="104663">NULIDADE</option>
+                            
+                            <option value="102774">NULIDADE DE CLÁUSULA CONTRATUAL</option>
+                            
+                            <option value="102469">OBRIGAÇÃO DE FAZER</option>
+                            
+                            <option value="106023">OBRIGAÇÃO DE NÃO FAZER</option>
+                            
+                            <option value="107017">ORDINÁRIA</option>
+                            
+                            <option value="107016">ORDINÁRIA CARTÃO CRÉDITO</option>
+                            
+                            <option value="107011">ORDINÁRIA CHEQUES</option>
+                            
+                            <option value="107012">ORDINÁRIA CONSÓRCIOS</option>
+                            
+                            <option value="107007">ORDINÁRIA CONSUMO ÁGUA</option>
+                            
+                            <option value="107002">ORDINÁRIA CUMPRIM. SERVIÇO</option>
+                            
+                            <option value="107000">ORDINÁRIA DEFEITO PRODUTO</option>
+                            
+                            <option value="107003">ORDINÁRIA DOCUM. ESCOLAR</option>
+                            
+                            <option value="107005">ORDINÁRIA ENERG. ELÉTRICA</option>
+                            
+                            <option value="107014">ORDINÁRIA IMÓVEIS</option>
+                            
+                            <option value="107010">ORDINÁRIA JUROS/ENCARGOS</option>
+                            
+                            <option value="107004">ORDINÁRIA MATRIC. ESCOLAR</option>
+                            
+                            <option value="107006">ORDINÁRIA PLANO SAÚDE</option>
+                            
+                            <option value="107015">ORDINÁRIA SERVIÇOS BANCOS</option>
+                            
+                            <option value="107001">ORDINÁRIA SOLICIT. SERVIÇO</option>
+                            
+                            <option value="107013">ORDINÁRIA SPC/SERASA</option>
+                            
+                            <option value="107009">ORDINÁRIA TELEFONIA</option>
+                            
+                            <option value="107008">ORDINÁRIA TELEFONIA DDI</option>
+                            
+                            <option value="104275">PASSAGEM FORÇADA</option>
+                            
+                            <option value="100919">PAULIANA</option>
+                            
+                            <option value="101446">POSSESSÓRIA</option>
+                            
+                            <option value="100042">PRECATÓRIA CRIME</option>
+                            
+                            <option value="100043">QUEIXA CRIME</option>
+                            
+                            <option value="103871">REABILITAÇÃO</option>
+                            
+                            <option value="100012">RECURSO CONTRA DECISÃO DE TUTELA (MANDADO DE SEGURANÇA)</option>
+                            
+                            <option value="100013">RECURSO INTERPOSTO</option>
+                            
+                            <option value="103152">REDIBITÓRIA</option>
+                            
+                            <option value="104572">REGRESSIVA</option>
+                            
+                            <option value="101453">REIVINDICATÓRIA</option>
+                            
+                            <option value="100044">RELAXAMENTO DE PRISÃO</option>
+                            
+                            <option value="105496">REMOÇÃO</option>
+                            
+                            <option value="104705">RENAVATÓRIA DE LOCAÇÃO</option>
+                            
+                            <option value="103020">RENOVATÓRIA</option>
+                            
+                            <option value="102956">REPETIÇÃO DE INDÉBITO</option>
+                            
+                            <option value="100017">REQUERIMENTO JUDICIAL</option>
+                            
+                            <option value="100828">RESCISÃO DE CONTRATO</option>
+                            
+                            <option value="105595">RESSARCIMENTO</option>
+                            
+                            <option value="101131">RESTITUIÇÃO</option>
+                            
+                            <option value="100045">RESTITUIÇÃO DE COISA APREENDIDA</option>
+                            
+                            <option value="103483">REVISÃO DE CLÁUSULA CONTRATUAL</option>
+                            
+                            <option value="102444">REVISÃO DE CONTRATO</option>
+                            
+                            <option value="104747">SERVIDÃO</option>
+                            
+                            <option value="100679">SUB-ROGAÇÃO</option>
+                            
+                            <option value="100968">SUSTAÇÃO DE PROTESTO</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				  
+                <tr class="tCinza">
+                    <td><strong>Assunto</strong></td>
+                    <td>
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/projudi/imagens/MostraOculta.js"></script>
+<script type="text/javascript" src="/projudi/scripts/ajaxPopulate.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/MovimentacaoService.js"></script>
+<script>
+    
+        dwr.engine.setErrorHandler(errorHandler);
+
+        function errorHandler(msg) {
+            alert("Erro:\n" + msg);                
+        }
+       
+
+    
+        function validaCamposFormularioTabelaCNJ(codTipoJustica,codArea) {    
+            var erros = '';
+            if (codTipoJustica!=null &&(codTipoJustica == "-1" || codTipoJustica=="")){
+                erros = erros + "- Selecione um tipo de justica.\n";
+            }
+            if (codArea!=null &&(codArea == "-1" || codArea=="")){
+                erros = erros + "- Selecione uma competência.\n";
+            }
+            return erros;
+        }
+            
+        function validaPesquisa(idCodigoCategoria, nomeCategoria){
+            var seqCategoria = document.getElementById(idCodigoCategoria).value;
+            var erros = '';                
+            if (seqCategoria == null || seqCategoria == ""){
+            	
+                erros = erros + "- Digite o código do(a) " + nomeCategoria + " para realizar a busca.\n";
+            }
+            return erros;
+        }       
+    
+    
+    
+        function getParametrosPesquisa(idCodigoCategoria, nomeCategoria, compExternos){
+            var codTipoJustica = null;
+            var codArea = null;
+            var codNatureza = null;
+            var codVara = null;
+            var indicadorCompetenciaTurma = null;
+            
+            if(compExternos.length>0){
+                if(compExternos[0]!=null && compExternos[0]!='')
+                    codTipoJustica = document.getElementById(compExternos[0]).value;
+                
+                if(compExternos.length>1){
+                    if(compExternos[1]!=null && compExternos[1]!='')
+                        codArea = document.getElementById(compExternos[1]).value;
+                }  
+                if(compExternos.length>2){
+                    if(compExternos[2]!=null && compExternos[2]!='')
+                        codNatureza = document.getElementById(compExternos[2]).value;
+                }  
+                if(compExternos.length>3){
+                    if(compExternos[3]!=null && compExternos[3]!='')
+                        codVara = document.getElementById(compExternos[3]).value;
+                }
+                if(compExternos.length>4){
+                    if(compExternos[4]!=null && compExternos[4]!='')
+                        indicadorCompetenciaTurma = document.getElementById(compExternos[4]).value;
+                }
+            }
+            
+            var erros = '';                
+                         
+            //variáveis para validação dos campos necessários
+            
+            erros = erros + validaPesquisa(idCodigoCategoria, nomeCategoria); 
+
+            if (erros!=''){
+                erros = "Verifique os seguintes erros:\n\n"+erros;
+                alert(erros);
+                return false;
+            }
+
+            params = new Array();
+            if(codTipoJustica!=null || codArea!=null || codNatureza!=null || codVara!=null || indicadorCompetenciaTurma!=null){
+                params[0] = codTipoJustica;
+                params[1] = codArea;
+                params[2] = codNatureza;
+                params[3] = codVara;
+                params[4] = indicadorCompetenciaTurma;
+            }
+                
+            return params;
+        } 
+           
+        
+        /**
+         * Método utilizado para pesquisa genérica com DWR.
+         * 
+         * @param idCodigoCategoria id do objeto html que será utilizado para digitação do código
+         * @param idDescricaoCategoria id do objeto html que será preenchido com a descrição buscada
+         * @param tipoTabela nome da categoria para exibição na mensagem de erro
+         * @param classePesquisaJava classe de pesquisa em java (com o nome do pacote)
+         * @param funcaoPreenchimento função utilizada para o preenchimento do campo de descrição após a busca
+         * @param funcaoGetParametros função utilizada para recuperar e validar os parâmetros que serão utilizados pela pesquisa
+         */
+        function pesquisa(idCodigoCategoria, idDescricaoCategoria, tipoTabela, classePesquisaJava, funcaoPreenchimento, funcaoGetParametros, idsComponentesExternos){
+            var seqCategoria = document.getElementById(idCodigoCategoria).value;
+                
+            //valida os campos necessários antes de realizar a pesquisa, retornando os parâmetros de busca
+            var params = funcaoGetParametros(idCodigoCategoria, tipoTabela, idsComponentesExternos);
+            if (!params) {
+                return false;
+            }
+             
+            Pesquisa.pesquisaCodigoPK(classePesquisaJava, seqCategoria, "VALIDACAO_PESQUISA", params, funcaoPreenchimento);
+            
+            
+        }
+        
+        function preencheAssunto(categoria){
+	        dwr.util.setValue("seqCategoriaAssunto", categoria.codigo);
+	        dwr.util.setValue("descCategoriaAssunto", categoria.descricao);
+	        
+    	}
+
+        
+
+        function acionarBuscaAssunto(event, idBotaoBusca, idDescricaoCategoria){
+            var botaoBusca = document.getElementById(idBotaoBusca);
+            var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+           
+            if (keyCode == 13) {//Enter                       
+                if(dwr.util.getValue(idDescricaoCategoria)=='')
+                    fireMouseEvent(botaoBusca,'click');
+                
+                return false;
+            }
+            else if(keyCode != 9) {//Tab
+                //limpa a categoria
+                dwr.util.setValue(idDescricaoCategoria, null);
+                return true;
+            }
+        }  
+
+        function fireMouseEvent(element,event){
+            if (document.createEventObject){
+                // dispatch for IE
+                var evt = document.createEventObject();
+                return element.fireEvent('on'+event,evt)
+            }
+            else{        
+                // dispatch for firefox + others
+                var evt = document.createEvent("MouseEvents");
+                evt.initEvent(event, true, true ); // event type,bubbling,cancelable 
+                return !element.dispatchEvent(evt);
+            }
+        }
+            
+    
+    
+    //determina se algum item já foi definido como Principal uma primeira vez.
+    var primeiroAssuntoPrincipalDefinido = false;
+
+    /**
+     * Método utilizado para adicionar(selecionar) um novo item à tabela de
+     * seleção.
+     */
+    function adicionarAssunto(){                
+        var codAssunto = document.getElementById('seqCategoriaAssunto').value;
+        var descAssunto = document.getElementById('descCategoriaAssunto').value;
+
+        //se o código e a descrição estiverem definidos
+        //e ainda não foram inseridos na tabela de seleção
+        if(!AssuntoJaAdicionado(codAssunto)){
+            if(codAssunto!='' && descAssunto!='' && !AssuntoJaAdicionado(codAssunto)){                
+            //recupera informações do item e executa a função que efetivamente irá adicioná-lo
+                Pesquisa.pesquisaProcedimento('Assunto', codAssunto,adicionarAssuntoTabela);                    
+            } 
+        }else{
+            alert('Código informado para Assunto já inserido.');
+        }
+    }
+
+    /**
+    * Método utilizado para efetivamente adicionar um novo item à tabela de
+    * seleção.
+    * proc Objeto PesquisaProcedimentoDTO com informações complementares
+    */
+    function adicionarAssuntoTabela(proc){            
+        var codAssunto = document.getElementById('seqCategoriaAssunto');
+        var descAssunto = document.getElementById('descCategoriaAssunto');
+
+        //se o código e a descrição estiverem definidos
+        //e ainda não foram inseridos na tabela de seleção
+        if(!AssuntoJaAdicionado(codAssunto.value)){
+            if(codAssunto.value!='' && descAssunto.value!=''){
+
+                var tbAssunto = document.getElementById('tbAssunto');
+                //configuração da linha inserida
+                novotr = tbAssunto.insertRow(tbAssunto.rows.length-1);
+                novotr.id = 'trTbAssunto'+codAssunto.value;
+                if(novotr.rowIndex % 2 == 0){
+                    novotr.className = 'tCinza';
+                }
+                else{
+                    novotr.className = 'tBranca';
+                }
+                //configuração das células inseridas
+                novotd0 = novotr.insertCell(0);
+                novotd0.style.paddingLeft = '5px';
+                novotd0.innerHTML = codAssunto.value+'&nbsp;-&nbsp;'+descAssunto.value;
+                novotd0.innerHTML = novotd0.innerHTML.concat(' <input id="inputCodAssunto'+codAssunto.value+'" name="codAssunto" type="hidden" value="'+codAssunto.value+'" /> ');
+                novotd0.innerHTML = novotd0.innerHTML.concat(' <input id="inputDescAssunto'+codAssunto.value+'" name="descAssunto" type="hidden" value="'+descAssunto.value+'" /> ');
+                novotd0.innerHTML = novotd0.innerHTML.concat(' <input id="inputSecundAssunto'+codAssunto.value+'" name="secundAssunto" type="hidden" value="'+proc.secundario+'" /> ');
+				//verifica se o tipo tabela eh Assunto, pois so ele tem o campo 'principal'
+                if (false) {
+	                novotd1 = novotr.insertCell(1);
+	                novotd1.style.textAlign = 'center';   
+	                //se algum item ainda não foi definido como Principal uma primeira vez
+	                //e o item inserido puder ser definido como Principal
+	                if(!primeiroAssuntoPrincipalDefinido && proc.secundario=='N'){
+	                    //define o item como Principal
+	                    novotd1.innerHTML = '<input id="radioAssunto'+codAssunto.value+'" name="codAssuntoPrincipal" style="border-style:none;" type="radio" checked value="'+codAssunto.value+'" />';
+	                    primeiroAssuntoPrincipalDefinido = true;
+	                    document.getElementById('inputAssuntoPrincipalDef').value = true;
+	                }
+	                else{
+	                    if(proc.secundario=='N')//se o item puder ser definido como Principal
+	                    //possibilita que o item seja definido como Principal
+	                        novotd1.innerHTML = '<input id="radioAssunto'+codAssunto.value+'" name="codAssuntoPrincipal" style="border-style:none;" type="radio" value="'+codAssunto.value+'" />';
+	                    else
+	                    //impossibilita que o item seja definido como Principal
+	                        novotd1.innerHTML = '<input id="radioAssunto'+codAssunto.value+'" name="codAssuntoPrincipal" style="border-style:none;" type="radio" disabled value="'+codAssunto.value+'" />';
+	                }
+                }
+
+                novotd2 = novotr.insertCell(1); //1 e 2 se refere a quant de colunas, pios sem a coluna principal, temos uma coluna a menos
+                novotd2.style.textAlign = 'center';
+                novotd2.innerHTML = '<input id="chkAssunto'+codAssunto.value+'" name="chkAssunto" type="checkbox" style="border-style:none;" value="'+codAssunto.value+'" />'; 
+
+                //limpa os textboxes de código e descrição
+                codAssunto.value = '';
+                descAssunto.value = '';
+            }
+        }else{
+            alert('Código informado para Assunto já inserido.');
+        }
+    }
+        
+    /**
+    * Método utilizado para verificar se um determinado código já foi
+    * adicionado à tabela de seleção.
+    */
+    function AssuntoJaAdicionado(codAssunto){
+    //tenta recuperar um hidden com o id formado a partir do código.
+        var input = document.getElementById('inputCodAssunto'+codAssunto);
+        if(input!=null)
+            return true;
+        return false;
+    }
+           
+    /**
+    * Método utilizado para marcar ou desmarcar todos os itens da tabela
+    * de seleção.
+    */
+    function marcarTodosAssunto(chkMestre){                
+        var chks = document.getElementsByName('chkAssunto');
+        for(var i=0;i<chks.length;i++){
+            chks[i].checked = chkMestre.checked;
+        }
+    }
+         
+    /**
+    * Método utilizado para excluir os itens da tabela de seleção que 
+    * estão marcados
+    */
+    function excluirAssuntoSelecionados(){
+        var tbAssunto = document.getElementById('tbAssunto');
+        var chks = document.getElementsByName('chkAssunto');
+        var codExcluidos = new Array();
+        var j=0;
+
+        //recupera os códigos dos itens a serem excluídos
+        for(var i=0;i<chks.length;i++){                    
+            if(chks[i].checked){
+                codExcluidos[j] = chks[i].value;
+                j++;
+            }                    
+        } 
+        //exclui os itens efetivamente
+        for(var i=0;i<codExcluidos.length;i++){                    
+            var tr = document.getElementById('trTbAssunto'+codExcluidos[i])
+            if(tr!=null)
+                tbAssunto.deleteRow(tr.rowIndex);                    
+        }
+        //se todos os itens da tabela de seleção forem excluídos,
+        //desmarca o checkbox "marcar todos"
+        if(tbAssunto.rows.length<3){
+            var chk = document.getElementById('chkMarcaTodosAssunto');
+            chk.checked = false;
+        }
+        
+    }
+            
+</script>
+
+
+<table id="tbPrincAssunto" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+    <td>
+        <input name="seqCategoriaAssunto" id="seqCategoriaAssunto" type="text" onkeypress="return acionarBuscaAssunto(event, 'buscaCategoriaAssunto', 'descCategoriaAssunto');" value="" size="10" maxlength="8" title="Código Assunto">
+        <a id="buscaCategoriaAssunto" href="javascript:;" onclick="pesquisa('seqCategoriaAssunto', 'descCategoriaAssunto', 'Assunto', 'projudi.beans.CnjAssuntoCategoriaPeer', preencheAssunto , getParametrosPesquisa, ['codTipoJustica',null,null,'codVara']);"><img id="btnBuscaAssunto" style="vertical-align:middle;"  border="0" src="/projudi/imagens/botoes/bot-busca.gif" title="Botão buscar Assunto"/></a>                        
+        <input name="descCategoriaAssunto" id="descCategoriaAssunto" readonly type="text" value="" size="50" maxlength="255" title="Descrição Assunto"/>        
+        
+            
+                <a href="javascript: exibePopup('/projudi/tabelaprocessual/BuscaArvore', 'Assunto', true,  700, 380, preencheAssunto, false, ['codTipoJustica',null,null,'codVara']); ">Buscar na &Aacute;rvore</a>
+            
+            
+                
+        
+        
+            &nbsp;
+
+            
+            <input type="checkbox" id="chkRecursivoAssunto" name="pesquisaRecursivaAssunto" value="true"  /><span style="vertical-align:middle;">Recursivo</span>
+        
+    </td>
+</tr>
+
+
+</table>
+
+
+
+
+
+
+                    </td>
+                </tr>
+				  
+                <tr class="tBranca">
+                    <td><strong>Classe</strong></td>
+                    <td>
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/projudi/imagens/MostraOculta.js"></script>
+<script type="text/javascript" src="/projudi/scripts/ajaxPopulate.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/MovimentacaoService.js"></script>
+<script>
+    
+        dwr.engine.setErrorHandler(errorHandler);
+
+        function errorHandler(msg) {
+            alert("Erro:\n" + msg);                
+        }
+       
+
+    
+        function validaCamposFormularioTabelaCNJ(codTipoJustica,codArea) {    
+            var erros = '';
+            if (codTipoJustica!=null &&(codTipoJustica == "-1" || codTipoJustica=="")){
+                erros = erros + "- Selecione um tipo de justica.\n";
+            }
+            if (codArea!=null &&(codArea == "-1" || codArea=="")){
+                erros = erros + "- Selecione uma competência.\n";
+            }
+            return erros;
+        }
+            
+        function validaPesquisa(idCodigoCategoria, nomeCategoria){
+            var seqCategoria = document.getElementById(idCodigoCategoria).value;
+            var erros = '';                
+            if (seqCategoria == null || seqCategoria == ""){
+            	
+                erros = erros + "- Digite o código do(a) " + nomeCategoria + " para realizar a busca.\n";
+            }
+            return erros;
+        }       
+    
+    
+    
+        function getParametrosPesquisa(idCodigoCategoria, nomeCategoria, compExternos){
+            var codTipoJustica = null;
+            var codArea = null;
+            var codNatureza = null;
+            var codVara = null;
+            var indicadorCompetenciaTurma = null;
+            
+            if(compExternos.length>0){
+                if(compExternos[0]!=null && compExternos[0]!='')
+                    codTipoJustica = document.getElementById(compExternos[0]).value;
+                
+                if(compExternos.length>1){
+                    if(compExternos[1]!=null && compExternos[1]!='')
+                        codArea = document.getElementById(compExternos[1]).value;
+                }  
+                if(compExternos.length>2){
+                    if(compExternos[2]!=null && compExternos[2]!='')
+                        codNatureza = document.getElementById(compExternos[2]).value;
+                }  
+                if(compExternos.length>3){
+                    if(compExternos[3]!=null && compExternos[3]!='')
+                        codVara = document.getElementById(compExternos[3]).value;
+                }
+                if(compExternos.length>4){
+                    if(compExternos[4]!=null && compExternos[4]!='')
+                        indicadorCompetenciaTurma = document.getElementById(compExternos[4]).value;
+                }
+            }
+            
+            var erros = '';                
+                         
+            //variáveis para validação dos campos necessários
+            
+            erros = erros + validaPesquisa(idCodigoCategoria, nomeCategoria); 
+
+            if (erros!=''){
+                erros = "Verifique os seguintes erros:\n\n"+erros;
+                alert(erros);
+                return false;
+            }
+
+            params = new Array();
+            if(codTipoJustica!=null || codArea!=null || codNatureza!=null || codVara!=null || indicadorCompetenciaTurma!=null){
+                params[0] = codTipoJustica;
+                params[1] = codArea;
+                params[2] = codNatureza;
+                params[3] = codVara;
+                params[4] = indicadorCompetenciaTurma;
+            }
+                
+            return params;
+        } 
+           
+        
+        /**
+         * Método utilizado para pesquisa genérica com DWR.
+         * 
+         * @param idCodigoCategoria id do objeto html que será utilizado para digitação do código
+         * @param idDescricaoCategoria id do objeto html que será preenchido com a descrição buscada
+         * @param tipoTabela nome da categoria para exibição na mensagem de erro
+         * @param classePesquisaJava classe de pesquisa em java (com o nome do pacote)
+         * @param funcaoPreenchimento função utilizada para o preenchimento do campo de descrição após a busca
+         * @param funcaoGetParametros função utilizada para recuperar e validar os parâmetros que serão utilizados pela pesquisa
+         */
+        function pesquisa(idCodigoCategoria, idDescricaoCategoria, tipoTabela, classePesquisaJava, funcaoPreenchimento, funcaoGetParametros, idsComponentesExternos){
+            var seqCategoria = document.getElementById(idCodigoCategoria).value;
+                
+            //valida os campos necessários antes de realizar a pesquisa, retornando os parâmetros de busca
+            var params = funcaoGetParametros(idCodigoCategoria, tipoTabela, idsComponentesExternos);
+            if (!params) {
+                return false;
+            }
+             
+            Pesquisa.pesquisaCodigoPK(classePesquisaJava, seqCategoria, "VALIDACAO_PESQUISA", params, funcaoPreenchimento);
+            
+            
+        }
+        
+        function preencheClasse(categoria){
+	        dwr.util.setValue("seqCategoriaClasse", categoria.codigo);
+	        dwr.util.setValue("descCategoriaClasse", categoria.descricao);
+	        
+    	}
+
+        
+
+        function acionarBuscaClasse(event, idBotaoBusca, idDescricaoCategoria){
+            var botaoBusca = document.getElementById(idBotaoBusca);
+            var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
+           
+            if (keyCode == 13) {//Enter                       
+                if(dwr.util.getValue(idDescricaoCategoria)=='')
+                    fireMouseEvent(botaoBusca,'click');
+                
+                return false;
+            }
+            else if(keyCode != 9) {//Tab
+                //limpa a categoria
+                dwr.util.setValue(idDescricaoCategoria, null);
+                return true;
+            }
+        }  
+
+        function fireMouseEvent(element,event){
+            if (document.createEventObject){
+                // dispatch for IE
+                var evt = document.createEventObject();
+                return element.fireEvent('on'+event,evt)
+            }
+            else{        
+                // dispatch for firefox + others
+                var evt = document.createEvent("MouseEvents");
+                evt.initEvent(event, true, true ); // event type,bubbling,cancelable 
+                return !element.dispatchEvent(evt);
+            }
+        }
+            
+    
+    
+    //determina se algum item já foi definido como Principal uma primeira vez.
+    var primeiroClassePrincipalDefinido = false;
+
+    /**
+     * Método utilizado para adicionar(selecionar) um novo item à tabela de
+     * seleção.
+     */
+    function adicionarClasse(){                
+        var codClasse = document.getElementById('seqCategoriaClasse').value;
+        var descClasse = document.getElementById('descCategoriaClasse').value;
+
+        //se o código e a descrição estiverem definidos
+        //e ainda não foram inseridos na tabela de seleção
+        if(!ClasseJaAdicionado(codClasse)){
+            if(codClasse!='' && descClasse!='' && !ClasseJaAdicionado(codClasse)){                
+            //recupera informações do item e executa a função que efetivamente irá adicioná-lo
+                Pesquisa.pesquisaProcedimento('Classe', codClasse,adicionarClasseTabela);                    
+            } 
+        }else{
+            alert('Código informado para Classe já inserido.');
+        }
+    }
+
+    /**
+    * Método utilizado para efetivamente adicionar um novo item à tabela de
+    * seleção.
+    * proc Objeto PesquisaProcedimentoDTO com informações complementares
+    */
+    function adicionarClasseTabela(proc){            
+        var codClasse = document.getElementById('seqCategoriaClasse');
+        var descClasse = document.getElementById('descCategoriaClasse');
+
+        //se o código e a descrição estiverem definidos
+        //e ainda não foram inseridos na tabela de seleção
+        if(!ClasseJaAdicionado(codClasse.value)){
+            if(codClasse.value!='' && descClasse.value!=''){
+
+                var tbClasse = document.getElementById('tbClasse');
+                //configuração da linha inserida
+                novotr = tbClasse.insertRow(tbClasse.rows.length-1);
+                novotr.id = 'trTbClasse'+codClasse.value;
+                if(novotr.rowIndex % 2 == 0){
+                    novotr.className = 'tCinza';
+                }
+                else{
+                    novotr.className = 'tBranca';
+                }
+                //configuração das células inseridas
+                novotd0 = novotr.insertCell(0);
+                novotd0.style.paddingLeft = '5px';
+                novotd0.innerHTML = codClasse.value+'&nbsp;-&nbsp;'+descClasse.value;
+                novotd0.innerHTML = novotd0.innerHTML.concat(' <input id="inputCodClasse'+codClasse.value+'" name="codClasse" type="hidden" value="'+codClasse.value+'" /> ');
+                novotd0.innerHTML = novotd0.innerHTML.concat(' <input id="inputDescClasse'+codClasse.value+'" name="descClasse" type="hidden" value="'+descClasse.value+'" /> ');
+                novotd0.innerHTML = novotd0.innerHTML.concat(' <input id="inputSecundClasse'+codClasse.value+'" name="secundClasse" type="hidden" value="'+proc.secundario+'" /> ');
+				//verifica se o tipo tabela eh Assunto, pois so ele tem o campo 'principal'
+                if (false) {
+	                novotd1 = novotr.insertCell(1);
+	                novotd1.style.textAlign = 'center';   
+	                //se algum item ainda não foi definido como Principal uma primeira vez
+	                //e o item inserido puder ser definido como Principal
+	                if(!primeiroClassePrincipalDefinido && proc.secundario=='N'){
+	                    //define o item como Principal
+	                    novotd1.innerHTML = '<input id="radioClasse'+codClasse.value+'" name="codClassePrincipal" style="border-style:none;" type="radio" checked value="'+codClasse.value+'" />';
+	                    primeiroClassePrincipalDefinido = true;
+	                    document.getElementById('inputClassePrincipalDef').value = true;
+	                }
+	                else{
+	                    if(proc.secundario=='N')//se o item puder ser definido como Principal
+	                    //possibilita que o item seja definido como Principal
+	                        novotd1.innerHTML = '<input id="radioClasse'+codClasse.value+'" name="codClassePrincipal" style="border-style:none;" type="radio" value="'+codClasse.value+'" />';
+	                    else
+	                    //impossibilita que o item seja definido como Principal
+	                        novotd1.innerHTML = '<input id="radioClasse'+codClasse.value+'" name="codClassePrincipal" style="border-style:none;" type="radio" disabled value="'+codClasse.value+'" />';
+	                }
+                }
+
+                novotd2 = novotr.insertCell(1); //1 e 2 se refere a quant de colunas, pios sem a coluna principal, temos uma coluna a menos
+                novotd2.style.textAlign = 'center';
+                novotd2.innerHTML = '<input id="chkClasse'+codClasse.value+'" name="chkClasse" type="checkbox" style="border-style:none;" value="'+codClasse.value+'" />'; 
+
+                //limpa os textboxes de código e descrição
+                codClasse.value = '';
+                descClasse.value = '';
+            }
+        }else{
+            alert('Código informado para Classe já inserido.');
+        }
+    }
+        
+    /**
+    * Método utilizado para verificar se um determinado código já foi
+    * adicionado à tabela de seleção.
+    */
+    function ClasseJaAdicionado(codClasse){
+    //tenta recuperar um hidden com o id formado a partir do código.
+        var input = document.getElementById('inputCodClasse'+codClasse);
+        if(input!=null)
+            return true;
+        return false;
+    }
+           
+    /**
+    * Método utilizado para marcar ou desmarcar todos os itens da tabela
+    * de seleção.
+    */
+    function marcarTodosClasse(chkMestre){                
+        var chks = document.getElementsByName('chkClasse');
+        for(var i=0;i<chks.length;i++){
+            chks[i].checked = chkMestre.checked;
+        }
+    }
+         
+    /**
+    * Método utilizado para excluir os itens da tabela de seleção que 
+    * estão marcados
+    */
+    function excluirClasseSelecionados(){
+        var tbClasse = document.getElementById('tbClasse');
+        var chks = document.getElementsByName('chkClasse');
+        var codExcluidos = new Array();
+        var j=0;
+
+        //recupera os códigos dos itens a serem excluídos
+        for(var i=0;i<chks.length;i++){                    
+            if(chks[i].checked){
+                codExcluidos[j] = chks[i].value;
+                j++;
+            }                    
+        } 
+        //exclui os itens efetivamente
+        for(var i=0;i<codExcluidos.length;i++){                    
+            var tr = document.getElementById('trTbClasse'+codExcluidos[i])
+            if(tr!=null)
+                tbClasse.deleteRow(tr.rowIndex);                    
+        }
+        //se todos os itens da tabela de seleção forem excluídos,
+        //desmarca o checkbox "marcar todos"
+        if(tbClasse.rows.length<3){
+            var chk = document.getElementById('chkMarcaTodosClasse');
+            chk.checked = false;
+        }
+        
+    }
+            
+</script>
+
+
+<table id="tbPrincClasse" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+    <td>
+        <input name="seqCategoriaClasse" id="seqCategoriaClasse" type="text" onkeypress="return acionarBuscaClasse(event, 'buscaCategoriaClasse', 'descCategoriaClasse');" value="" size="10" maxlength="8" title="Código Classe">
+        <a id="buscaCategoriaClasse" href="javascript:;" onclick="pesquisa('seqCategoriaClasse', 'descCategoriaClasse', 'Classe', 'projudi.beans.CnjClasseCategoriaPeer', preencheClasse , getParametrosPesquisa, ['codTipoJustica',null,null,'codVara']);"><img id="btnBuscaClasse" style="vertical-align:middle;"  border="0" src="/projudi/imagens/botoes/bot-busca.gif" title="Botão buscar Classe"/></a>                        
+        <input name="descCategoriaClasse" id="descCategoriaClasse" readonly type="text" value="" size="50" maxlength="255" title="Descrição Classe"/>        
+        
+            
+                <a href="javascript: exibePopup('/projudi/tabelaprocessual/BuscaArvore', 'Classe', true,  700, 380, preencheClasse, false, ['codTipoJustica',null,null,'codVara']); ">Buscar na &Aacute;rvore</a>
+            
+            
+                
+        
+        
+            &nbsp;
+
+            
+            <input type="checkbox" id="chkRecursivoClasse" name="pesquisaRecursivaClasse" value="true"  /><span style="vertical-align:middle;">Recursivo</span>
+        
+    </td>
+</tr>
+
+
+</table>
+
+
+
+
+
+
+                    </td>
+                </tr>
+				  
+                <tr class="tCinza">
+                    <td><strong>Prioridade Processual</strong></td>
+                    <td>
+                        <select name="codPrioridadeProcessual" id="codPrioridadeProcessual">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                            <option value="0">NORMAL</option>
+                            
+                            <option value="5">IDOSO(A) - 60 A 79 ANOS</option>
+                            
+                            <option value="10">MAIOR 80 ANOS</option>
+                            
+                            <option value="7">PESSOA COM DEFICIÊNCIA - PCD</option>
+                            
+                            <option value="8">DOENÇA TERMINAL</option>
+                            
+                            <option value="9">DOENÇA GRAVE</option>
+                            
+                            <option value="6">RÉU PRESO</option>
+                            
+                            <option value="11">PESSOA EM SITUAÇÃO DE RUA</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				 			 
+				  <tr class="tBranca">
+                    <td><strong>Natureza</strong></td>
+                    <td>
+                        <select name="codNatureza" id="codNatureza">
+                         <option value="-1">Selecione Para Busca</option> 
+                         
+						  <option value="1" >Cível</option>
+						 
+						  <option value="2" >Criminal</option>
+						 
+                        </select>
+                    </td>
+                </tr>
+				 
+                <tr class="tCinza">
+                    <td><strong>Status Processual</strong></td>
+                    <td>
+                        <select name="codStatusProcesso" id="codStatusProcesso">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                                <option value="0">ATIVO</option>
+                            
+                                <option value="1">ARQUIVADO</option>
+                            
+                                <option value="2">SUSPENSO</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				  
+                <tr class="tBranca">
+                    <td><strong>Segredo de Justi&ccedil;a</strong></td>
+                    <td>
+                        <select name="segredo" id="segredo" disabled>
+                            <option value="-1">Selecione Para Busca</option>
+                            <option value="0" selected>NÃO</option>
+                            <option value="1">SIM</option>
+                        </select>
+                    </td>
+                </tr>
+				 
+                
+                <tr class="tCinza">
+                    <td><strong>Situação do Processo</strong></td>
+                    <td>
+                        <select name="codSituacao" id="codSituacao">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                            <option value="3">AGUARDANDO AUDIÊNCIA</option>
+                            
+                            <option value="2">AUTOS CONCLUSOS</option>
+                            
+                            <option value="4">PROCESSO ARQUIVADO</option>
+                            
+                            <option value="1">PROCESSO DISTRIBUÍDO</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				 
+                <tr class="tBranca">
+                    <td><strong>Data Inicial de Distribui&ccedil;&atilde;o</strong></td>
+                    <td>
+                        <input name="dataInicio" id="dataInicio" type="text" size="50" maxlength="10" style="width: 96pt;" onkeypress="return dateMask(event);" >
+                        <img style="vertical-align:bottom; cursor:pointer;" src="/projudi/scripts/calendar/images/bot-calendario.png" alt="Selecionar data e hora a partir de um calendário" width="18" height="18" border="0" align="bottom"
+                             onclick="javascript:displayCalendarInitTime(document.getElementById('dataInicio'),'dd/mm/yyyy',this,false,null);"/>
+                    </td>
+                </tr>
+				 
+                <tr class="tCinza">
+                    <td><strong>Data Final de Distribui&ccedil;&atilde;o</strong></td>
+                    <td>
+                        <input name="dataFim" id="dataFim" type="text" size="50" maxlength="10" style="width: 96pt;" onkeypress="return dateMask(event);" >
+                        <img style="vertical-align:bottom; cursor:pointer;" src="/projudi/scripts/calendar/images/bot-calendario.png" alt="Selecionar data e hora a partir de um calendário" width="18" height="18" border="0" align="bottom"
+                             onclick="javascript:displayCalendarInitTime(document.getElementById('dataFim'),'dd/mm/yyyy',this,false,null);"/>
+                    </td>
+                </tr>
+				 
+                
+                
+                
+                <tr class="tBranca">
+                    <td><strong>Protocolo Juntada</strong></td>
+                    <td>
+                        <input name="protocoloJuntada" type="text" size="50" maxlength="200" >
+                    </td>
+                </tr>   
+                  				
+                	    
+                                
+                <tr class="primeiraLinha">
+                    <td colspan="2">Dados de Delegacia</td>
+                </tr>
+                <tr class="tCinza">
+                    <td><strong>Data do Fato</strong></td>
+                    <td>
+                        <input name="dataFato" id="dataFato" type="text" size="50" maxlength="10" style="width: 96pt;" onkeypress="return dateMask(event);" >
+                        <img style="vertical-align:bottom; cursor:pointer;" src="/projudi/scripts/calendar/images/bot-calendario.png" alt="Selecionar data e hora a partir de um calendário" width="18" height="18" border="0" align="bottom"
+                             onclick="javascript:displayCalendarInitTime(document.getElementById('dataFato'),'dd/mm/yyyy',this,false,null);"/>
+                    </td>
+                </tr>
+				 
+                <tr class="tBranca">
+                    <td><strong>Delegacia de Origem</strong></td>
+                    <td>
+                        <select name="delegaciaOrigem" id="delegaciaOrigem">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                                <option value="195"
+                                        
+                                        >
+                                    AIQUARA | DELEGACIA DE POLICIA DE AIQUARA 
+                                </option>
+                            
+                                <option value="196"
+                                        
+                                        >
+                                    AIQUARA | DELEGACIA DE POLICIA DE AIQUARA 
+                                </option>
+                            
+                                <option value="193"
+                                        
+                                        >
+                                    AIQUARA | DELEGACIA DE POLÍCIA DE AIQUARA-BA
+                                </option>
+                            
+                                <option value="261"
+                                        
+                                        >
+                                    ALAGOINHAS | DELEGACIA DE REPRESSÃO A FURTOS E ROUBOS - DRFR
+                                </option>
+                            
+                                <option value="240"
+                                        
+                                        >
+                                    ALAGOINHAS | Delegacia Especial de Atendimento à Mulher (DEAM)
+                                </option>
+                            
+                                <option value="251"
+                                        
+                                        >
+                                    ALAGOINHAS | 1ª Delegacia Territorial de Alagoinhas
+                                </option>
+                            
+                                <option value="139"
+                                        
+                                        >
+                                    ALAGOINHAS | 2ª COORPIN - ALAGOINHAS
+                                </option>
+                            
+                                <option value="83"
+                                        
+                                        >
+                                    ALMADINA | Delegacia Territorial de Almadina
+                                </option>
+                            
+                                <option value="218"
+                                        
+                                        >
+                                    AMÉRICA DOURADA | Delegacia de Polícia de América Dourada
+                                </option>
+                            
+                                <option value="223"
+                                        
+                                        >
+                                    ANGICAL | DELEGACIA TERRITORIAL DE POLICIA DE ANGICAL
+                                </option>
+                            
+                                <option value="202"
+                                        
+                                        >
+                                    ANGUERA | Delegacia Territorial de Anguera
+                                </option>
+                            
+                                <option value="187"
+                                        
+                                        >
+                                    ANTAS | Delegacia de Policia
+                                </option>
+                            
+                                <option value="238"
+                                        
+                                        >
+                                    ANTÔNIO CARDOSO | Delegacia de Polícia de Antônio Cardoso
+                                </option>
+                            
+                                <option value="296"
+                                        
+                                        >
+                                    APUAREMA | DELEGACIA TERRITORIAL DE APUAREMA
+                                </option>
+                            
+                                <option value="250"
+                                        
+                                        >
+                                    ARAÇÁS | DELEGACIA TERRITORIAL DE ARAÇÁS
+                                </option>
+                            
+                                <option value="105"
+                                        
+                                        >
+                                    ARACATU | DELEGACIA DE POLÍCIA DE ARACATU
+                                </option>
+                            
+                                <option value="255"
+                                        
+                                        >
+                                    ARAMARI | Delegacia de Policia de Aramari
+                                </option>
+                            
+                                <option value="176"
+                                        
+                                        >
+                                    BAIXA GRANDE | DELEGACIA DE POLICIA CIVIL
+                                </option>
+                            
+                                <option value="60"
+                                        
+                                        >
+                                    BARRA DO ROCHA | Delegacia de Policia de Barra do Rocha
+                                </option>
+                            
+                                <option value="290"
+                                        
+                                        >
+                                    BARREIRAS | 1ª Delegacia Territorial de Barreiras
+                                </option>
+                            
+                                <option value="281"
+                                        
+                                        >
+                                    BARREIRAS | 10ª Delegacia em Barreiras
+                                </option>
+                            
+                                <option value="98"
+                                        
+                                        >
+                                    BARREIRAS | 11ª COORPIN - Barreiras
+                                </option>
+                            
+                                <option value="235"
+                                        
+                                        >
+                                    BARRO PRETO | Delegacia Territorial de Barro Preto
+                                </option>
+                            
+                                <option value="94"
+                                        
+                                        >
+                                    BARROCAS | Delegacia de Polícia de Barrocas
+                                </option>
+                            
+                                <option value="95"
+                                        
+                                        >
+                                    BIRITINGA | Delegacia de Polícia de Biritinga
+                                </option>
+                            
+                                <option value="159"
+                                        
+                                        >
+                                    BOA VISTA DO TUPIM | DELEGACIA TERRITORIAL DE BOA VISTA DO TUPIM
+                                </option>
+                            
+                                <option value="111"
+                                        
+                                        >
+                                    BOM JESUS DA LAPA | 24ª COORPIN - Bom Jesus da Lapa
+                                </option>
+                            
+                                <option value="222"
+                                        
+                                        >
+                                    BONINAL | Delegacia de Polícia de Boninal
+                                </option>
+                            
+                                <option value="104"
+                                        
+                                        >
+                                    BRUMADO | DELEGACIA DE POLÍCIA DE BRUMADO
+                                </option>
+                            
+                                <option value="279"
+                                        
+                                        >
+                                    BRUMADO | 20ª COORPIN - BRUMADO
+                                </option>
+                            
+                                <option value="86"
+                                        
+                                        >
+                                    CAÉM | DELEGACIA DE CAÉM
+                                </option>
+                            
+                                <option value="92"
+                                        
+                                        >
+                                    CAIRU | Delegacia de Polícia de Cairu
+                                </option>
+                            
+                                <option value="109"
+                                        
+                                        >
+                                    CAIRU | Delegacia de Polícia de Cairu
+                                </option>
+                            
+                                <option value="69"
+                                        
+                                        >
+                                    CAMAÇARI | DEAM-Delegacia Esp. de Atendimento a Mulher
+                                </option>
+                            
+                                <option value="62"
+                                        
+                                        >
+                                    CAMAÇARI | DEAM-Delegacia Esp. de Atendimento a Mulher - INATIVA
+                                </option>
+                            
+                                <option value="70"
+                                        
+                                        >
+                                    CAMAÇARI | 18º - Delegacia Ciscunscrição Policial de Camaçari - INATIVA
+                                </option>
+                            
+                                <option value="63"
+                                        
+                                        >
+                                    CAMAÇARI | 18ª DELEGACIA CIRCUNSCRIÇÃO POLICIAL DE CAMAÇARI
+                                </option>
+                            
+                                <option value="64"
+                                        
+                                        >
+                                    CAMAÇARI | 26ª DELEGACIA CIRCUNSCRIÇÃO POLICIAL DE CAMAÇARI
+                                </option>
+                            
+                                <option value="71"
+                                        
+                                        >
+                                    CAMAÇARI | 26ª Delegacia Ciscunscrição Policial de Camaçari - INATIVA
+                                </option>
+                            
+                                <option value="65"
+                                        
+                                        >
+                                    CAMAÇARI | 33ª DELEGACIA CIRCUNSCRIÇÃO POLICIAL DE CAMAÇARI
+                                </option>
+                            
+                                <option value="72"
+                                        
+                                        >
+                                    CAMAÇARI | 33ª Delegacia Ciscunscrição Policial de Camaçari - INATIVA
+                                </option>
+                            
+                                <option value="268"
+                                        
+                                        >
+                                    CAMAÇARI | 4ª Delegacia de Homicídios de Camaçari
+                                </option>
+                            
+                                <option value="147"
+                                        
+                                        >
+                                    CANAVIEIRAS | DELEGACIA POLÍCIA TERRITORIAL CANAVIEIRAS 7ª COORP
+                                </option>
+                            
+                                <option value="118"
+                                        
+                                        >
+                                    CANDEAL | Delegacia de Polícia de Candeal/BA
+                                </option>
+                            
+                                <option value="230"
+                                        
+                                        >
+                                    CANDEIAS | Delegacia Especial de Atendimento à Mulher - Candeias
+                                </option>
+                            
+                                <option value="236"
+                                        
+                                        >
+                                    CANDEIAS | Delegacia territorial 20ª DT
+                                </option>
+                            
+                                <option value="246"
+                                        
+                                        >
+                                    CANDIBA | DELEGACIA DE POLÍCIA CIVIL
+                                </option>
+                            
+                                <option value="212"
+                                        
+                                        >
+                                    CARINHANHA | Delegacia Territorial de Carinhanha/BA
+                                </option>
+                            
+                                <option value="207"
+                                        
+                                        >
+                                    CASTRO ALVES | Delegacia de Polícia de Castro Alves/BA
+                                </option>
+                            
+                                <option value="304"
+                                        
+                                        >
+                                    CATU | Delegacia Territorial de Catu
+                                </option>
+                            
+                                <option value="145"
+                                        
+                                        >
+                                    CÍCERO DANTAS | DELEGACIA DE CÍCERO DANTAS
+                                </option>
+                            
+                                <option value="82"
+                                        
+                                        >
+                                    COARACI | Delegacia Territorial de Coaraci - Ba
+                                </option>
+                            
+                                <option value="213"
+                                        
+                                        >
+                                    COCOS | Delegacia Territorial de Cocos
+                                </option>
+                            
+                                <option value="180"
+                                        
+                                        >
+                                    CONCEIÇÃO DO COITÉ | DELEGACIA DE POLÍCIA CIVIL
+                                </option>
+                            
+                                <option value="143"
+                                        
+                                        >
+                                    CONCEIÇÃO DO COITÉ | 15ª COORPIN - Conceição do Coité
+                                </option>
+                            
+                                <option value="242"
+                                        
+                                        >
+                                    CRISTOPOLIS | Delegacia Territorial
+                                </option>
+                            
+                                <option value="189"
+                                        
+                                        >
+                                    DÁRIO MEIRA | DELEGACIA TERRITORIAL DE DÁRIO MEIRA
+                                </option>
+                            
+                                <option value="307"
+                                        
+                                        >
+                                    DELEGACIA DE REPRESSÃO A CRIMES PREVIDENCIÁRIOS - DELEPREV/DRPJ/SR/PF/BA
+                                </option>
+                            
+                                <option value="254"
+                                        
+                                        >
+                                    DOM BASILIO | Delegacia de Polícia de Dom Basílio
+                                </option>
+                            
+                                <option value="149"
+                                        
+                                        >
+                                    DOM MACEDO COSTA | Delegacia Territorial de Dom Macedo Costa
+                                </option>
+                            
+                                <option value="168"
+                                        
+                                        >
+                                    EUCLIDES DA CUNHA | DELEGACIA DE POLICIA CIVIL
+                                </option>
+                            
+                                <option value="252"
+                                        
+                                        >
+                                    EUCLIDES DA CUNHA | 1ª Delegacia Territorial ¿ 25ª COORPIN-DEP
+                                </option>
+                            
+                                <option value="266"
+                                        
+                                        >
+                                    EUNÁPOLIS | Delegacia de Repressão a Furtos e Roubos de Eunápolis
+                                </option>
+                            
+                                <option value="265"
+                                        
+                                        >
+                                    EUNÁPOLIS | Delegacia Territorial de Eunápolis
+                                </option>
+                            
+                                <option value="57"
+                                        
+                                        >
+                                    EUNÁPOLIS | Delegacia Territorial de Eunápolis
+                                </option>
+                            
+                                <option value="167"
+                                        
+                                        >
+                                    EUNÁPOLIS | 9ª Delegacia da PRF
+                                </option>
+                            
+                                <option value="146"
+                                        
+                                        >
+                                    FÁTIMA | DELEGACIA DE FÁTIMA
+                                </option>
+                            
+                                <option value="232"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | Central de Flagrantes de Feira de Santana
+                                </option>
+                            
+                                <option value="273"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | Delegacia de Repressão a Furto e Roubo de Cargas
+                                </option>
+                            
+                                <option value="203"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | DELEGACIA DE REPRESSÃO A FURTOS E ROUBOS DE FEIRA DE SANTANA - DRFR
+                                </option>
+                            
+                                <option value="272"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | Delegacia de Tóxicos e Entorpecentes - DTE de Feira de Santana
+                                </option>
+                            
+                                <option value="199"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | Delegacia Especializada de Atendimento a Mulher - DEAM
+                                </option>
+                            
+                                <option value="241"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | Delegacia para o Adolescente Infrator de Feira de Santana
+                                </option>
+                            
+                                <option value="282"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | 1ª COORPIN FEIRA DE SANTANA
+                                </option>
+                            
+                                <option value="56"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | 1ª Delegacia Territorial de Feira de Santana
+                                </option>
+                            
+                                <option value="201"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | 2ª DELEGACIA DA PRF
+                                </option>
+                            
+                                <option value="197"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | 2ª Delegacia de Tóxicos e Entorpecentes
+                                </option>
+                            
+                                <option value="198"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | 2ª Delegacia Territorial de Feira de Santana
+                                </option>
+                            
+                                <option value="204"
+                                        
+                                        >
+                                    FEIRA DE SANTANA | 3ª Delegacia Territorial de Feira de Santana
+                                </option>
+                            
+                                <option value="58"
+                                        
+                                        >
+                                    GANDU | Delegacia de Polícia de Gandu
+                                </option>
+                            
+                                <option value="243"
+                                        
+                                        >
+                                    GANDU | Posto da Policia Rodoviária Federal
+                                </option>
+                            
+                                <option value="124"
+                                        
+                                        >
+                                    GLÓRIA | Delegacia de Polícia Territorial de Glória
+                                </option>
+                            
+                                <option value="166"
+                                        
+                                        >
+                                    GLÓRIA | Delegacia de Polícia Territorial de Glória
+                                </option>
+                            
+                                <option value="96"
+                                        
+                                        >
+                                    GUANAMBI | 22° Corpin - Delegacia de Policia de Guanambi
+                                </option>
+                            
+                                <option value="219"
+                                        
+                                        >
+                                    GUARATINGA | Delegacia Territorial de Guaratinga/BA
+                                </option>
+                            
+                                <option value="144"
+                                        
+                                        >
+                                    HELIOPÓLIS | DELEGACIA DE HELIOPÓLIS
+                                </option>
+                            
+                                <option value="185"
+                                        
+                                        >
+                                    IBIRATAIA | DELEGACIA TERRITORIAL DE IBIRATAIA
+                                </option>
+                            
+                                <option value="140"
+                                        
+                                        >
+                                    IBITITÁ | DELEGACIA TERRITORIAL DE IBITITÁ - 14ª COORPIN
+                                </option>
+                            
+                                <option value="117"
+                                        
+                                        >
+                                    ICHU | Delegacia de Polícia de Ichú/BA
+                                </option>
+                            
+                                <option value="27"
+                                        
+                                        >
+                                    ILHÉUS | Delegacia de Atendimento à Mulher - DEAM - ILHÉUS
+                                </option>
+                            
+                                <option value="102"
+                                        
+                                        >
+                                    ILHÉUS | DELEGACIA DE POLÍCIA FEDERAL EM ILHÉUS
+                                </option>
+                            
+                                <option value="25"
+                                        
+                                        >
+                                    ILHÉUS | Delegacia de Proteção Ambiental - ILHÉUS
+                                </option>
+                            
+                                <option value="28"
+                                        
+                                        >
+                                    ILHÉUS | Delegacia de Proteção ao Turista - Deltur - ILHÉUS
+                                </option>
+                            
+                                <option value="24"
+                                        
+                                        >
+                                    ILHÉUS | 7ª Coordenadoria de Polícia do Interior - ILHÉUS
+                                </option>
+                            
+                                <option value="239"
+                                        
+                                        >
+                                    IPECAETÁ | Delegacia de Polícia de Ipecaetá
+                                </option>
+                            
+                                <option value="297"
+                                        
+                                        >
+                                    IPECAETA | Delegacia Territorial de Ipecaetá
+                                </option>
+                            
+                                <option value="59"
+                                        
+                                        >
+                                    IPIAU | Delegacia Circuscricional de Ipiaú
+                                </option>
+                            
+                                <option value="295"
+                                        
+                                        >
+                                    IPIAU | 55ª Companhia Independente da Polícia Militar
+                                </option>
+                            
+                                <option value="53"
+                                        
+                                        >
+                                    IPIRÁ | Delegacia Circunscricional de IPIRÁ
+                                </option>
+                            
+                                <option value="161"
+                                        
+                                        >
+                                    IRECÊ | DELEGACIA DE TOXICOS E ENTORPECENTES - 14ª COORD.
+                                </option>
+                            
+                                <option value="226"
+                                        
+                                        >
+                                    IRECÊ | Delegacia de Tóxicos e Entorpecentes de Irecê - 5ª DTE
+                                </option>
+                            
+                                <option value="142"
+                                        
+                                        >
+                                    IRECÊ | DELEGACIA TERRITORIAL DE IRECÊ - 14ª COORPIN
+                                </option>
+                            
+                                <option value="259"
+                                        
+                                        >
+                                    IRECÊ | NÚCLEO DE ATENDIMENTO À MULHER IRECÊ - NEAM - 14ª COORPIN 
+                                </option>
+                            
+                                <option value="192"
+                                        
+                                        >
+                                    ITABELA | DELEGACIA TERRITORIAL DE ITABELA
+                                </option>
+                            
+                                <option value="152"
+                                        
+                                        >
+                                    ITABERABA | Unidade da Polícia Rodoviária Federal - Itaberaba
+                                </option>
+                            
+                                <option value="138"
+                                        
+                                        >
+                                    ITABERABA | 12ª COORPIN - 1ª Delegacia Territorial de Itaberaba
+                                </option>
+                            
+                                <option value="234"
+                                        
+                                        >
+                                    ITABUNA | Delegacia de Repressão a Furtos e Roubos - DRFR Itabuna
+                                </option>
+                            
+                                <option value="231"
+                                        
+                                        >
+                                    ITABUNA | Delegacia de Tóxicos e Entorpecentes (DTE)
+                                </option>
+                            
+                                <option value="44"
+                                        
+                                        >
+                                    ITABUNA | Delegacia Especializada de Atendimento a Mulher
+                                </option>
+                            
+                                <option value="294"
+                                        
+                                        >
+                                    ITABUNA | Polícia Rodoviária Federal - Unidade Operacional Itabuna
+                                </option>
+                            
+                                <option value="224"
+                                        
+                                        >
+                                    ITABUNA | 1ª DELEGACIA TERRITORIAL DE ITABUNA
+                                </option>
+                            
+                                <option value="47"
+                                        
+                                        >
+                                    ITABUNA | 15º Batalhão de Polícia Militar de Itabuna
+                                </option>
+                            
+                                <option value="45"
+                                        
+                                        >
+                                    ITABUNA | 6ª Coorpin-Coordenadoria Regional de Polícia Civil
+                                </option>
+                            
+                                <option value="126"
+                                        
+                                        >
+                                    ITAGI | Delegacia Circunscricional de Itagi - BA
+                                </option>
+                            
+                                <option value="186"
+                                        
+                                        >
+                                    ITAGIBÁ | DELEGACIA TERRITORIAL DE ITAGIBÁ
+                                </option>
+                            
+                                <option value="287"
+                                        
+                                        >
+                                    ITAGIMIRIM | DELEGACIA TERRITORIAL DE ITAGIMIRIM
+                                </option>
+                            
+                                <option value="229"
+                                        
+                                        >
+                                    ITAJUÍPE | DELEGACIA DE POLÍCIA DE ITAJUÍPE
+                                </option>
+                            
+                                <option value="115"
+                                        
+                                        >
+                                    ITAMARI | Delegacia Circunscricional de Itamari-Ba
+                                </option>
+                            
+                                <option value="46"
+                                        
+                                        >
+                                    ITAPÉ | Departamento de Polícia do Interior - Delegacia
+                                </option>
+                            
+                                <option value="286"
+                                        
+                                        >
+                                    ITAPEBI | DELEGACIA TERRITORIAL DE ITAPEBI
+                                </option>
+                            
+                                <option value="89"
+                                        
+                                        >
+                                    ITAPETINGA | Delegacia Territorial de Polícia Civil
+                                </option>
+                            
+                                <option value="248"
+                                        
+                                        >
+                                    ITAPETINGA | Delegacia Territorial de Polícia Civil
+                                </option>
+                            
+                                <option value="179"
+                                        
+                                        >
+                                    ITAPITANGA | 6ª COORPIN - DELEGACIA TERRITORIAL
+                                </option>
+                            
+                                <option value="225"
+                                        
+                                        >
+                                    ITIÚBA | Delegacia Territorial de Itiúba-BA
+                                </option>
+                            
+                                <option value="221"
+                                        
+                                        >
+                                    ITUAÇU | Delegacia Territorial de Ituaçu
+                                </option>
+                            
+                                <option value="210"
+                                        
+                                        >
+                                    JACARACI | Delegacia Territorial de Jacaraci/BA 
+                                </option>
+                            
+                                <option value="85"
+                                        
+                                        >
+                                    JACOBINA | DELEGACIA DE MIRANGABA
+                                </option>
+                            
+                                <option value="84"
+                                        
+                                        >
+                                    JACOBINA | DELEGACIA, 16ª COORPIN ¿ JACOBINA
+                                </option>
+                            
+                                <option value="99"
+                                        
+                                        >
+                                    JEQUIÉ | Delegacia Circ. de Polícia de Jequié - 9ª Coorpin
+                                </option>
+                            
+                                <option value="137"
+                                        
+                                        >
+                                    JEQUIÉ | Delegacia de Polícia Rodoviária Federal de Jequié
+                                </option>
+                            
+                                <option value="100"
+                                        
+                                        >
+                                    JEQUIÉ | Delegacia Esp. Atend. a Mulher - JEQUIÉ
+                                </option>
+                            
+                                <option value="302"
+                                        
+                                        >
+                                    JEQUIÉ | 11ª Delegacia de Tóxicos e Entorpecentes
+                                </option>
+                            
+                                <option value="194"
+                                        
+                                        >
+                                    JITAÚNA | DELEGACIA TERRITORIAL DE JIRAÚNA
+                                </option>
+                            
+                                <option value="81"
+                                        
+                                        >
+                                    JUAZEIRO | CONJUNTO PENAL - JUAZEIRO
+                                </option>
+                            
+                                <option value="79"
+                                        
+                                        >
+                                    JUAZEIRO | DEAM - JUAZEIRO
+                                </option>
+                            
+                                <option value="80"
+                                        
+                                        >
+                                    JUAZEIRO | DELEGACIA DE POLICIA FEDERAL - JUAZEIRO
+                                </option>
+                            
+                                <option value="78"
+                                        
+                                        >
+                                    JUAZEIRO | 1ª Delegacia Territorial de Juazeiro
+                                </option>
+                            
+                                <option value="280"
+                                        
+                                        >
+                                    JUAZEIRO | 1ª Delegacia Territorial de Juazeiro
+                                </option>
+                            
+                                <option value="291"
+                                        
+                                        >
+                                    JUAZEIRO | 7 Delegacia de Tóxicos e Entorpecentes
+                                </option>
+                            
+                                <option value="141"
+                                        
+                                        >
+                                    JUSSARA | DELEGACIA TERRITORIAL DE JUSSARA - 14ª COORPIN
+                                </option>
+                            
+                                <option value="208"
+                                        
+                                        >
+                                    JUSSARI | Delegacia Territorial de Jussari-BA
+                                </option>
+                            
+                                <option value="209"
+                                        
+                                        >
+                                    LAGOA REAL | Delegacia Territorial de Lagoa Real/BA
+                                </option>
+                            
+                                <option value="217"
+                                        
+                                        >
+                                    LAJE | Delegacia de Polícia de Laje - BA
+                                </option>
+                            
+                                <option value="20"
+                                        
+                                        >
+                                    LAURO DE FREITAS | 23ª Delegacia Circunscricional de Polícia - 23ª DP
+                                </option>
+                            
+                                <option value="200"
+                                        
+                                        >
+                                    LAURO DE FREITAS | 27ª DT - Itinga
+                                </option>
+                            
+                                <option value="26"
+                                        
+                                        >
+                                    LAURO DE FREITAS | 34ª Delegacia Circunscricional Portão
+                                </option>
+                            
+                                <option value="258"
+                                        
+                                        >
+                                    LIVRAMENTO DE NOSSA SENHORA | Delegacia de Polícia Territorial
+                                </option>
+                            
+                                <option value="182"
+                                        
+                                        >
+                                    LUÍS EDUARDO MAGALHÃES | Delegacia Territorial de Luís Eduardo Magalhães
+                                </option>
+                            
+                                <option value="32"
+                                        
+                                        >
+                                    MADRE DE DEUS | 17ª Delegacia Circunscricional de Polícia (17ª DP)
+                                </option>
+                            
+                                <option value="211"
+                                        
+                                        >
+                                    MALHADA | Delegacia Territorial de Malhada/BA
+                                </option>
+                            
+                                <option value="106"
+                                        
+                                        >
+                                    MALHADA DE PEDRAS | DELEGACIA DE POLÍCIA DE MALHADA DE PEDRAS
+                                </option>
+                            
+                                <option value="101"
+                                        
+                                        >
+                                    MANOEL VITORINO | Delegacia Circ. de Polícia de MANOEL VITORINO
+                                </option>
+                            
+                                <option value="216"
+                                        
+                                        >
+                                    MARAGOGIPE | Delegacia de Polícia de Maragogipe - BA
+                                </option>
+                            
+                                <option value="228"
+                                        
+                                        >
+                                    MARAÚ | DELEGACIA TERRITORIAL DE MARAÚ
+                                </option>
+                            
+                                <option value="132"
+                                        
+                                        >
+                                    MATA DE SÃO JOÃO | Delegacia de Proteção Ambiental - Mata de São João
+                                </option>
+                            
+                                <option value="191"
+                                        
+                                        >
+                                    NILO PEÇANHA | DELEGACIA DE POLÍCIA NILO PEÇANHA
+                                </option>
+                            
+                                <option value="61"
+                                        
+                                        >
+                                    NOVA IBIÁ | Delegacia de Polícia de Nova Ibiá
+                                </option>
+                            
+                                <option value="188"
+                                        
+                                        >
+                                    NOVO TRIUNFO | Delegacia de Policia
+                                </option>
+                            
+                                <option value="220"
+                                        
+                                        >
+                                    OLIVEIRA DOS BREJINHOS | Delegacia Territorial de Oliveira dos Brejinhos
+                                </option>
+                            
+                                <option value="87"
+                                        
+                                        >
+                                    OUROLÂNDIA | DELEGACIA DE OUROLÂNDIA
+                                </option>
+                            
+                                <option value="177"
+                                        
+                                        >
+                                    PARATINGA | Delegacia de Paratinga
+                                </option>
+                            
+                                <option value="120"
+                                        
+                                        >
+                                    PAULO AFONSO | Delegacia Especial de Atendimento a Mulher - DEAM - Paulo Afonso
+                                </option>
+                            
+                                <option value="121"
+                                        
+                                        >
+                                    PAULO AFONSO | Delegacia Territorial de Polícia de Paulo Afonso
+                                </option>
+                            
+                                <option value="278"
+                                        
+                                        >
+                                    PAULO AFONSO | Delegacia Territorial de Polícia de Paulo Afonso
+                                </option>
+                            
+                                <option value="123"
+                                        
+                                        >
+                                    PAULO AFONSO | Polícia Rodoviária Federal - Paulo Afonso
+                                </option>
+                            
+                                <option value="162"
+                                        
+                                        >
+                                    PAULO AFONSO | SEDE/COORPIN - Paulo Afonso
+                                </option>
+                            
+                                <option value="127"
+                                        
+                                        >
+                                    PAULO AFONSO | 20º Batalhão de Polícia Militar de Paulo Afonso
+                                </option>
+                            
+                                <option value="119"
+                                        
+                                        >
+                                    PÉ DE SERRA | Delegacia de Polícia de Pé de Serra/BA
+                                </option>
+                            
+                                <option value="288"
+                                        
+                                        >
+                                    PETROLINA | Policia Rodoviária Federal de Petrolina - PE
+                                </option>
+                            
+                                <option value="247"
+                                        
+                                        >
+                                    PINDAI | DELEGACIA DE POLÍA CIVIL DE PINDAI
+                                </option>
+                            
+                                <option value="54"
+                                        
+                                        >
+                                    PINTADAS | Delegacia Circunscrional de PINTADAS
+                                </option>
+                            
+                                <option value="181"
+                                        
+                                        >
+                                    PIRAÍ DO NORTE | DELEGACIA TERRITORIAL DE PIRAÍ DO NORTE/BA
+                                </option>
+                            
+                                <option value="77"
+                                        
+                                        >
+                                    PORTO SEGURO | Delegacia de Polícia Federal em Porto Seguro
+                                </option>
+                            
+                                <option value="76"
+                                        
+                                        >
+                                    PORTO SEGURO | Delegacia de Proteção ao Turista - PORTO SEGURO
+                                </option>
+                            
+                                <option value="267"
+                                        
+                                        >
+                                    PORTO SEGURO | Delegacia de Tóxicos e Entorpecentes de Porto Seguro
+                                </option>
+                            
+                                <option value="155"
+                                        
+                                        >
+                                    PORTO SEGURO | Delegacia Esp. Atend. a Mulher - PORTO SEGURO
+                                </option>
+                            
+                                <option value="75"
+                                        
+                                        >
+                                    PORTO SEGURO | Delegacia Esp. Atend. a Mulher - PORTO SEGURO
+                                </option>
+                            
+                                <option value="158"
+                                        
+                                        >
+                                    PORTO SEGURO | DELTUR PORTO SEGURO
+                                </option>
+                            
+                                <option value="263"
+                                        
+                                        >
+                                    PORTO SEGURO | PA Trancoso de Porto Seguro
+                                </option>
+                            
+                                <option value="264"
+                                        
+                                        >
+                                    PORTO SEGURO | Plantão Policial de Porto Seguro
+                                </option>
+                            
+                                <option value="73"
+                                        
+                                        >
+                                    PORTO SEGURO | 1ª Delegacia Circunscricional de Porto Seguro
+                                </option>
+                            
+                                <option value="156"
+                                        
+                                        >
+                                    PORTO SEGURO | 1ª DELEGACIA TERRITORIAL DE PORTO SEGURO
+                                </option>
+                            
+                                <option value="74"
+                                        
+                                        >
+                                    PORTO SEGURO | 2ª Delegacia Circunscricional de Arraial D&#039;Ajuda
+                                </option>
+                            
+                                <option value="157"
+                                        
+                                        >
+                                    PORTO SEGURO | 2ª TERRITORIAL DE PORTO SEGURO ARRAIAL DA AJUDA
+                                </option>
+                            
+                                <option value="205"
+                                        
+                                        >
+                                    PORTO SEGURO | 8º Batalhão da Polícia Militar de Porto Seguro
+                                </option>
+                            
+                                <option value="172"
+                                        
+                                        >
+                                    PRESIDENTE DUTRA | DELEGACIA DE POLÍCIA TERRITORIAL
+                                </option>
+                            
+                                <option value="171"
+                                        
+                                        >
+                                    PRESIDENTE DUTRA | DELEGACIA DE POLÍCIA TERRITORIAL
+                                </option>
+                            
+                                <option value="173"
+                                        
+                                        >
+                                    PRESIDENTE DUTRA | DELEGACIA POLICIA TERRITORIAL
+                                </option>
+                            
+                                <option value="91"
+                                        
+                                        >
+                                    PRESIDENTE TANCREDO NEVES | Delegacia de Polícia de Presidente Tancredo Neves
+                                </option>
+                            
+                                <option value="169"
+                                        
+                                        >
+                                    QUIJINGUE | DELEGACIA DE POLICIA CIVIL
+                                </option>
+                            
+                                <option value="114"
+                                        
+                                        >
+                                    RIACHAO DO JACUIPE | Delegacia Circunscricional de Riachão do Jacuípe
+                                </option>
+                            
+                                <option value="260"
+                                        
+                                        >
+                                    RIACHÃO DO JACUIPE | DELEGACIA TERRITORIAL DE RIACHÃO DO JACUIPE
+                                </option>
+                            
+                                <option value="269"
+                                        
+                                        >
+                                    RIO DE CONTAS | Delegacia de Polícia Territorial de Rio de Contas - BA
+                                </option>
+                            
+                                <option value="227"
+                                        
+                                        >
+                                    RUY BARBOSA | Delegacia Territorial de Ruy Barbosa
+                                </option>
+                            
+                                <option value="293"
+                                        
+                                        >
+                                    SALVADOR | COORDENAÇÃO DE FISCALIZAÇÃO DE PRODUTOS CONTROLADOS
+                                </option>
+                            
+                                <option value="256"
+                                        
+                                        >
+                                    SALVADOR | Coordenação de Operações Especiais - COE
+                                </option>
+                            
+                                <option value="262"
+                                        
+                                        >
+                                    SALVADOR | COORDENAÇÃO DE POLÍCIA INTESTADUAL - POLINTER
+                                </option>
+                            
+                                <option value="310"
+                                        
+                                        >
+                                    SALVADOR | COORDENAÇÃO DE REPRESSÃO A CRIMES CONTRA INSTITUIÇÕES FINANCEIRAS - CRCCIF
+                                </option>
+                            
+                                <option value="40"
+                                        
+                                        >
+                                    SALVADOR | CORREGEDORIA DA POLICIA CIVIL
+                                </option>
+                            
+                                <option value="308"
+                                        
+                                        >
+                                    SALVADOR | CORREGEDORIA DA POLICIA FEDERAL NA BAHIA
+                                </option>
+                            
+                                <option value="39"
+                                        
+                                        >
+                                    SALVADOR | CORREGEDORIA DA POLICIA MILITAR
+                                </option>
+                            
+                                <option value="303"
+                                        
+                                        >
+                                    SALVADOR | DAS - Delegacia Especializada Anti-sequestro
+                                </option>
+                            
+                                <option value="3"
+                                        
+                                        >
+                                    SALVADOR | DEAM - PERIPERI
+                                </option>
+                            
+                                <option value="6"
+                                        
+                                        >
+                                    SALVADOR | Deam-delegacia Especial de Atendimento Mulher
+                                </option>
+                            
+                                <option value="34"
+                                        
+                                        >
+                                    SALVADOR | DEATI-Delegacia Especial de Atendimento ao Idoso
+                                </option>
+                            
+                                <option value="52"
+                                        
+                                        >
+                                    SALVADOR | DECECAP Crimes Econômicos e Administração Pública
+                                </option>
+                            
+                                <option value="38"
+                                        
+                                        >
+                                    SALVADOR | DECON-Delegacia de Defesa do Consumidor
+                                </option>
+                            
+                                <option value="134"
+                                        
+                                        >
+                                    SALVADOR | Delegacia da Arena Fonte Nova
+                                </option>
+                            
+                                <option value="1"
+                                        
+                                        >
+                                    SALVADOR | Delegacia da 3ª Circunscrição Policial/Bonfim
+                                </option>
+                            
+                                <option value="301"
+                                        
+                                        >
+                                    SALVADOR | Delegacia de combate ao Racismo e Intolerância Religiosa - DECRIN
+                                </option>
+                            
+                                <option value="130"
+                                        
+                                        >
+                                    SALVADOR | DELEGACIA DE POLÍCIA FEDERAL (AEROPORTO/SALVADOR)
+                                </option>
+                            
+                                <option value="299"
+                                        
+                                        >
+                                    SALVADOR | Delegacia de Repressao a Crimes Ciberneticos - DRCC
+                                </option>
+                            
+                                <option value="13"
+                                        
+                                        >
+                                    SALVADOR | Delegacia Especial de Atendimento ao Idoso - DEATI
+                                </option>
+                            
+                                <option value="298"
+                                        
+                                        >
+                                    SALVADOR | Delegacia Especializada de Assuntos Internos DEAI-CORREPOL
+                                </option>
+                            
+                                <option value="41"
+                                        
+                                        >
+                                    SALVADOR | Delegacia Especializada de Repressão a Roubos em Coletivo - DERRC
+                                </option>
+                            
+                                <option value="309"
+                                        
+                                        >
+                                    SALVADOR | DELEGACIA NÃO CADASTRADA
+                                </option>
+                            
+                                <option value="306"
+                                        
+                                        >
+                                    SALVADOR | Delegacia Regional de Polícia Judiciária
+                                </option>
+                            
+                                <option value="36"
+                                        
+                                        >
+                                    SALVADOR | DELTUR-Delegacia de Proteção ao Turista
+                                </option>
+                            
+                                <option value="133"
+                                        
+                                        >
+                                    SALVADOR | DENARC
+                                </option>
+                            
+                                <option value="305"
+                                        
+                                        >
+                                    SALVADOR | DEPARTAMENTO ESPECIALIZADO DE INVESTIGACOES CRIMINAIS
+                                </option>
+                            
+                                <option value="289"
+                                        
+                                        >
+                                    SALVADOR | DEPARTAMENTO ESPECIALIZADO DE INVESTIGACOES CRIMINAIS - DEIC
+                                </option>
+                            
+                                <option value="33"
+                                        
+                                        >
+                                    SALVADOR | DERCA-Crimes Contra a Criança e o Adolescente
+                                </option>
+                            
+                                <option value="160"
+                                        
+                                        >
+                                    SALVADOR | DHPP Departamento de Homicídios/Proteção a Pessoa
+                                </option>
+                            
+                                <option value="284"
+                                        
+                                        >
+                                    SALVADOR | DRACO - DEPARTAMENTO DE REPRESSAO E COMBATE AO CRIME ORGANIZADO
+                                </option>
+                            
+                                <option value="37"
+                                        
+                                        >
+                                    SALVADOR | DREOF-Repressão ao Estelionato e Outras Fraudes
+                                </option>
+                            
+                                <option value="43"
+                                        
+                                        >
+                                    SALVADOR | DRFR-Delegacia de Repressão a Furtos e Roubos
+                                </option>
+                            
+                                <option value="42"
+                                        
+                                        >
+                                    SALVADOR | DRFRV-Del. Repressão a Furtos e Roubos de Veículos
+                                </option>
+                            
+                                <option value="35"
+                                        
+                                        >
+                                    SALVADOR | DTE-Delegacia de Tóxicos e Entorpecentes
+                                </option>
+                            
+                                <option value="131"
+                                        
+                                        >
+                                    SALVADOR | GME - DELEGACIA DE CRIMES VIRTUAIS
+                                </option>
+                            
+                                <option value="129"
+                                        
+                                        >
+                                    SALVADOR | SUPERINTENDÊNCIA REGIONAL DA POLÍCIA FEDERAL NA BAHIA
+                                </option>
+                            
+                                <option value="30"
+                                        
+                                        >
+                                    SALVADOR | 1ª Delegacia Circunscricional de Polícia (1ª DP)
+                                </option>
+                            
+                                <option value="15"
+                                        
+                                        >
+                                    SALVADOR | 1ª Delegacia Circunscricional de Polícia 1ª DP
+                                </option>
+                            
+                                <option value="7"
+                                        
+                                        >
+                                    SALVADOR | 10ª Delegacia Circunscricional de Polícia (10ª DP)
+                                </option>
+                            
+                                <option value="10"
+                                        
+                                        >
+                                    SALVADOR | 11ª Delegacia Circunscricional de Polícia (11ª DP)
+                                </option>
+                            
+                                <option value="8"
+                                        
+                                        >
+                                    SALVADOR | 12ª Delegacia Circunscricional de Polícia (12ª DP)
+                                </option>
+                            
+                                <option value="18"
+                                        
+                                        >
+                                    SALVADOR | 13ª Delegacia Circunscricional de Polícia (13ª DP)
+                                </option>
+                            
+                                <option value="22"
+                                        
+                                        >
+                                    SALVADOR | 14ª Delegacia Circunscricional de Polícia - 14ª DP
+                                </option>
+                            
+                                <option value="31"
+                                        
+                                        >
+                                    SALVADOR | 14ª Delegacia Circunscricional de Polícia (14ª DP)
+                                </option>
+                            
+                                <option value="9"
+                                        
+                                        >
+                                    SALVADOR | 16ª Delegacia Circunscricional de Polícia (16ª DP)
+                                </option>
+                            
+                                <option value="5"
+                                        
+                                        >
+                                    SALVADOR | 2ª Delegacia Circunscricional de Polícia (2ª DP)
+                                </option>
+                            
+                                <option value="21"
+                                        
+                                        >
+                                    SALVADOR | 27ª Delegacia Circunscricional de Polícia (27ª DP)
+                                </option>
+                            
+                                <option value="23"
+                                        
+                                        >
+                                    SALVADOR | 28ª Delegacia Circunscricional de Polícia (28ª DP)
+                                </option>
+                            
+                                <option value="253"
+                                        
+                                        >
+                                    SALVADOR | 28ª Delegacia Territorial Nordeste de Amaralina
+                                </option>
+                            
+                                <option value="135"
+                                        
+                                        >
+                                    SALVADOR | 29ª Delegacia Circunscricional de Polícia (29ª DP)
+                                </option>
+                            
+                                <option value="17"
+                                        
+                                        >
+                                    SALVADOR | 3ª Delegacia Circunscricional de Polícia (3ª DP)
+                                </option>
+                            
+                                <option value="4"
+                                        
+                                        >
+                                    SALVADOR | 4ª Delegacia Circunscricional de Polícia (4ª DP)
+                                </option>
+                            
+                                <option value="257"
+                                        
+                                        >
+                                    SALVADOR | 4ª DELEGACIA TERRITORIAL
+                                </option>
+                            
+                                <option value="2"
+                                        
+                                        >
+                                    SALVADOR | 5ª Delegacia Circunscricional de Polícia (5ª DP)
+                                </option>
+                            
+                                <option value="244"
+                                        
+                                        >
+                                    SALVADOR | 5ª DELEGACIA TERRITORIAL DE PERIPERI
+                                </option>
+                            
+                                <option value="245"
+                                        
+                                        >
+                                    SALVADOR | 5ª DELEGACIA TERRITORIAL DE PERIPERI
+                                </option>
+                            
+                                <option value="16"
+                                        
+                                        >
+                                    SALVADOR | 6ª Delegacia Circunscricional de Polícia (6ª DP)
+                                </option>
+                            
+                                <option value="29"
+                                        
+                                        >
+                                    SALVADOR | 6ª DELEGACIA DE PITANGUEIRAS
+                                </option>
+                            
+                                <option value="12"
+                                        
+                                        >
+                                    SALVADOR | 7ª Delegacia Circunscricional de Polícia (7ª DP)
+                                </option>
+                            
+                                <option value="292"
+                                        
+                                        >
+                                    SALVADOR | 8ª DELEGACIA TERRITORIAL - VALÉRIA
+                                </option>
+                            
+                                <option value="11"
+                                        
+                                        >
+                                    SALVADOR | 9ª Delegacia Circunscricional de Polícia (9ª DP)
+                                </option>
+                            
+                                <option value="122"
+                                        
+                                        >
+                                    SANTA BRÍGIDA | Delegacia de Polícia de Santa Brígida
+                                </option>
+                            
+                                <option value="164"
+                                        
+                                        >
+                                    SANTA BRÍGIDA | Delegacia de Santa Brígida
+                                </option>
+                            
+                                <option value="153"
+                                        
+                                        >
+                                    SANTA MARIA DA VITÓRIA | DELEGACIA DE SANTA MARIA DA VITÓRIA - BA
+                                </option>
+                            
+                                <option value="151"
+                                        
+                                        >
+                                    SANTO ANTÔNIO DE JESUS | 4ª COORPIN - STO ANTONIO DE JESUS
+                                </option>
+                            
+                                <option value="237"
+                                        
+                                        >
+                                    SANTO ESTÊVÃO | Delegacia de Polícia de Santo Estêvão
+                                </option>
+                            
+                                <option value="154"
+                                        
+                                        >
+                                    SÃO FELIX DO CORIBE | DELEGACIA DE SÃO FELIX DO CORIBE - BA
+                                </option>
+                            
+                                <option value="175"
+                                        
+                                        >
+                                    SÃO GABRIEL | DELEGACIA DE POLÍCIA TERRITORIAL
+                                </option>
+                            
+                                <option value="285"
+                                        
+                                        >
+                                    SÃO SEBASTIÃO DO PASSÉ | 37ª DELEGACIA TERRITORIAL
+                                </option>
+                            
+                                <option value="283"
+                                        
+                                        >
+                                    SEABRA | DELEGACIA PRF
+                                </option>
+                            
+                                <option value="136"
+                                        
+                                        >
+                                    SENHOR DO BONFIM | 10ª SRPRF/BA - DELEGACIA DE SENHOR DO BONFIM
+                                </option>
+                            
+                                <option value="97"
+                                        
+                                        >
+                                    SENHOR DO BONFIM | 19º CORPIN de Senhor do Bonfim
+                                </option>
+                            
+                                <option value="215"
+                                        
+                                        >
+                                    SENTO SÉ | Delegacia Territorial de Sento Sé
+                                </option>
+                            
+                                <option value="112"
+                                        
+                                        >
+                                    SERRA DO RAMALHO | Delegacia de Polícia de Serra do Ramalho
+                                </option>
+                            
+                                <option value="206"
+                                        
+                                        >
+                                    SERRA PRETA | Delegacia Territorial de Serra Preta
+                                </option>
+                            
+                                <option value="93"
+                                        
+                                        >
+                                    SERRINHA | 1ª Delegacia de Polícia de Serrinha
+                                </option>
+                            
+                                <option value="125"
+                                        
+                                        >
+                                    SERROLÂNDIA | Delegacia Circunscrional de Serrolândia
+                                </option>
+                            
+                                <option value="184"
+                                        
+                                        >
+                                    SIMÕES FILHO | POLICIA RODOVIARIA FEDERAL
+                                </option>
+                            
+                                <option value="148"
+                                        
+                                        >
+                                    SIMÕES FILHO | 22ª DT - SIMÕES FILHO
+                                </option>
+                            
+                                <option value="19"
+                                        
+                                        >
+                                    SIMÕES FILHO | 8ª Delegacia Circunscricional de Polícia 8ª DP
+                                </option>
+                            
+                                <option value="113"
+                                        
+                                        >
+                                    SÍTIO DO MATO | Delegacia de Polícia de Sítio do Mato
+                                </option>
+                            
+                                <option value="108"
+                                        
+                                        >
+                                    TANCREDO NEVES | Delegacia de Polícia de Presidente Tancredo Neves
+                                </option>
+                            
+                                <option value="55"
+                                        
+                                        >
+                                    TANQUINHO | Delegacia de Polícia de Tanquinho
+                                </option>
+                            
+                                <option value="190"
+                                        
+                                        >
+                                    TAPEROÁ | Delegacia de Polícia de Taperoá
+                                </option>
+                            
+                                <option value="128"
+                                        
+                                        >
+                                    TEIXEIRA DE FREITAS | CIA Ind Polícia Rod(4º Pelotão)Teixeira de Freitas
+                                </option>
+                            
+                                <option value="67"
+                                        
+                                        >
+                                    TEIXEIRA DE FREITAS | Delegacia de Atend. à Mulher - TEIXEIRA DE FREITAS
+                                </option>
+                            
+                                <option value="300"
+                                        
+                                        >
+                                    TEIXEIRA DE FREITAS | 1ª DELEGACIA TERRITORIAL DE TEIXEIRA DE FREITAS
+                                </option>
+                            
+                                <option value="66"
+                                        
+                                        >
+                                    TEIXEIRA DE FREITAS | 13º Batalhão Pol. Militar - TEIXEIRA DE FREITAS
+                                </option>
+                            
+                                <option value="68"
+                                        
+                                        >
+                                    TEIXEIRA DE FREITAS | 8ª COORPIN - TEIXEIRA DE FREITAS
+                                </option>
+                            
+                                <option value="271"
+                                        
+                                        >
+                                    TEIXEIRA DE FREITAS | 87ª Companhia Indepedente de Policia Militar
+                                </option>
+                            
+                                <option value="214"
+                                        
+                                        >
+                                    TEOFILÂNDIA | DELEGACIA DE POLÍCIA DE TEOFILÂNDIA
+                                </option>
+                            
+                                <option value="116"
+                                        
+                                        >
+                                    TEOLÂNDIA | Delegacia Territorial de Teolândia-BA
+                                </option>
+                            
+                                <option value="174"
+                                        
+                                        >
+                                    UIBAÍ | DELEGACIA POLICIA TERRITORIAL
+                                </option>
+                            
+                                <option value="103"
+                                        
+                                        >
+                                    UMBURANAS | DELEGACIA DE POLÍCIA DE UMBURANAS
+                                </option>
+                            
+                                <option value="107"
+                                        
+                                        >
+                                    VALENÇA | Delegacia Circunscricional
+                                </option>
+                            
+                                <option value="90"
+                                        
+                                        >
+                                    VALENÇA | Delegacia Circunscricional de Valença
+                                </option>
+                            
+                                <option value="270"
+                                        
+                                        >
+                                    VALENÇA | Delegacia de Polícia Territorial de Valença
+                                </option>
+                            
+                                <option value="88"
+                                        
+                                        >
+                                    VÁRZEA NOVA | DELEGACIA DE POLÍCIA DE VÁRZEA NOVA
+                                </option>
+                            
+                                <option value="150"
+                                        
+                                        >
+                                    VARZEDO | Delegacia Territorial de Varzedo
+                                </option>
+                            
+                                <option value="178"
+                                        
+                                        >
+                                    VERA CRUZ | Delegacia da 24ª Circunscrição Policial
+                                </option>
+                            
+                                <option value="50"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | DEAM - VITÓRIA DA CONQUISTA
+                                </option>
+                            
+                                <option value="51"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | DRFR (furtos e roubos) - VITÓRIA DA CONQUISTA
+                                </option>
+                            
+                                <option value="170"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | DTE - Delegacia de Tóxicos
+                                </option>
+                            
+                                <option value="49"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 1ª Circunscrição Policial - VITÓRIA DA CONQUISTA
+                                </option>
+                            
+                                <option value="276"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 1ª Delegacia de Polícia Civil de Vitória da Conquista
+                                </option>
+                            
+                                <option value="274"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 10ª COORPIN - Coordenadoria de Polícia do Interior
+                                </option>
+                            
+                                <option value="48"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 2ª Circunscrição Policial - VITÓRIA DA CONQUISTA
+                                </option>
+                            
+                                <option value="275"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 2ª Delegacia Territorial de Vitória da Conquista
+                                </option>
+                            
+                                <option value="183"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 8ª Delegacia da PRF
+                                </option>
+                            
+                                <option value="249"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 8ª Delegacia da PRF
+                                </option>
+                            
+                                <option value="277"
+                                        
+                                        >
+                                    VITÓRIA DA CONQUISTA | 8ª DELEGACIA DE TÓXICOS E ENTORPECENTES DE VITÓRIA DA CONQUISTA
+                                </option>
+                            
+                                <option value="110"
+                                        
+                                        >
+                                    WENCESLAU GUIMARÃES | DELEGACIA CIRCUNSCRICIONAL DE WENCESLAU GUIMARÃES
+                                </option>
+                            
+                        </select>
+                    </td>
+                </tr>
+				 
+                <tr class="tCinza">
+                    <td><strong>N&uacute;mero do TCO</strong></td>
+                    <td><input name="numeroProcessoTCO" value="" type="text" id="numeroProcessoTCO" size="25" maxlength="20"></td>
+                </tr>
+				 
+                <tr class="tBranca">
+                    <td><strong>Data do TCO</strong></td>
+                    <td>
+                        <input name="dataTCO" id="dataTCO" type="text" size="50" maxlength="10" style="width: 96pt;" onkeypress="return dateMask(event);" >
+                        <img style="vertical-align:bottom; cursor:pointer;" src="/projudi/scripts/calendar/images/bot-calendario.png" alt="Selecionar data e hora a partir de um calendário" width="18" height="18" border="0" align="bottom"
+                             onclick="javascript:displayCalendarInitTime(document.getElementById('dataTCO'),'dd/mm/yyyy',this,false,null);"/>
+                    </td>
+                </tr>
+				 
+                <tr class="tCinza">
+                    <td><strong>Registro de Ocorr&ecirc;ncia</strong></td>
+                    <td>
+                        <select name="codTipoRegistroOcorrencia" id="codTipoRegistroOcorrencia" onclick="verificaTipoRegistroOutros()">
+                            <option value="-1">Selecione Para Busca</option>
+                            
+                                
+                                    <option value="1"> Outros</option>
+                                
+                                    <option value="2"> Boletim Ocorrência</option>
+                                
+                                    <option value="3"> Número do REDS</option>
+                                
+                            
+                        </select>
+                        &nbsp; <strong>Desc. Outros</strong> <input id="tipoRegistroOutros" name="tipoRegistroOutros" disabled type="text" class="textField" style="width:150px;" maxlength="40"/>
+                        &nbsp; <strong>Nº</strong><input id="numeroRegistro" name="numeroRegistro" type="text" class="textField" style="width:150px;" maxlength="20" size="20" onkeypress="mascara(this,numeros)"/>
+                    </td>
+                </tr>
+                
+                 
+                
+                <tr class="primeiraLinha">
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr class="tBranca">
+                    <td><strong>Codigo de acesso individual:</strong></td>
+                    <td>
+                        <input name="codigoHash" id="codigoHash" type="text" size="100" maxlength="100" style="width: 96pt;">
+                       
+                    </td>
+                </tr>
+				 
+                <!-- <tr valign="middle">
+					<td><strong>Validação</strong></td>
+					<td>
+					<table border ="0">
+						<tr>
+						  <td width="100px">
+							<div id="idCapcha" name="idCapcha"><img id="idImg" name="idImg" src="/projudi/captcha.jpg" alt="Captcha"/></div>
+						  </td>
+						  <td align="center">
+							<a href="javascript:reload()">Trocar imagem</a>
+						  </td>
+						</tr>
+							
+						<tr>
+							<td colspan="2"><strong>Digite o texto aqui:</strong> <input type="text" name="captcha" id="captcha" size="10" maxlength="10"></td>
+						</tr>
+					</table>
+					
+                	</td>
+                	<script>
+						function reload() {
+							document.getElementById("idImg").src = "/projudi/captcha.jpg?" + parseInt(Math.random()*100);           
+						}
+					</script>
+				</tr>-->
+                
+                <tr align="center" valign="middle" class="ultimaLinha">
+                    <td colspan="2">
+                   	  
+						<input type="hidden" id="token" name="token"/>
+					    		
+					  
+                     <input name="Buscar"  value="Buscar" type="image" src="/projudi/imagens/botoes/bot-submeter.gif" width="60" height="21" border="0">
+					   
+	                   &nbsp;&nbsp;
+					   <input name="Voltar"  value="Voltar" type="image" src="/projudi/imagens/botoes/bot-voltar.gif" width="60" height="21" border="0" onClick="javascript:window.location='/projudi/Logout';return false;">
+		              
+					</td>
+                </tr>
+            </table>
+             <script>populateSelectWithDisabling('codVara','codAreaDeVara','/projudi/componentes/ComboAreaDeVarasXML','codVara','Clique para selecionar',true);</script>
+            <script>atualizaCombos('codVara');</script>  
+            <div align="center"></div>
+        </form>
+    </body>
+</html>

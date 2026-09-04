@@ -1,0 +1,3002 @@
+<html>
+<head>
+</head>
+<body>
+ <script language="JavaScript1.2" src="/projudi/imagens/tips.js"></script>
+ <script language="JavaScript1.2" src="/projudi/imagens/ajudas/ajudas.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/projudi/dwr/engine.js"></script>
+<script src="/projudi/dwr/util.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/ProcessoService.js"></script>
+
+
+
+
+
+
+<script language="JavaScript1.2">
+    <!--
+    function DoPrinting(){
+        if (!window.print){
+            alert("Use o Netscape  ou Internet Explorer \n nas versões 4.0 ou superior!")
+            return
+        }
+        window.print()
+    }
+    //-->
+</script>
+<script type="text/javascript" src="/projudi/scripts/subModal/subModal.js"></script>
+<script>
+<!--
+	initPopUp();
+ 	function chamaPopHist(numProcesso){
+	  showPopWin('/projudi/listagens/HistoricoJuiz?numeroProcesso=' + numProcesso, 1024,350,null,true);
+	} 
+
+ 	function chamaPopHistAcesso(numProcesso){
+ 		  showPopWin('/projudi/listagens/HistoricoAcessoTerceiro?numeroProcesso=' + numProcesso, 780,350,null,true);
+ 		}
+ 	
+ 	function chamaPopHistAnaliseDispensa(numProcesso){
+		  showPopWin('/projudi/listagens/HistoricoAnaliseDispensa?numeroProcesso=' + numProcesso, 780,350,null,true);
+	}
+
+ 	function chamaDownloadProcesso(numProcesso){
+ 		if (window.confirm('O download do processo pode levar alguns minutos. Deseja continuar?')) 
+ 	 		window.location = '/projudi/acoes/DownloadProcesso?numeroProcesso=' + numProcesso;
+	}	
+
+ 	function chamaResumoProcesso(numProcesso){
+ 		window.open('/projudi/listagens/ResumoProcesso?numeroProcesso=' + numProcesso);
+	}
+
+ 	function chamaRelatorioAtosProcesso(numProcesso, codRelatorio){
+ 	 	
+ 			showPopWin('/projudi/listagens/DadosRelatorio?numeroProcesso='+ numProcesso +'&codRelatorio='+codRelatorio+'&filtro=true', 580,200,null,true);
+ 		
+	}
+
+ 	function chamaPopLotacaoAudiencia(numProcesso){
+ 		  showPopWin('/projudi/VerLotacaoAudiencia?numeroProcesso=' + numProcesso, 600,250,null,true);
+ 	} 
+
+ 	function copy(text) {
+ 	 	if (navigator != undefined && navigator.clipboard != undefined) {
+	 		navigator.clipboard
+	 	      .writeText(text)
+	 	      .then(() => {
+	 	        //alert("Copiado!");
+	 	      })
+	 	      .catch(() => {
+	 	        alert("Falha ao copiar.");
+	 	      });
+ 	 	} else {
+ 	 		copyAlternative(text);
+ 	 	}
+ 	}
+
+ 	function copyAlternative(valor){
+ 			// Create a "hidden" input
+ 		  var aux = document.createElement("input");
+
+ 		  // Assign it the value of the specified element
+ 		  aux.setAttribute("value", valor);
+
+ 		  // Append it to the body
+ 		  document.body.appendChild(aux);
+
+ 		  // Highlight its content
+ 		  aux.select();
+
+ 		  // Copy the highlighted text
+ 		  document.execCommand("copy");
+
+ 		  // Remove it from the body
+ 		  document.body.removeChild(aux);
+
+ 		  //alert("Copiado!");
+ 	}
+ 	      
+
+ 	function obterProcessos(codProcesso) {
+ 	  codProcessoSelect = codProcesso;
+ 	  var link = document.getElementById("verificar" + codProcesso);
+ 	  if (link) { 
+ 	 	  link.style.display = "none";
+ 	  }
+ 	  document.getElementById("contaCertificacoesDePrazoDeIntimacaoPraRealizarEmVara").innerHTML = '<span style="margin-left:5px;"><font color="#AA1C1C">Carregando...</font></span>';
+ 	  ProcessoService.contaCertificacoesDePrazoDeIntimacaoPraRealizarEmVara(codProcesso, exibeQuantIntimacoes);
+ 	  ProcessoService.contaCertificacoesDePrazoDeCumprimentosPraRealizarEmVara(codProcesso, exibeQuantCumprimentos);
+ 	}
+ 	function exibeQuantIntimacoes(valor) {
+ 	  document.getElementById('contaCertificacoesDePrazoDeIntimacaoPraRealizarEmVara').innerHTML = valor + ' Intimações<br>';
+ 	}
+ 	function exibeQuantCumprimentos(valor) {
+ 	  document.getElementById('contaCertificacoesDePrazoDeCumprimentosPraRealizarEmVara').innerHTML = valor + ' Cumprimentos do cartório';
+ 	}
+//-->		
+	</script>
+
+<link href="/projudi/estilo.css" rel="stylesheet" type="text/css">
+<link href="../../../estilo.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+    .style9 {color: #990000; font-size: 12px; font-weight: bold; }
+</style>
+
+<p align="center" class="tituloPagina">DADOS DO PROCESSO</p>
+<b>
+
+
+
+
+
+
+<link href="/projudi/estilo.css" rel="stylesheet" type="text/css">
+
+
+
+
+</b>
+<script src="/projudi/imagens/MostraOculta.js"></script>
+
+
+    
+    
+    
+
+<div id="Partes">
+    <table width="98%" align="center" cellpadding="0" cellspacing="0">
+        <tr class="primeiraLinha">
+            <td colspan="4" valign="middle"><b>&nbsp;<font size="4" >Processo n&ordm; <a href="/projudi/listagens/DadosProcesso?numeroProcesso=34020255277923" class="style2">0004745-68.2025.8.05.0022</a>
+            <a href="javascript: copy('0004745-68.2025.8.05.0022')"><img src="/projudi/imagens/copy.png" style="vertical-align:middle" title="Copiar número"/></a>
+            ( 252 dias em tramitação )</font> 
+            </b>&nbsp; 
+            		
+            </td>
+        </tr>
+
+        
+            
+                <tr>
+                    
+                        
+                            <td nowrap   class="tBranca"   > <div align="center"><strong>Promovente</strong></div></td>
+                        
+                        
+                    
+                    <td colspan="3" class="tCinza">
+                        
+
+
+
+
+
+
+
+
+
+<script src="/projudi/dwr/engine.js"></script>
+<script src="/projudi/dwr/util.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/ParteService.js"></script>
+
+<script>
+	var codParteSelect = 0;
+	function obterQuantProcessoParte(codParte){
+		codParteSelect = codParte;
+		ParteService.obterQuantidadeProcessoParte(codParte, exibeQuantProcessoParte);
+		document.getElementById("div"+codParte).innerHTML = '<font color=\"#AA1C1C\">Carregando ...</font>';	
+	}
+	function exibeQuantProcessoParte(valor){
+		div = document.getElementById('div'+codParteSelect);
+		div.innerHTML = '<a href="/projudi/buscas/ProcessosParte?fm=post&codParte='+codParteSelect+'&nome="""">('+valor+' Processo(s) Distribuído(s))</a>';
+	}
+	
+    function mostraOculta(idParteProcesso,idTabela,linhaCount,tipoInfo){
+        var titulo;
+        var conteudoHTML;
+        span = document.getElementById('span'+tipoInfo+idParteProcesso);
+        trEndAdv = document.getElementById('tr'+tipoInfo+idParteProcesso);
+        tr = document.getElementById('tr'+idParteProcesso);
+        td = document.getElementById('td'+idParteProcesso);
+        td1 = document.getElementById('td1'+idParteProcesso);
+        tabela = document.getElementById(idTabela);
+    
+        if(trEndAdv == null){
+            novotr = tabela.insertRow(tr.rowIndex+1);
+            novotr.id = 'tr'+tipoInfo+idParteProcesso;
+            if(linhaCount % 2 == 0){
+                novotr.className = 'linhaEscura';
+            }
+            else{
+                novotr.className = 'linhaClara';
+            }
+            novotd = novotr.insertCell(0);
+            novotd.innerHTML = span.innerHTML;
+                     
+                         
+                         
+                                     novotd.colSpan = 4;
+                                     td.rowSpan = td.rowSpan+1;
+                                     td1.rowSpan = td1.rowSpan+1;                                     
+                         
+                     
+                             }
+                             else{   
+                    
+                         
+                                                    
+                                     td.rowSpan = td.rowSpan-1;
+                                     td1.rowSpan = td1.rowSpan-1;                                     
+                         
+                                        
+                                tabela.deleteRow(trEndAdv.rowIndex);
+                            } 
+                        }
+    
+                        function excluirParte(radioExcluirNome, tableExcluirNome){
+                            radioExcluirParte = document.getElementById(radioExcluirNome);
+							tableExcluirParte = document.getElementById(tableExcluirNome);
+							
+							var itens = tableExcluirParte.getElementsByTagName('input');
+							var checked = false;
+							
+							for(i=0;i<itens.length;i++){
+								if(itens[i].type=='radio'){
+									checked = itens[i].checked;
+									if(itens[i].checked) break;
+								}
+							}
+						 
+                            if(checked){
+                                if(confirm('Tem certeza que deseja excluir do processo a parte selecionada?'))
+                                    doPost(radioExcluirParte.name,null,0);
+                            }
+                            else{
+                                alert("Selecione uma Parte para excluir.")
+
+                            }
+                        }
+
+                        
+	function chamaPopWinDadosGeraisParte(){
+		var codParte = '0';
+		showPopWin('/projudi/popupModalAlterarDadosGeraisParte.jsp?codParte=' + codParte + '&primeiraVez=true', 1000,420,retornoPopWinDadosGeraisParte,true);
+	}
+
+    function retornoPopWinDadosGeraisParte(){
+        document.formCadastraPartesAcao.submit();
+    }
+
+
+</script>
+
+
+
+
+
+
+
+<table style="width:100%;" class="tabelaLista" id="tabelaPartes1">
+	<tr>
+	    
+	       <th></th>
+	    
+	    <th>Nome</th>         
+	    <th style="width:120px;">Identidade</th>
+	    <th style="width:120px;">CPF</th>
+		
+		    <th style="width:120px;">Advogados</th>
+		
+	    <th style="width:120px;">Endere&ccedil;o</th>
+	    
+	</tr>
+
+
+
+
+    <tr id="tr13412284"  class="linhaClara" >
+        
+                <td id="td13412284" style="white-space:nowrap;text-align:center;width:20px;">
+                
+                </td>                         
+        
+      
+        <td id="td113412284" style="padding-left:5px;">
+        	LORENA TAYNA CAMPOS DOS SANTOS
+        	
+        	
+                
+                
+        	
+        	
+        </td>                                                                                                                                          
+        <td style="white-space:nowrap;text-align:center;width:120px;">
+            
+            Não disponível
+            
+        </td>
+        <td style="white-space:nowrap;text-align:center;width:120px;">
+            
+            Não disponível
+            
+        </td> 
+         
+        	<td style="white-space:nowrap;text-align:center;width:120px;">
+        		<a href="javascript: mostraOculta('13412284','tabelaPartes1',1,'Adv')">Mostrar/Ocultar</a>
+        	</td>
+        
+        <td style="white-space:nowrap;text-align:center;width:120px;">
+            
+            Não disponível
+            
+        </td>
+
+        
+
+
+    </tr>  
+    
+     
+
+
+
+</table>
+
+<!-- Informações (paineis) ocultas que serão exibidas dinamicamente através de javascript -->
+     <!-- Informações de Advogado -->
+     
+     
+    <span id="spanAdv13412284" style="visibility:show;display:none;">
+        <table class="tabelaEndereco" style="width:100%;">
+            <tr class="tCinza">
+                <td width="93" class="topico" >Advogado</td>
+            </tr>
+            <tr>
+                <td>
+                    
+                        
+                        
+                            
+
+
+
+
+
+<link href="/projudi/estilo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/projudi/scripts/subModal/subModal.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/AdvogadoService.js"></script>
+
+<script>
+
+	var parteIdSelecionado = null;
+	
+	function chamaPopWinHistorico(codParteProcesso, codParteRecurso){
+		  showPopWin('/projudi/listagens/HistoricoAdvogado?codParteProcesso=' + codParteProcesso +'&codParteRecurso='+ codParteRecurso, 1001,350,null,true);
+	}
+
+	function chamaPopWinPreCadastro(parteId){
+		  parteIdSelecionado = parteId;
+		  showPopWin('/projudi/cadastros/CadastraAdvogado?ehPreCadastro=true', 850,300,retornoPopWinPreCadastro,true);
+	}
+
+	function chamaPopWinPreCadastroUpdate(oab, estadoOab, complementoOab){
+		let url = '/projudi/cadastros/CadastraAdvogado?ehPreCadastro=true&oab=' + oab + '&estadoOab=' + estadoOab + '&complementoOab=' + complementoOab;
+		showPopWin(url, 850, 300, retornoPopWinPreCadastroUpdate, true);
+	}
+
+    function retornoPopWinPreCadastro(retorno){
+	    // Verificar se o retorno é válido
+	    if (!retorno || retorno.length < 3) {
+	        console.error('Retorno inválido do pré-cadastro');
+	        return;
+	    }
+
+	    var oab = retorno[0];
+	    var estadoOAB = retorno[1];
+	    var complementoOAB = retorno[2];
+
+	    // Preencher os campos do formulário principal
+	    document.getElementById('OAB' + parteIdSelecionado).value = oab;
+	    document.getElementById('estadoOAB' + parteIdSelecionado).value = estadoOAB;
+	    
+	    // Adiciona o novo do complemento OAB não mapeado vindo do CNA
+	    var opcoesComplementoOAB = Array.from(document.getElementById('complementoOAB' + parteIdSelecionado));
+	     
+		var opcoesComplementoOABDocument = document.getElementById('complementoOAB' + parteIdSelecionado);
+	    var novoComplementoOAB = new Option(complementoOAB, complementoOAB);
+	    opcoesComplementoOABDocument.add(novoComplementoOAB);
+
+	    document.getElementById('complementoOAB' + parteIdSelecionado).value = complementoOAB;
+	    	   
+		//Realiza o insert
+	    doPost('insereAdvogado', 'parteId=' + parteIdSelecionado +'&ehCadastroInicial=false', 0);
+    }
+
+    function retornoPopWinPreCadastroUpdate(){
+    	window.location.reload();
+    }
+	
+</script>
+
+
+
+              
+   
+              <table style="width:100%;" class="tabelaLista" id="tabelaAdvogadoPartes1">   
+                <tr>
+                    <th >Nome</th>                   
+                    <th style="width:120px;">OAB/MADEP</th> 
+                    <!--<th style="width:50px;">E-mail</th>-->
+                    
+                </tr>
+                
+                        <tr  class="linhaClara"  > 
+                            
+                            	<td style="padding-left:5px;">MARCOS CALEBE DOS SANTOS ALVES
+                            	
+                            	
+	                           </td>
+                                                        
+                            <td style="white-space:nowrap;text-align:center;width:120px;">41692N-BA</td>
+                            
+                            
+                        </tr>						
+                
+                        <tr  class="linhaEscura"  > 
+                            
+                            	<td style="padding-left:5px;">ALESSANDRO FAGUNDES MOURA
+                            	
+                            	
+	                           </td>
+                                                        
+                            <td style="white-space:nowrap;text-align:center;width:120px;">50375N-BA</td>
+                            
+                            
+                        </tr>						
+                
+                
+                
+			  				
+			 
+              </table>
+              
+             
+                                
+    							
+                        
+                    
+                </td>
+            </tr>
+        </table>
+    </span>
+
+    <!-- Informações de Endereço -->
+    <span id="spanEnd13412284" style="visibility:hidden;display:none;">
+        <table class="tabelaEndereco" style="width:100%;">
+            <tr class="tCinza">
+                <td width="93" class="topico" >Endere&ccedil;o</td>
+            </tr>
+            <tr>
+                <td>
+                    
+                        
+                            
+                            RUA DOS MARES
+                            ,&nbsp;470
+                            
+                            ,&nbsp;CIDADE NOVA
+                            
+                                
+                                    ,&nbsp;BARREIRAS
+                                
+                                
+                            
+                            
+                                
+                                    &nbsp;-&nbsp;BA
+                                
+                                
+                            
+                            
+                                &nbsp;-&nbsp;BRASIL
+                            
+
+                            ,&nbsp;47804244
+                            
+                                <br/>n possui
+                            
+                            
+                                , (Contato: N POSSUI)
+                             
+                             
+                        
+                        
+                                        
+                </td>
+            </tr>
+        </table>      
+    </span>
+    
+
+
+                    </td>
+                </tr>
+            
+                <tr>
+                    
+                        
+                            <td nowrap   class="tCinza"   > <div align="center"><strong>Promovido</strong></div></td>
+                        
+                        
+                    
+                    <td colspan="3" class="tCinza">
+                        
+
+
+
+
+
+
+
+
+
+<script src="/projudi/dwr/engine.js"></script>
+<script src="/projudi/dwr/util.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/ParteService.js"></script>
+
+<script>
+	var codParteSelect = 0;
+	function obterQuantProcessoParte(codParte){
+		codParteSelect = codParte;
+		ParteService.obterQuantidadeProcessoParte(codParte, exibeQuantProcessoParte);
+		document.getElementById("div"+codParte).innerHTML = '<font color=\"#AA1C1C\">Carregando ...</font>';	
+	}
+	function exibeQuantProcessoParte(valor){
+		div = document.getElementById('div'+codParteSelect);
+		div.innerHTML = '<a href="/projudi/buscas/ProcessosParte?fm=post&codParte='+codParteSelect+'&nome="""">('+valor+' Processo(s) Distribuído(s))</a>';
+	}
+	
+    function mostraOculta(idParteProcesso,idTabela,linhaCount,tipoInfo){
+        var titulo;
+        var conteudoHTML;
+        span = document.getElementById('span'+tipoInfo+idParteProcesso);
+        trEndAdv = document.getElementById('tr'+tipoInfo+idParteProcesso);
+        tr = document.getElementById('tr'+idParteProcesso);
+        td = document.getElementById('td'+idParteProcesso);
+        td1 = document.getElementById('td1'+idParteProcesso);
+        tabela = document.getElementById(idTabela);
+    
+        if(trEndAdv == null){
+            novotr = tabela.insertRow(tr.rowIndex+1);
+            novotr.id = 'tr'+tipoInfo+idParteProcesso;
+            if(linhaCount % 2 == 0){
+                novotr.className = 'linhaEscura';
+            }
+            else{
+                novotr.className = 'linhaClara';
+            }
+            novotd = novotr.insertCell(0);
+            novotd.innerHTML = span.innerHTML;
+                     
+                         
+                         
+                                     novotd.colSpan = 4;
+                                     td.rowSpan = td.rowSpan+1;
+                                     td1.rowSpan = td1.rowSpan+1;                                     
+                         
+                     
+                             }
+                             else{   
+                    
+                         
+                                                    
+                                     td.rowSpan = td.rowSpan-1;
+                                     td1.rowSpan = td1.rowSpan-1;                                     
+                         
+                                        
+                                tabela.deleteRow(trEndAdv.rowIndex);
+                            } 
+                        }
+    
+                        function excluirParte(radioExcluirNome, tableExcluirNome){
+                            radioExcluirParte = document.getElementById(radioExcluirNome);
+							tableExcluirParte = document.getElementById(tableExcluirNome);
+							
+							var itens = tableExcluirParte.getElementsByTagName('input');
+							var checked = false;
+							
+							for(i=0;i<itens.length;i++){
+								if(itens[i].type=='radio'){
+									checked = itens[i].checked;
+									if(itens[i].checked) break;
+								}
+							}
+						 
+                            if(checked){
+                                if(confirm('Tem certeza que deseja excluir do processo a parte selecionada?'))
+                                    doPost(radioExcluirParte.name,null,0);
+                            }
+                            else{
+                                alert("Selecione uma Parte para excluir.")
+
+                            }
+                        }
+
+                        
+	function chamaPopWinDadosGeraisParte(){
+		var codParte = '0';
+		showPopWin('/projudi/popupModalAlterarDadosGeraisParte.jsp?codParte=' + codParte + '&primeiraVez=true', 1000,420,retornoPopWinDadosGeraisParte,true);
+	}
+
+    function retornoPopWinDadosGeraisParte(){
+        document.formCadastraPartesAcao.submit();
+    }
+
+
+</script>
+
+
+
+
+
+
+
+<table style="width:100%;" class="tabelaLista" id="tabelaPartes0">
+	<tr>
+	    
+	       <th></th>
+	    
+	    <th>Nome</th>         
+	    <th style="width:120px;">Identidade</th>
+	    <th style="width:120px;">CPF</th>
+		
+		    <th style="width:120px;">Advogados</th>
+		
+	    <th style="width:120px;">Endere&ccedil;o</th>
+	    
+	</tr>
+
+
+
+
+    <tr id="tr13412283"  class="linhaClara" >
+        
+                <td id="td13412283" style="white-space:nowrap;text-align:center;width:20px;">
+                
+                </td>                         
+        
+      
+        <td id="td113412283" style="padding-left:5px;">
+        	BANCO MERCANTIL DO BRASIL SA
+        	
+           		<img border="0" title="Parte credenciada para recebimento de citação/intimação eletrônica" src="/projudi/imagens/envelope.jpg"/>
+           		
+           		<img border="0" title="Parte credenciada para participar da Negociação Virtual" src="/projudi/imagens/icon/negociacao_mao.gif"/>
+           		
+           	
+    		    <img border="0" title="Parte credenciada ao Domicílio CNJ" src="/projudi/imagens/favicon-domicilio-judicial-eletronico.png"/>&nbsp;
+	    	
+        	
+                
+                
+        	
+        	
+        </td>                                                                                                                                          
+        <td style="white-space:nowrap;text-align:center;width:120px;">
+            
+            Não disponível
+            
+        </td>
+        <td style="white-space:nowrap;text-align:center;width:120px;">
+            
+            Não disponível
+            
+        </td> 
+         
+        	<td style="white-space:nowrap;text-align:center;width:120px;">
+        		<a href="javascript: mostraOculta('13412283','tabelaPartes0',1,'Adv')">Mostrar/Ocultar</a>
+        	</td>
+        
+        <td style="white-space:nowrap;text-align:center;width:120px;">
+            
+            Não disponível
+            
+        </td>
+
+        
+
+
+    </tr>  
+    
+     
+
+
+
+</table>
+
+<!-- Informações (paineis) ocultas que serão exibidas dinamicamente através de javascript -->
+     <!-- Informações de Advogado -->
+     
+     
+    <span id="spanAdv13412283" style="visibility:show;display:none;">
+        <table class="tabelaEndereco" style="width:100%;">
+            <tr class="tCinza">
+                <td width="93" class="topico" >Advogado</td>
+            </tr>
+            <tr>
+                <td>
+                    
+                        
+                        
+                            
+
+
+
+
+
+<link href="/projudi/estilo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/projudi/scripts/subModal/subModal.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/AdvogadoService.js"></script>
+
+<script>
+
+	var parteIdSelecionado = null;
+	
+	function chamaPopWinHistorico(codParteProcesso, codParteRecurso){
+		  showPopWin('/projudi/listagens/HistoricoAdvogado?codParteProcesso=' + codParteProcesso +'&codParteRecurso='+ codParteRecurso, 1001,350,null,true);
+	}
+
+	function chamaPopWinPreCadastro(parteId){
+		  parteIdSelecionado = parteId;
+		  showPopWin('/projudi/cadastros/CadastraAdvogado?ehPreCadastro=true', 850,300,retornoPopWinPreCadastro,true);
+	}
+
+	function chamaPopWinPreCadastroUpdate(oab, estadoOab, complementoOab){
+		let url = '/projudi/cadastros/CadastraAdvogado?ehPreCadastro=true&oab=' + oab + '&estadoOab=' + estadoOab + '&complementoOab=' + complementoOab;
+		showPopWin(url, 850, 300, retornoPopWinPreCadastroUpdate, true);
+	}
+
+    function retornoPopWinPreCadastro(retorno){
+	    // Verificar se o retorno é válido
+	    if (!retorno || retorno.length < 3) {
+	        console.error('Retorno inválido do pré-cadastro');
+	        return;
+	    }
+
+	    var oab = retorno[0];
+	    var estadoOAB = retorno[1];
+	    var complementoOAB = retorno[2];
+
+	    // Preencher os campos do formulário principal
+	    document.getElementById('OAB' + parteIdSelecionado).value = oab;
+	    document.getElementById('estadoOAB' + parteIdSelecionado).value = estadoOAB;
+	    
+	    // Adiciona o novo do complemento OAB não mapeado vindo do CNA
+	    var opcoesComplementoOAB = Array.from(document.getElementById('complementoOAB' + parteIdSelecionado));
+	     
+		var opcoesComplementoOABDocument = document.getElementById('complementoOAB' + parteIdSelecionado);
+	    var novoComplementoOAB = new Option(complementoOAB, complementoOAB);
+	    opcoesComplementoOABDocument.add(novoComplementoOAB);
+
+	    document.getElementById('complementoOAB' + parteIdSelecionado).value = complementoOAB;
+	    	   
+		//Realiza o insert
+	    doPost('insereAdvogado', 'parteId=' + parteIdSelecionado +'&ehCadastroInicial=false', 0);
+    }
+
+    function retornoPopWinPreCadastroUpdate(){
+    	window.location.reload();
+    }
+	
+</script>
+
+
+
+              
+   
+              <table style="width:100%;" class="tabelaLista" id="tabelaAdvogadoPartes0">   
+                <tr>
+                    <th >Nome</th>                   
+                    <th style="width:120px;">OAB/MADEP</th> 
+                    <!--<th style="width:50px;">E-mail</th>-->
+                    
+                </tr>
+                
+                        <tr  class="linhaClara"  > 
+                            
+                            	<td style="padding-left:5px;">BERNARDO PARREIRAS DE FREITAS
+                            	
+                            	
+	                           </td>
+                                                        
+                            <td style="white-space:nowrap;text-align:center;width:120px;">109797N-MG</td>
+                            
+                            
+                        </tr>						
+                
+                
+                
+			  				
+			 
+              </table>
+              
+             
+                                
+    							
+                        
+                    
+                </td>
+            </tr>
+        </table>
+    </span>
+
+    <!-- Informações de Endereço -->
+    <span id="spanEnd13412283" style="visibility:hidden;display:none;">
+        <table class="tabelaEndereco" style="width:100%;">
+            <tr class="tCinza">
+                <td width="93" class="topico" >Endere&ccedil;o</td>
+            </tr>
+            <tr>
+                <td>
+                    
+                        
+                            
+                            AVENIDA DO CONTORNO
+                            ,&nbsp;5800
+                            ,&nbsp;ANDAR 11 12 13 14 E 15
+                            ,&nbsp;FUNCIONARIOS
+                            
+                                
+                                    ,&nbsp;BELO HORIZONTE
+                                
+                                
+                            
+                            
+                                
+                                    &nbsp;-&nbsp;MG
+                                
+                                
+                            
+                            
+                                &nbsp;-&nbsp;BRASIL
+                            
+
+                            ,&nbsp;30110042
+                            
+                                <br/>LEGALIZACAO.AGENCIAS@MERCANTIL.COM.BR
+                            
+                            
+                                , (Contato: 31 3057 5342)
+                             
+                             
+                        
+                        
+                                        
+                </td>
+            </tr>
+        </table>      
+    </span>
+    
+
+
+                    </td>
+                </tr>
+            
+                <tr>
+                    
+                        
+                            <td nowrap   class="tBranca"   > <div align="center"><strong>Testemunha</strong></div></td>
+                        
+                        
+                    
+                    <td colspan="3" class="tCinza">
+                        
+
+
+
+
+
+
+
+
+
+<script src="/projudi/dwr/engine.js"></script>
+<script src="/projudi/dwr/util.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/ParteService.js"></script>
+
+<script>
+	var codParteSelect = 0;
+	function obterQuantProcessoParte(codParte){
+		codParteSelect = codParte;
+		ParteService.obterQuantidadeProcessoParte(codParte, exibeQuantProcessoParte);
+		document.getElementById("div"+codParte).innerHTML = '<font color=\"#AA1C1C\">Carregando ...</font>';	
+	}
+	function exibeQuantProcessoParte(valor){
+		div = document.getElementById('div'+codParteSelect);
+		div.innerHTML = '<a href="/projudi/buscas/ProcessosParte?fm=post&codParte='+codParteSelect+'&nome="""">('+valor+' Processo(s) Distribuído(s))</a>';
+	}
+	
+    function mostraOculta(idParteProcesso,idTabela,linhaCount,tipoInfo){
+        var titulo;
+        var conteudoHTML;
+        span = document.getElementById('span'+tipoInfo+idParteProcesso);
+        trEndAdv = document.getElementById('tr'+tipoInfo+idParteProcesso);
+        tr = document.getElementById('tr'+idParteProcesso);
+        td = document.getElementById('td'+idParteProcesso);
+        td1 = document.getElementById('td1'+idParteProcesso);
+        tabela = document.getElementById(idTabela);
+    
+        if(trEndAdv == null){
+            novotr = tabela.insertRow(tr.rowIndex+1);
+            novotr.id = 'tr'+tipoInfo+idParteProcesso;
+            if(linhaCount % 2 == 0){
+                novotr.className = 'linhaEscura';
+            }
+            else{
+                novotr.className = 'linhaClara';
+            }
+            novotd = novotr.insertCell(0);
+            novotd.innerHTML = span.innerHTML;
+                     
+                         
+                         
+                                     novotd.colSpan = 4;
+                                     td.rowSpan = td.rowSpan+1;
+                                     td1.rowSpan = td1.rowSpan+1;                                     
+                         
+                     
+                             }
+                             else{   
+                    
+                         
+                                                    
+                                     td.rowSpan = td.rowSpan-1;
+                                     td1.rowSpan = td1.rowSpan-1;                                     
+                         
+                                        
+                                tabela.deleteRow(trEndAdv.rowIndex);
+                            } 
+                        }
+    
+                        function excluirParte(radioExcluirNome, tableExcluirNome){
+                            radioExcluirParte = document.getElementById(radioExcluirNome);
+							tableExcluirParte = document.getElementById(tableExcluirNome);
+							
+							var itens = tableExcluirParte.getElementsByTagName('input');
+							var checked = false;
+							
+							for(i=0;i<itens.length;i++){
+								if(itens[i].type=='radio'){
+									checked = itens[i].checked;
+									if(itens[i].checked) break;
+								}
+							}
+						 
+                            if(checked){
+                                if(confirm('Tem certeza que deseja excluir do processo a parte selecionada?'))
+                                    doPost(radioExcluirParte.name,null,0);
+                            }
+                            else{
+                                alert("Selecione uma Parte para excluir.")
+
+                            }
+                        }
+
+                        
+	function chamaPopWinDadosGeraisParte(){
+		var codParte = '0';
+		showPopWin('/projudi/popupModalAlterarDadosGeraisParte.jsp?codParte=' + codParte + '&primeiraVez=true', 1000,420,retornoPopWinDadosGeraisParte,true);
+	}
+
+    function retornoPopWinDadosGeraisParte(){
+        document.formCadastraPartesAcao.submit();
+    }
+
+
+</script>
+
+
+
+
+
+
+
+<table style="width:100%;" class="tabelaLista" id="tabelaPartes3">
+	<tr>
+	    
+	       <th></th>
+	    
+	    <th>Nome</th>         
+	    <th style="width:120px;">Identidade</th>
+	    <th style="width:120px;">CPF</th>
+		
+		    <th style="width:120px;">Advogados</th>
+		
+	    <th style="width:120px;">Endere&ccedil;o</th>
+	    
+	</tr>
+
+
+
+     
+
+
+
+</table>
+
+<!-- Informações (paineis) ocultas que serão exibidas dinamicamente através de javascript -->
+     <!-- Informações de Advogado -->
+     
+     
+
+                    </td>
+                </tr>
+            
+                <tr>
+                    
+                        
+                            <td nowrap   class="tCinza"   > <div align="center"><strong>Terceiro</strong></div></td>
+                        
+                        
+                    
+                    <td colspan="3" class="tCinza">
+                        
+
+
+
+
+
+
+
+
+
+<script src="/projudi/dwr/engine.js"></script>
+<script src="/projudi/dwr/util.js"></script>
+<script type="text/javascript" src="/projudi/dwr/interface/ParteService.js"></script>
+
+<script>
+	var codParteSelect = 0;
+	function obterQuantProcessoParte(codParte){
+		codParteSelect = codParte;
+		ParteService.obterQuantidadeProcessoParte(codParte, exibeQuantProcessoParte);
+		document.getElementById("div"+codParte).innerHTML = '<font color=\"#AA1C1C\">Carregando ...</font>';	
+	}
+	function exibeQuantProcessoParte(valor){
+		div = document.getElementById('div'+codParteSelect);
+		div.innerHTML = '<a href="/projudi/buscas/ProcessosParte?fm=post&codParte='+codParteSelect+'&nome="""">('+valor+' Processo(s) Distribuído(s))</a>';
+	}
+	
+    function mostraOculta(idParteProcesso,idTabela,linhaCount,tipoInfo){
+        var titulo;
+        var conteudoHTML;
+        span = document.getElementById('span'+tipoInfo+idParteProcesso);
+        trEndAdv = document.getElementById('tr'+tipoInfo+idParteProcesso);
+        tr = document.getElementById('tr'+idParteProcesso);
+        td = document.getElementById('td'+idParteProcesso);
+        td1 = document.getElementById('td1'+idParteProcesso);
+        tabela = document.getElementById(idTabela);
+    
+        if(trEndAdv == null){
+            novotr = tabela.insertRow(tr.rowIndex+1);
+            novotr.id = 'tr'+tipoInfo+idParteProcesso;
+            if(linhaCount % 2 == 0){
+                novotr.className = 'linhaEscura';
+            }
+            else{
+                novotr.className = 'linhaClara';
+            }
+            novotd = novotr.insertCell(0);
+            novotd.innerHTML = span.innerHTML;
+                     
+                         
+                         
+                                     novotd.colSpan = 4;
+                                     td.rowSpan = td.rowSpan+1;
+                                     td1.rowSpan = td1.rowSpan+1;                                     
+                         
+                     
+                             }
+                             else{   
+                    
+                         
+                                                    
+                                     td.rowSpan = td.rowSpan-1;
+                                     td1.rowSpan = td1.rowSpan-1;                                     
+                         
+                                        
+                                tabela.deleteRow(trEndAdv.rowIndex);
+                            } 
+                        }
+    
+                        function excluirParte(radioExcluirNome, tableExcluirNome){
+                            radioExcluirParte = document.getElementById(radioExcluirNome);
+							tableExcluirParte = document.getElementById(tableExcluirNome);
+							
+							var itens = tableExcluirParte.getElementsByTagName('input');
+							var checked = false;
+							
+							for(i=0;i<itens.length;i++){
+								if(itens[i].type=='radio'){
+									checked = itens[i].checked;
+									if(itens[i].checked) break;
+								}
+							}
+						 
+                            if(checked){
+                                if(confirm('Tem certeza que deseja excluir do processo a parte selecionada?'))
+                                    doPost(radioExcluirParte.name,null,0);
+                            }
+                            else{
+                                alert("Selecione uma Parte para excluir.")
+
+                            }
+                        }
+
+                        
+	function chamaPopWinDadosGeraisParte(){
+		var codParte = '0';
+		showPopWin('/projudi/popupModalAlterarDadosGeraisParte.jsp?codParte=' + codParte + '&primeiraVez=true', 1000,420,retornoPopWinDadosGeraisParte,true);
+	}
+
+    function retornoPopWinDadosGeraisParte(){
+        document.formCadastraPartesAcao.submit();
+    }
+
+
+</script>
+
+
+
+
+
+
+
+<table style="width:100%;" class="tabelaLista" id="tabelaPartes2">
+	<tr>
+	    
+	       <th></th>
+	    
+	    <th>Nome</th>         
+	    <th style="width:120px;">Identidade</th>
+	    <th style="width:120px;">CPF</th>
+		
+		    <th style="width:120px;">Advogados</th>
+		
+	    <th style="width:120px;">Endere&ccedil;o</th>
+	    
+	</tr>
+
+
+
+     
+
+
+
+</table>
+
+<!-- Informações (paineis) ocultas que serão exibidas dinamicamente através de javascript -->
+     <!-- Informações de Advogado -->
+     
+     
+
+                    </td>
+                </tr>
+            
+        
+        <tr>
+            <td align="center" nowrap class="tBranca"><div align="left"><strong>Proc. Principal</strong></div></td>
+            <td class="tBranca">
+                
+                O Próprio
+                  </td>
+            <td align="center" class="tBranca"><div align="left"><strong>Proc. Dependentes</strong></div></td>
+            <td class="tBranca">
+                     
+            
+                   
+                             
+             </td>
+        </tr>
+        <tr class="tCinza">
+            <td align="center" nowrap class="tCinza"><div align="left"><strong>Ju&iacute;zo:</strong></div></td>
+            <td class="tCinza">1ª Vara do Sistema dos Juizados - BARREIRAS <b>Juiz</b>: OCLEI ALVES DA SILVA <a href="javascript:chamaPopHist(34020255277923);">Histórico de Juízes</a></td>
+            <td align="center" class="tCinza">&nbsp;</td>
+            <td class="tCinza">&nbsp;</td>
+        </tr>
+        <tr class="tCinza">
+            <td align="center" nowrap class="tBranca"><div align="left"><strong>Assunto:</strong></div></td>
+            <td  class="tBranca">Cartão de Crédito &laquo; Contratos de Consumo &laquo; DIREITO DO CONSUMIDOR</td>
+            <td class="tBranca">&nbsp;</td>
+            <td class="tBranca">&nbsp;</td>
+        </tr>
+        <tr class="tBranca">
+            <td height="18" align="center" nowrap><div align="left"><strong>Complementares:</strong></div></td>
+            <td colspan="3" valign="top">
+                <table width="100%" border="0">
+                    
+                        <tr>
+                            <td style="border-bottom:0.4px solid #7f7f7f;"> Defeito, nulidade ou anulação &laquo; Ato / Negócio Jurídico &laquo; Fatos Jurídicos &laquo; DIREITO CIVIL</td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="border-bottom:0.4px solid #7f7f7f;"> Indenização por Dano Moral &laquo; Responsabilidade do Fornecedor &laquo; DIREITO DO CONSUMIDOR</td>
+                        </tr>
+                    
+            </table>    </td>
+            <td>    </td>
+        </tr>
+        <tr >
+            <td align="center" nowrap class="tCinza"><div align="left"><strong>Classe:</strong></div></td>
+            <td  class="tCinza">Procedimento do Juizado Especial Cível &laquo; Procedimento de Conhecimento &laquo; Processo de Conhecimento &laquo; PROCESSO CÍVEL E DO TRABALHO</td>
+            
+            
+                <td colspan="2"><table cellpadding="4" width="100%"><tr>
+                <td bgcolor="lightgray" align="center" > <a href="/projudi/listagens/AnalisePrevencao?numeroProcesso=34020255277923" target="_self"> <b><font color="darkred" size="2"> Este processo possui 1 suspeita de prevenção</font></b></a></td>
+                </tr></table></td>
+            
+            
+
+        </tr>
+        <tr>
+            <!--
+<td align="center" nowrap class="tBranca"> <div align="left"><strong>Tipo de A&ccedil;&atilde;o</strong></strong>:</div></td>
+<td  class="tBranca">Procedimento do Juizado Especial Cível</td>
+            -->
+				<td align="center"><div align="left"><strong>Segredo de Justi&ccedil;a</strong></div></td>
+				<td ><div ><strong>N&Atilde;O</strong>
+				
+				</div></td>
+            
+        </tr>
+
+        <tr> 
+            <td align="center" nowrap class="tCinza"> <div align="left"><strong>Proridade Processual:</strong>:</div></td>
+            <td  class="tCinza"> NORMAL      </td>
+            <td class="tCinza">&nbsp;</td>
+            <td class="tCinza">&nbsp;</td>
+        </tr>
+        <tr class="tBranca">
+            <td align="center" nowrap class="tBranca"> <div align="left"><strong>Fase
+            Processual</strong>:</div></td>
+            <td  class="tBranca">CONHECIMENTO</td>
+            <td nowrap class="tBranca"> <div align="left"><strong>Objeto</strong></div></td>
+            <td  class="tBranca"><font color='FF0000'><strong>OBJETO NÃO CADASTRADO</strong></font>
+            <div align="center"></div></td>
+        </tr>
+        <tr>
+            <td align="center" nowrap class="tCinza"> <div align="left"><strong>Situa&ccedil;&atilde;o</strong>:</div></td>
+            <td  class="tCinza"> PROCESSO DISTRIBUÍDO      </td>
+            <td  nowrap class="tCinza"> <div align="left"><strong>Data de Distribui&ccedil;&atilde;o</strong></div></td>
+            <td  class="tCinza"> 26 de Dezembro de 2025 &agrave;s 09:30:20 h
+            <div align="center"></div></td>
+        </tr>
+
+        <tr>
+            <td align="center" nowrap class="tBranca"><div align="left"><strong>Valor da Causa</strong>:</div></td>
+            <td class="tBranca" ><b> R$ 24.188,00</b></td>
+            <td align="center" nowrap class="tBranca"><div align="left">&nbsp;</div></td>
+            <td  class="tBranca">&nbsp;</td>
+        </tr>
+        <tr class="tCinza">
+            <td><strong>Cart&oacute;rio Extrajudicial:</strong></td>
+            <td> </td>
+            <td align="center" nowrap><div align="left"><strong>Prioridade</strong></div></td>
+            <td></td>
+        </tr>
+         
+		
+		
+        
+    </table>
+</div>
+<script language="javascript">
+    initPartes();
+</script>   
+<div class="style9">
+<p align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+</div>
+<div id="Arquivos">
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#999999">
+    <tr>
+        <td>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr class="primeiraLinha">
+            <td width="36" nowrap><font size="2">Nº</font></td>
+            <td nowrap><font size="2">Eventos do Processo</font></td>
+            <td width="100" align="center" nowrap><font size="2">Data</font></td>
+            <td width="200" align="center" nowrap><font size="2">Movimentado por</font></td>
+            <td width="95" nowrap align="center"><font size="2">Arquivos/Observação</font></td> 
+                </tr>
+            </table>
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">29</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Disponibilização no Diário da Justiça Eletrônico - DJEN</b></font> <BR>  Disponibilização no Diário da Justiça Eletrônico em (21/05/26) para BANCO MERCANTIL DO BRASIL SA *Referente ao evento Suspensão por Decisão do Presidente do STJ em razão da SIRDR número 10
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>19/05/26</td>
+                    <td width="200" align="center">DJEN CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs405099030">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub405099030">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">28</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Disponibilização no Diário da Justiça Eletrônico - DJEN</b></font> <BR>  Disponibilização no Diário da Justiça Eletrônico em (21/05/26) para LORENA TAYNA CAMPOS DOS SANTOS *Referente ao evento Suspensão por Decisão do Presidente do STJ em razão da SIRDR número 10
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>19/05/26</td>
+                    <td width="200" align="center">DJEN CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs405099029">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub405099029">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">27</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Intimação expedido(a)</b></font> <BR>  (P/ Advgs. de BANCO MERCANTIL DO BRASIL SA) Sem prazo Aguardando disponibilização no Diário da Justiça Eletrônico Nacional - DJEN (CNJ)
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>18/05/26</td>
+                    <td width="200" align="center">OCLEI ALVES DA SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs404875062">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub404875062">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">26</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Intimação expedido(a)</b></font> <BR>  (P/ Advgs. de LORENA TAYNA CAMPOS DOS SANTOS) Sem prazo Aguardando disponibilização no Diário da Justiça Eletrônico Nacional - DJEN (CNJ)
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>18/05/26</td>
+                    <td width="200" align="center">OCLEI ALVES DA SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs404875061">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub404875061">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">25</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Processo suspenso por Recurso Especial Repetitivo 1414</b></font> <BR>  1414
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>18/05/26</td>
+                    <td width="200" align="center">OCLEI ALVES DA SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                            <a  href="javascript: mostra('sub404875060')" ><img src="/projudi/imagens/arquivos.png" border="0" width="16" height="16" title="Mostrar ocultar arquvos." onmouseover="this.src='/projudi/imagens/arquivos02.png'" onmouseout="this.src='/projudi/imagens/arquivos.png'" /></a>
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs404875060">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub404875060">
+            
+            <div style="border-top: 2px solid rgb(102, 102, 102);">
+                <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        
+                        <tr>
+                            <td rowspan="1">
+                            Arquivos:</td>
+                            
+                            <td nowrap>Citação</td>
+                            <td align="center" nowrap>Ass.: OCLEI ALVES DA SILVA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >online.html</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </span>
+
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">24</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Conclusos para Sentença</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>03/03/26</td>
+                    <td width="200" align="center">ALEX DOS SANTOS MILHOMENS</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs394963455">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub394963455">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">23</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Audiência de Conciliação Realizada (Telepresencial)</b></font> <BR>   Conduzida por Juiz OCLEI ALVES DA SILVA Realizada em/para 03/03/2026 13:13, BARREIRAS
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>03/03/26</td>
+                    <td width="200" align="center">ALEX DOS SANTOS MILHOMENS</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                            <a  href="javascript: mostra('sub394963454')" ><img src="/projudi/imagens/arquivos.png" border="0" width="16" height="16" title="Mostrar ocultar arquvos." onmouseover="this.src='/projudi/imagens/arquivos02.png'" onmouseout="this.src='/projudi/imagens/arquivos.png'" /></a>
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                        <a  href="javascript: mostra('obs394963454')" ><img src="/projudi/imagens/observacao.png" border="0" width="16" height="16" title="Mostrar observações da movimentação." onmouseover="this.src='/projudi/imagens/observacao02.png'" onmouseout="this.src='/projudi/imagens/observacao.png'" /></a>
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs394963454">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>Audiência realizada através da sala virtual https://call.lifesizecloud.com/3193537<br>Esta movimentação gerou uma ordem automática de pagamento ao Conciliador ALEX DOS SANTOS MILHOMENS, conforme <a href="http://www5.tjba.jus.br/juizadosespeciais/images/pdf/JUIZ_LEIGO_CONCILIADOR/declaracao_conciliador.pdf" target="blank"> declaração</a>.                         </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub394963454">
+            
+            <div style="border-top: 2px solid rgb(102, 102, 102);">
+                <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        
+                        <tr>
+                            <td rowspan="1">
+                            Arquivos:</td>
+                            
+                            <td nowrap>Termo de Audiência</td>
+                            <td align="center" nowrap>Ass.: ALEX DOS SANTOS MILHOMENS</td>
+                            <td nowrap>
+                            
+                            	<a href="/projudi/listagens/DownloadArquivo?arquivo=192918505" >online.html</a>
+                            	
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </span>
+
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">22</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Mudança de Assunto Processual</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>24/02/26</td>
+                    <td width="200" align="center">LORENA DANTAS SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                        <a  href="javascript: mostra('obs393993752')" ><img src="/projudi/imagens/observacao.png" border="0" width="16" height="16" title="Mostrar observações da movimentação." onmouseover="this.src='/projudi/imagens/observacao02.png'" onmouseout="this.src='/projudi/imagens/observacao.png'" /></a>
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs393993752">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td><b>Configuração de Assuntos anterior:</b> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Indenização por Dano Moral<b> (Principal)</b><br>
+<br><b>Nova Configuração de Assuntos:</b> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Indenização por Dano Moral<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Cartão de Crédito<b> (Principal)</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Defeito, nulidade ou anulação<br>
+                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub393993752">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">21</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Juntada de Certidão</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>23/02/26</td>
+                    <td width="200" align="center">SILVANA FERREIRA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                        <a  href="javascript: mostra('obs393756209')" ><img src="/projudi/imagens/observacao.png" border="0" width="16" height="16" title="Mostrar observações da movimentação." onmouseover="this.src='/projudi/imagens/observacao02.png'" onmouseout="this.src='/projudi/imagens/observacao.png'" /></a>
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs393756209">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td> Advogados habilitados: OAB: 109797-N/MG para a parte BANCO MERCANTIL DO BRASIL SA<br>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub393756209">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">20</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Outros Tipos de Documentos lido(a)</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>23/02/26</td>
+                    <td width="200" align="center">SILVANA FERREIRA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs393756052">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub393756052">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">19</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Juntada de Petição de Contestação</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>23/02/26</td>
+                    <td width="200" align="center">BERNARDO PARREIRAS DE FREITAS</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                            <a  href="javascript: mostra('sub393755814')" ><img src="/projudi/imagens/arquivos.png" border="0" width="16" height="16" title="Mostrar ocultar arquvos." onmouseover="this.src='/projudi/imagens/arquivos02.png'" onmouseout="this.src='/projudi/imagens/arquivos.png'" /></a>
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs393755814">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub393755814">
+            
+            <div style="border-top: 2px solid rgb(102, 102, 102);">
+                <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        
+                        <tr>
+                            <td rowspan="11">
+                            Arquivos:</td>
+                            
+                            <td nowrap>Contestação</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >CONTESTAÃ¿Ã¿O - LORENA TAYNA CAMPOS DOS SANTOS.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Procuração</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >0.2. PROCURAÃ¿Ã¿O.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Procuração</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >04. ATOS CONSTITUTIVOS.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Substabelecimento</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >Substabelecimento+687542.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>1</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >2 VIA 5345782.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>2</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >TERMO DE CONSENTIMENTO.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>3</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >000124885_ComprovanteSaque.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>4</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >EXTRATO.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>5</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >Multiextrato_1.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>6</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >000124885_FaturaCartao_1.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Procuração</td>
+                            <td align="center" nowrap>Ass.: BERNARDO PARREIRAS DE FREITAS</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >Carta de PreposiÃ§Ã£o - Geral.docx.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </span>
+
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">18</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Juntada de AR - Aviso de Recebimento</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>14/02/26</td>
+                    <td width="200" align="center">ECT</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                            <a  href="javascript: mostra('sub393043689')" ><img src="/projudi/imagens/arquivos.png" border="0" width="16" height="16" title="Mostrar ocultar arquvos." onmouseover="this.src='/projudi/imagens/arquivos02.png'" onmouseout="this.src='/projudi/imagens/arquivos.png'" /></a>
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs393043689">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub393043689">
+            
+            <div style="border-top: 2px solid rgb(102, 102, 102);">
+                <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        
+                        <tr>
+                            <td rowspan="1">
+                            Arquivos:</td>
+                            
+                            <td nowrap>Citação</td>
+                            <td align="center" nowrap>Ass.: ECT</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >28556182000000412026021128.PDF</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </span>
+
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">17</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Citação lido(a)</b></font> <BR>  P/ BANCO MERCANTIL DO BRASIL SA em 04/02/26
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>14/02/26</td>
+                    <td width="200" align="center">ECT</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs393043688">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub393043688">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">16</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Juntada de Certidão</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">LORENA DANTAS SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                        <a  href="javascript: mostra('obs390514817')" ><img src="/projudi/imagens/observacao.png" border="0" width="16" height="16" title="Mostrar observações da movimentação." onmouseover="this.src='/projudi/imagens/observacao02.png'" onmouseout="this.src='/projudi/imagens/observacao.png'" /></a>
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390514817">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>Sala virtual definida, a sala virtual deverá ser consultada no formulário da página inicial do PROJUDI.                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390514817">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">15</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Citação expedido(a)</b></font> <BR>  Para BANCO MERCANTIL DO BRASIL SA
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">TADEU DE JESUS SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                            <a  href="javascript: mostra('sub390496333')" ><img src="/projudi/imagens/arquivos.png" border="0" width="16" height="16" title="Mostrar ocultar arquvos." onmouseover="this.src='/projudi/imagens/arquivos02.png'" onmouseout="this.src='/projudi/imagens/arquivos.png'" /></a>
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390496333">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390496333">
+            
+            <div style="border-top: 2px solid rgb(102, 102, 102);">
+                <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        
+                        <tr>
+                            <td rowspan="1">
+                            Arquivos:</td>
+                            
+                            <td nowrap>Citação</td>
+                            <td align="center" nowrap>Ass.: TADEU DE JESUS SILVA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >online.html</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </span>
+
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">14</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Audiência de Conciliação Designada (Telepresencial)</b></font> <BR>  (Designada para 3 de Março de 2026 &agrave;s 10:15 h)
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">TADEU DE JESUS SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390496304">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390496304">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">13</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Audiência de Conciliação Redesignada (Telepresencial)</b></font> <BR>  Redesignada
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">TADEU DE JESUS SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390496289">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390496289">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">12</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" > Ato ordinatório praticado</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">TADEU DE JESUS SILVA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390496288">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390496288">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">11</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Solicitada a Expedição de Citação</b></font> <BR>  (Para BANCO MERCANTIL DO BRASIL SA) Sem prazo
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">NAIRA MARIANA FERRAZ GOMES</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390427292">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390427292">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">10</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" > Ato ordinatório praticado</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">NAIRA MARIANA FERRAZ GOMES</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390427291">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390427291">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">9</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Juntada de Não confirmação da citação eletrônica</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">SISTEMA CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390395653">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390395653">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">8</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Não confirmada a citação eletrônica</b></font> <BR>  Para BANCO MERCANTIL DO BRASIL SA
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/01/26</td>
+                    <td width="200" align="center">SISTEMA CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs390395652">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub390395652">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">7</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Juntada de Certidão</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>07/01/26</td>
+                    <td width="200" align="center">DIERRE JOSE DOS ANJOS</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                        <a  href="javascript: mostra('obs388118074')" ><img src="/projudi/imagens/observacao.png" border="0" width="16" height="16" title="Mostrar observações da movimentação." onmouseover="this.src='/projudi/imagens/observacao02.png'" onmouseout="this.src='/projudi/imagens/observacao.png'" /></a>
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs388118074">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>Sala virtual definida, a sala virtual deverá ser consultada no formulário da página inicial do PROJUDI.                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub388118074">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">6</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Remetidos os Autos para a Negociação Virtual</b></font> <BR> 
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/12/25</td>
+                    <td width="200" align="center">SISTEMA CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                        <a  href="javascript: mostra('obs387568448')" ><img src="/projudi/imagens/observacao.png" border="0" width="16" height="16" title="Mostrar observações da movimentação." onmouseover="this.src='/projudi/imagens/observacao02.png'" onmouseout="this.src='/projudi/imagens/observacao.png'" /></a>
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs387568448">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>(<a href="http://www5.tjba.jus.br/juizadosespeciais/images/pdf/Certidao_de_Envio_Negociacao_Virtual.pdf" target="blank">Clique aqui para mais orientações</a>)                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub387568448">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">5</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Citação expedido(a)</b></font> <BR>  (Para BANCO MERCANTIL DO BRASIL SA) Sem prazo
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/12/25</td>
+                    <td width="200" align="center">SISTEMA CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                        <a  href="javascript: mostra('obs387568447')" ><img src="/projudi/imagens/observacao.png" border="0" width="16" height="16" title="Mostrar observações da movimentação." onmouseover="this.src='/projudi/imagens/observacao02.png'" onmouseout="this.src='/projudi/imagens/observacao.png'" /></a>
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs387568447">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>Citação realizada através do Domicílio Eletrônico (Nacional)                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub387568447">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">4</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Intimação lido(a)</b></font> <BR>  (Para LORENA TAYNA CAMPOS DOS SANTOS) em 26/12/25 *Referente ao evento Audiência de Conciliação Designada (Telepresencial)(26/12/25)
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/12/25</td>
+                    <td width="200" align="center">SISTEMA CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs387568446">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub387568446">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">3</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Audiência de Conciliação Designada (Telepresencial)</b></font> <BR>  (Designada para 9 de Fevereiro de 2026 &agrave;s 11:45 h)
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/12/25</td>
+                    <td width="200" align="center">SISTEMA CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs387568445">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub387568445">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tCinza">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">2</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Distribuído por Sorteio</b></font> <BR>  1ª Vara do Sistema dos Juizados - BARREIRAS
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/12/25</td>
+                    <td width="200" align="center">SISTEMA CNJ</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs387568444">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub387568444">
+            
+    <div style="border-top: 2px solid rgb(102, 102, 102); ">Movimentação sem arquivos</div>
+    
+    
+    <tr>
+        <td class="tBranca">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr >
+                    <td  height="40" width="33">1</td>
+                    <td><b><!--ATENCAOTJBA--><font size="2" color="#800517" >Recebido pelo Distribuidor</b></font> <BR>  Origem: OAB50375NBA
+                                                
+                    </td>
+                    <td width="100" align="center" nowrap>26/12/25</td>
+                    <td width="200" align="center">ALESSANDRO FAGUNDES MOURA</td>
+                    <td width="98" nowrap> <div style="cursor:pointer "> <div align="center">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="33%">
+                                    
+                                            <a  href="javascript: mostra('sub387568443')" ><img src="/projudi/imagens/arquivos.png" border="0" width="16" height="16" title="Mostrar ocultar arquvos." onmouseover="this.src='/projudi/imagens/arquivos02.png'" onmouseout="this.src='/projudi/imagens/arquivos.png'" /></a>
+                                    
+                                    </td>
+                                    <td width="34%">
+                                     
+                                    </td>                                  
+                                    <td width="33%">
+                                    
+                                    </td>                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <span id="obs387568443">
+                <div style="border-top: 2px solid rgb(102, 102, 102);">
+                    <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                        <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>                        </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </span>
+
+            <span id="sub387568443">
+            
+            <div style="border-top: 2px solid rgb(102, 102, 102);">
+                <div style="border-top: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-bottom: 2px solid rgb(255, 255, 255);">
+                    <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        
+                        <tr>
+                            <td rowspan="6">
+                            Arquivos:</td>
+                            
+                            <td nowrap>Petição Inicial</td>
+                            <td align="center" nowrap>Ass.: ALESSANDRO FAGUNDES MOURA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >petiÃ§Ã£o rcc.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Procuração</td>
+                            <td align="center" nowrap>Ass.: ALESSANDRO FAGUNDES MOURA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >procuraÃ§Ã£o Lorena TainÃ¡.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Digite/informe aqui a DescriÃ§Ã£o</td>
+                            <td align="center" nowrap>Ass.: ALESSANDRO FAGUNDES MOURA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >identidade Lorena.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Digite/informe aqui a DescriÃ§Ã£o</td>
+                            <td align="center" nowrap>Ass.: ALESSANDRO FAGUNDES MOURA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >historico-creditos (14)rcc.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Comprovante Residência</td>
+                            <td align="center" nowrap>Ass.: ALESSANDRO FAGUNDES MOURA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >comprovante de endereÃ§o em nome da tia.pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                            <td nowrap>Digite/informe aqui a DescriÃ§Ã£o</td>
+                            <td align="center" nowrap>Ass.: ALESSANDRO FAGUNDES MOURA</td>
+                            <td nowrap>
+                            
+                            	<a href="javaScript:alert('O download deste arquivo não está sendo permitido. Apenas usuários cadastrados no sistema podem acessá-lo.');" >extrato_emprestimo_consignado_completo_231225 (1).pdf</a>
+                            
+                            
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </span>
+
+    
+    
+</table>
+
+
+</div>
+<script language="javascript">
+    var ar = document.getElementById("Arquivos").getElementsByTagName("span");
+    for (var i=0; i<ar.length; i++){
+        ar[i].style.display = "none";
+    }
+</script>
+<br>
+<div align="center">
+ <img src="/projudi/imagens/botoes/bot-Imprimir.gif" OnClick="javascript:DoPrinting()">
+     
+         <img src="/projudi/imagens/botoes/bot-voltar.gif" onClick="javascript:window.location='/projudi/Logout';return false;">
+        
+</div>
+
+
+
+
+
+
+
+
+
+
+</body></html>

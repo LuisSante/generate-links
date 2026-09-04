@@ -1,6 +1,259 @@
-{"process_number": "0036864-73.2023.8.05.0080", "iteration": 187, "attempt": 0, "status": 200, "tipo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
-{"process_number": "0074636-79.2024.8.05.0001", "iteration": 186, "attempt": 0, "status": 200, "tipo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
-{"process_number": "0051750-18.2026.8.05.0001", "iteration": 13393, "attempt": 0, "status": 200, "tipo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
-{"process_number": "0002440-14.2025.8.05.0022", "iteration": 13390, "attempt": 0, "status": 200, "tipo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
-{"process_number": "0122470-78.2024.8.05.0001", "iteration": 13367, "attempt": 0, "status": 200, "tipo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
-{"process_number": "0085670-80.2026.8.05.0001", "iteration": 13350, "attempt": 0, "status": 200, "tipo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0036864-73.2023.8.05.0080", "iteration": 187, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0074636-79.2024.8.05.0001", "iteration": 186, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0055133-09.2023.8.05.0001", "iteration": 200, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0008675-49.2024.8.05.0113", "iteration": 199, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0069034-44.2023.8.05.0001", "iteration": 198, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002020-44.2024.8.05.0248", "iteration": 197, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002120-96.2024.8.05.0248", "iteration": 196, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002254-26.2024.8.05.0248", "iteration": 195, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002027-36.2024.8.05.0248", "iteration": 194, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0189063-26.2023.8.05.0001", "iteration": 193, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0090788-08.2024.8.05.0001", "iteration": 192, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002061-56.2024.8.05.0039", "iteration": 191, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001781-68.2024.8.05.0271", "iteration": 190, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0097747-92.2024.8.05.0001", "iteration": 189, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0100074-78.2022.8.05.0001", "iteration": 188, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002117-44.2024.8.05.0248", "iteration": 185, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003490-93.2025.8.05.0113", "iteration": 13433, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0201695-50.2024.8.05.0001", "iteration": 13432, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0053646-33.2025.8.05.0001", "iteration": 13431, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0006312-20.2024.8.05.0039", "iteration": 13430, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0138176-67.2025.8.05.0001", "iteration": 13429, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0213727-87.2024.8.05.0001", "iteration": 13428, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0222185-59.2025.8.05.0001", "iteration": 13427, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003567-22.2024.8.05.0248", "iteration": 13426, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0008224-60.2023.8.05.0080", "iteration": 13425, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0152443-44.2025.8.05.0001", "iteration": 13424, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0014636-96.2024.8.05.0039", "iteration": 13423, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003415-90.2025.8.05.0004", "iteration": 13422, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0163603-03.2024.8.05.0001", "iteration": 13421, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0012813-87.2024.8.05.0039", "iteration": 13420, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003227-77.2025.8.05.0043", "iteration": 13419, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0007627-14.2024.8.05.0256", "iteration": 13418, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0005242-20.2024.8.05.0248", "iteration": 13417, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0161668-25.2024.8.05.0001", "iteration": 13416, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003511-86.2024.8.05.0248", "iteration": 13415, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001296-47.2026.8.05.0126", "iteration": 13414, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000567-73.2026.8.05.0141", "iteration": 13413, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001077-13.2025.8.05.0112", "iteration": 13412, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0219386-77.2024.8.05.0001", "iteration": 13411, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001805-53.2025.8.05.0080", "iteration": 13410, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0007211-18.2024.8.05.0039", "iteration": 13409, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0014099-03.2024.8.05.0039", "iteration": 13408, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0017735-40.2025.8.05.0039", "iteration": 13407, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0149590-96.2024.8.05.0001", "iteration": 13406, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0092493-70.2026.8.05.0001", "iteration": 13405, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000149-07.2026.8.05.0022", "iteration": 13404, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0018076-66.2025.8.05.0039", "iteration": 13403, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000879-18.2026.8.05.0022", "iteration": 13402, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0004344-85.2025.8.05.0146", "iteration": 13401, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003452-20.2025.8.05.0004", "iteration": 13400, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0033586-30.2024.8.05.0080", "iteration": 13399, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0051750-18.2026.8.05.0001", "iteration": 13393, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0002440-14.2025.8.05.0022", "iteration": 13390, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0004075-42.2024.8.05.0191", "iteration": 13398, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0201687-73.2024.8.05.0001", "iteration": 13397, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0039660-75.2026.8.05.0001", "iteration": 13396, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002593-90.2025.8.05.0137", "iteration": 13395, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0005398-38.2024.8.05.0141", "iteration": 13394, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0057359-79.2026.8.05.0001", "iteration": 13392, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003383-17.2026.8.05.0080", "iteration": 13391, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000191-56.2026.8.05.0022", "iteration": 13389, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0089611-38.2026.8.05.0001", "iteration": 13388, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001571-46.2025.8.05.0250", "iteration": 13387, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000458-28.2026.8.05.0022", "iteration": 13386, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001579-61.2026.8.05.0032", "iteration": 13385, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000170-14.2026.8.05.0141", "iteration": 13384, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002909-87.2025.8.05.0110", "iteration": 13383, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0006495-31.2025.8.05.0079", "iteration": 13382, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001113-48.2025.8.05.0082", "iteration": 13381, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002579-58.2025.8.05.0250", "iteration": 13380, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0122470-78.2024.8.05.0001", "iteration": 13367, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0000943-59.2023.8.05.0078", "iteration": 13379, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0007155-52.2024.8.05.0146", "iteration": 13378, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002069-81.2025.8.05.0141", "iteration": 13377, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0127980-38.2025.8.05.0001", "iteration": 13376, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003755-77.2025.8.05.0022", "iteration": 13375, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0129711-69.2025.8.05.0001", "iteration": 13374, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001282-61.2026.8.05.0256", "iteration": 13373, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0139944-28.2025.8.05.0001", "iteration": 13372, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003791-86.2026.8.05.0248", "iteration": 13371, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001948-97.2025.8.05.0191", "iteration": 13370, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0016824-28.2025.8.05.0039", "iteration": 13369, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0016069-38.2024.8.05.0039", "iteration": 13368, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000690-40.2026.8.05.0022", "iteration": 13366, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0103886-60.2024.8.05.0001", "iteration": 13365, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003637-24.2025.8.05.0274", "iteration": 13364, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0230932-95.2025.8.05.0001", "iteration": 13363, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0085670-80.2026.8.05.0001", "iteration": 13350, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0214198-69.2025.8.05.0001", "iteration": 13362, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0136891-73.2024.8.05.0001", "iteration": 13361, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001101-78.2026.8.05.0250", "iteration": 13360, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0115505-84.2024.8.05.0001", "iteration": 13359, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001694-07.2024.8.05.0112", "iteration": 13358, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0149046-74.2025.8.05.0001", "iteration": 13357, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003857-69.2025.8.05.0032", "iteration": 13356, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000565-72.2026.8.05.0022", "iteration": 13355, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0029104-05.2025.8.05.0080", "iteration": 13354, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0005452-59.2025.8.05.0079", "iteration": 13353, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0100085-05.2025.8.05.0001", "iteration": 13352, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002323-44.2025.8.05.0112", "iteration": 13351, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001234-48.2026.8.05.0274", "iteration": 13349, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0006488-32.2025.8.05.0146", "iteration": 13348, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000200-83.2025.8.05.0141", "iteration": 13347, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002487-46.2025.8.05.0229", "iteration": 13346, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001404-60.2025.8.05.0078", "iteration": 13345, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0004521-62.2025.8.05.0271", "iteration": 13344, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0133945-94.2025.8.05.0001", "iteration": 13343, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002237-19.2026.8.05.0248", "iteration": 13342, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002448-03.2026.8.05.0039", "iteration": 13341, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002309-39.2025.8.05.0022", "iteration": 13340, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0187951-51.2025.8.05.0001", "iteration": 13339, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0012201-18.2025.8.05.0039", "iteration": 13338, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002717-10.2024.8.05.0137", "iteration": 13337, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000593-85.2024.8.05.0256", "iteration": 13336, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0223007-82.2024.8.05.0001", "iteration": 13335, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0149061-43.2025.8.05.0001", "iteration": 13334, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0004146-48.2025.8.05.0146", "iteration": 13333, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0005252-83.2025.8.05.0004", "iteration": 13332, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001114-82.2026.8.05.0022", "iteration": 13331, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002242-34.2024.8.05.0079", "iteration": 13330, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0144194-07.2025.8.05.0001", "iteration": 13329, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001642-76.2025.8.05.0079", "iteration": 13328, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0143838-12.2025.8.05.0001", "iteration": 13327, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000667-91.2024.8.05.0078", "iteration": 13326, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0004698-51.2025.8.05.0004", "iteration": 13325, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0006786-82.2025.8.05.0256", "iteration": 13324, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000759-69.2026.8.05.0120", "iteration": 13323, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0024935-72.2025.8.05.0080", "iteration": 13322, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0007126-95.2025.8.05.0039", "iteration": 13321, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000076-56.2026.8.05.0112", "iteration": 13320, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0110293-48.2025.8.05.0001", "iteration": 13319, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002084-28.2026.8.05.0137", "iteration": 13318, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0070648-79.2026.8.05.0001", "iteration": 13317, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000925-07.2026.8.05.0022", "iteration": 13316, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0149037-49.2024.8.05.0001", "iteration": 13315, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0005709-62.2025.8.05.0248", "iteration": 13314, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0178855-46.2024.8.05.0001", "iteration": 13313, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001240-27.2024.8.05.0112", "iteration": 13312, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000940-30.2025.8.05.0274", "iteration": 13311, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003180-98.2024.8.05.0250", "iteration": 13310, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0175448-32.2024.8.05.0001", "iteration": 13309, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0231821-83.2024.8.05.0001", "iteration": 13308, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003829-65.2025.8.05.0141", "iteration": 13307, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000668-79.2026.8.05.0022", "iteration": 13306, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0007017-47.2026.8.05.0039", "iteration": 13305, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003658-09.2024.8.05.0250", "iteration": 13304, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002062-76.2025.8.05.0113", "iteration": 13303, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0017041-29.2025.8.05.0150", "iteration": 13302, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0230560-49.2025.8.05.0001", "iteration": 13301, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0212047-67.2024.8.05.0001", "iteration": 13300, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000531-48.2026.8.05.0103", "iteration": 13299, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0006149-80.2025.8.05.0079", "iteration": 13298, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0229204-53.2024.8.05.0001", "iteration": 13297, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0134747-29.2024.8.05.0001", "iteration": 13296, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002843-18.2024.8.05.0248", "iteration": 13295, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0211612-59.2025.8.05.0001", "iteration": 13294, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0006225-97.2025.8.05.0146", "iteration": 13293, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002923-98.2025.8.05.0004", "iteration": 13292, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0090423-17.2025.8.05.0001", "iteration": 13291, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0017682-59.2025.8.05.0039", "iteration": 13290, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0218806-47.2024.8.05.0001", "iteration": 13289, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0197249-04.2024.8.05.0001", "iteration": 13288, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0006207-61.2025.8.05.0248", "iteration": 13287, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0111975-72.2024.8.05.0001", "iteration": 13286, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000873-61.2025.8.05.0146", "iteration": 13285, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0005889-03.2025.8.05.0079", "iteration": 13284, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0146235-44.2025.8.05.0001", "iteration": 13283, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0114576-17.2025.8.05.0001", "iteration": 13282, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0081682-51.2026.8.05.0001", "iteration": 13281, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002825-94.2024.8.05.0248", "iteration": 13280, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0003456-38.2024.8.05.0248", "iteration": 13279, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0015579-16.2024.8.05.0039", "iteration": 13278, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0197338-90.2025.8.05.0001", "iteration": 13277, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002035-36.2025.8.05.0229", "iteration": 13276, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000693-60.2025.8.05.0141", "iteration": 13275, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0017475-34.2025.8.05.0080", "iteration": 13274, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000430-23.2025.8.05.0078", "iteration": 13273, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0004494-81.2025.8.05.0141", "iteration": 13272, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0005190-18.2026.8.05.0001", "iteration": 13271, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0014106-32.2025.8.05.0080", "iteration": 13270, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0102693-73.2025.8.05.0001", "iteration": 13269, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001466-71.2026.8.05.0141", "iteration": 13268, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0011061-80.2024.8.05.0039", "iteration": 13267, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000671-34.2026.8.05.0022", "iteration": 13266, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0017073-13.2024.8.05.0039", "iteration": 13265, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0016137-53.2025.8.05.0103", "iteration": 13264, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000994-10.2025.8.05.0043", "iteration": 13263, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0015035-65.2025.8.05.0080", "iteration": 13262, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0040416-75.2025.8.05.0080", "iteration": 13261, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0004733-77.2025.8.05.0079", "iteration": 13260, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0015797-10.2025.8.05.0039", "iteration": 13259, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000096-23.2024.8.05.0078", "iteration": 13258, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0007177-89.2026.8.05.0001", "iteration": 13257, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002577-77.2026.8.05.0113", "iteration": 13256, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0006095-10.2025.8.05.0146", "iteration": 13255, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001610-59.2026.8.05.0201", "iteration": 13254, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002051-87.2025.8.05.0229", "iteration": 13253, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0009771-17.2026.8.05.0150", "iteration": 13252, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003092-13.2026.8.05.0146", "iteration": 13251, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0008213-23.2024.8.05.0039", "iteration": 13250, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0005551-17.2024.8.05.0256", "iteration": 13249, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0003841-79.2025.8.05.0141", "iteration": 13248, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000591-21.2025.8.05.0082", "iteration": 13247, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0005731-79.2024.8.05.0079", "iteration": 13246, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0144325-79.2025.8.05.0001", "iteration": 13245, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000054-40.2024.8.05.0250", "iteration": 13244, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0005127-96.2024.8.05.0248", "iteration": 13243, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0057483-62.2026.8.05.0001", "iteration": 13242, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001218-66.2024.8.05.0112", "iteration": 13241, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0004745-68.2025.8.05.0022", "iteration": 13240, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0007720-12.2025.8.05.0039", "iteration": 13239, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0001440-13.2024.8.05.0022", "iteration": 13238, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002982-43.2026.8.05.0201", "iteration": 13237, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0102941-05.2026.8.05.0001", "iteration": 13236, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000177-69.2024.8.05.0078", "iteration": 13235, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001343-97.2025.8.05.0112", "iteration": 13234, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000739-78.2024.8.05.0078", "iteration": 13233, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000636-32.2025.8.05.0112", "iteration": 13232, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000089-31.2024.8.05.0078", "iteration": 13231, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000443-22.2025.8.05.0078", "iteration": 13230, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000431-08.2025.8.05.0078", "iteration": 13229, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000712-14.2026.8.05.0244", "iteration": 13228, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000333-23.2025.8.05.0078", "iteration": 13227, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000906-67.2025.8.05.9000", "iteration": 13214, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo não encontrado."}]}
+{"process_number": "0005839-63.2026.8.05.0039", "iteration": 13226, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0009156-71.2026.8.05.0103", "iteration": 13225, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000880-34.2023.8.05.0078", "iteration": 13224, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001713-13.2024.8.05.0112", "iteration": 13223, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001748-47.2025.8.05.9000", "iteration": 13212, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo não encontrado."}]}
+{"process_number": "0001716-65.2024.8.05.0112", "iteration": 13222, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000257-96.2025.8.05.0078", "iteration": 13221, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000273-50.2025.8.05.0078", "iteration": 13220, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000738-93.2024.8.05.0078", "iteration": 13219, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000533-90.2026.8.05.0079", "iteration": 13218, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000583-56.2025.8.05.0078", "iteration": 13217, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0002406-36.2025.8.05.0120", "iteration": 13216, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0000281-27.2025.8.05.0078", "iteration": 13215, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0209621-82.2024.8.05.0001", "iteration": 13213, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": [{"tipo": "aviso", "texto": "Processo sobrestado sem tema, controvérsia associado."}]}
+{"process_number": "0002201-52.2025.8.05.0105", "iteration": 13211, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0001873-64.2012.8.05.0110", "iteration": 13209, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0000726-27.2026.8.05.0105", "iteration": 13207, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo sob Segredo de Justiça."}]}
+{"process_number": "0000654-40.2026.8.05.0105", "iteration": 13202, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0001155-28.2025.8.05.0105", "iteration": 13210, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0001427-20.2026.8.05.0256", "iteration": 13198, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0002348-76.2026.8.05.0256", "iteration": 13197, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0000822-42.2026.8.05.0105", "iteration": 13208, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000659-62.2026.8.05.0105", "iteration": 13206, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000500-22.2026.8.05.0105", "iteration": 13205, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0004631-72.2026.8.05.0256", "iteration": 13195, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0000281-09.2026.8.05.0105", "iteration": 13204, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000724-57.2026.8.05.0105", "iteration": 13203, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000641-41.2026.8.05.0105", "iteration": 13201, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000317-51.2026.8.05.0105", "iteration": 13200, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0000214-44.2026.8.05.0105", "iteration": 13199, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0004598-82.2026.8.05.0256", "iteration": 13196, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0077094-98.2026.8.05.0001", "iteration": 13192, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
+{"process_number": "0001921-79.2026.8.05.0256", "iteration": 13194, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0004536-42.2026.8.05.0256", "iteration": 13193, "attempt": 0, "status": 200, "tipo": "dados_processo", "motivo": "sem_download", "mensagens": []}
+{"process_number": "0074829-26.2026.8.05.0001", "iteration": 13186, "attempt": 0, "status": 200, "tipo": "erro", "motivo": "erro", "mensagens": [{"tipo": "erro", "texto": "Processo arquivado!"}]}
