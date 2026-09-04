@@ -1,9 +1,12 @@
 from pathlib import Path
 from dotenv import load_dotenv
+from scrapy.exceptions import CloseSpider
 
 from paddleocr import PaddleOCR
+import numpy as np
 import scrapy
 import json
+import cv2
 import os
 
 load_dotenv()
@@ -12,6 +15,20 @@ class LegalSpider(scrapy.Spider):
     name = os.getenv("name")
     allowed_domains = [os.getenv("allowed_domains")]
     start_urls = [os.getenv("legal_url")]
+    max_retries = 3
+    max_saved = 200
+    html_dir = Path("html_group")
+    saved = 0
+
+    def __init__(self, limite=None, **kwargs):
+        super().__init__(**kwargs)
+
+        if limite is not None:
+            limite = str(limite).lower()
+
+            self.max_saved = (
+                0 if limite in ("todo", "todos", "all") else int(limite)
+            )
 
     ocr = PaddleOCR(
         engine="paddle",
@@ -62,26 +79,56 @@ class LegalSpider(scrapy.Spider):
             response.css("#idImg").attrib["src"]
         )
 
+        form_action = response.urljoin(form.attrib["action"])
         process_list = self.read_json(response)
 
         for i in range(len(process_list)):
-            yield scrapy.Request(
-                legal_img,
-                callback=self.parse_legal_image,
-                meta={
-                    "legal_img": legal_img,
-                    "process_number": process_list[i],
-                    "form_action": response.urljoin(form.attrib["action"]),
-                    "input_name": numero_input.attrib["name"],
-                    "iteration": i + 1,
-                },
-                dont_filter=True,
+            yield self.search_request(
+                process_number=process_list[i],
+                iteration=i + 1,
+                attempt=0,
+                main_url=response.url,
+                legal_img=legal_img,
+                form_action=form_action,
             )
 
+    def search_request(
+        self, process_number, iteration, attempt, main_url, legal_img, form_action
+    ):
+        return scrapy.Request(
+            main_url,
+            callback=self.open_session,
+            priority=30 if attempt else 0,
+            meta={
+                "cookiejar": f"{iteration}-{attempt}",
+                "main_url": main_url,
+                "legal_img": legal_img,
+                "form_action": form_action,
+                "process_number": process_number,
+                "iteration": iteration,
+                "attempt": attempt,
+            },
+            dont_filter=True,
+        )
+
+    def open_session(self, response):
+        yield scrapy.Request(
+            response.meta["legal_img"],
+            callback=self.parse_legal_image,
+            priority=40,
+            meta=response.meta,
+            dont_filter=True,
+        )
+
     def parse_legal_image(self, response):
-        image_url = os.getenv("complete_legal_url")
         iteration = response.meta["iteration"]
-        result = self.ocr.predict(image_url)
+        process_number = response.meta["process_number"]
+        form_action = response.meta["form_action"]
+
+        image = cv2.imdecode(
+            np.frombuffer(response.body, np.uint8), cv2.IMREAD_COLOR
+        )
+        result = self.ocr.predict(image)
 
         text = ""
 
@@ -95,13 +142,153 @@ class LegalSpider(scrapy.Spider):
 
         print()
         print("=" * 60)
-        yield {
-            "iteration": iteration,
-            "legal_img": response.meta["legal_img"],
-            "extract_text_to_image": text,
+        print(f"iteration: {iteration}")
+        print(f"extract_text_to_image: {text}")
+        print(f"process_number: {process_number}")
+        print(f"form_action: {form_action}")
+        print("=" * 60)
+
+        yield scrapy.FormRequest(
+            url=form_action,
+            method="POST",
+            priority=50,
+            formdata={
+                "numeroProcesso": process_number,
+                "nome": "",
+                "captcha": text,
+            },
+            callback=self.result,
+            meta={
+                **response.meta,
+                "handle_httpstatus_all": True,
+                "captcha": text,
+            },
+            dont_filter=True,
+        )
+
+    def read_messages(self, response):
+        messages = []
+
+        for box in response.css(".erro, .aviso, .info, .sucesso"):
+            kind = box.attrib.get("class", "").strip()
+
+            items = [t.strip() for t in box.css("li::text").getall() if t.strip()]
+
+            if not items:
+                items = [
+                    t.strip()
+                    for t in box.xpath(
+                        ".//text()[not(ancestor::strong or ancestor::b"
+                        " or ancestor::legend)]"
+                    ).getall()
+                    if t.strip()
+                ]
+
+            for item in items:
+                messages.append({"tipo": kind, "texto": item})
+
+        return messages
+
+    def classify(self, response, messages):
+        if response.status != 200:
+            return f"http_{response.status}"
+
+        if "SessionExpired" in response.text:
+            return "sesion_expirada"
+
+        if "DADOS DO PROCESSO" in response.text:
+            return "dados_processo"
+
+        if messages:
+            return messages[0]["tipo"]
+
+        return "desconhecido"
+
+    retry_marks = ("imagem", "captcha", "caracteres")
+
+    def should_retry(self, kind, messages):
+        if kind in ("http_500", "sesion_expirada"):
+            return True
+
+        for message in messages:
+            texto = message["texto"].lower()
+
+            if any(mark in texto for mark in self.retry_marks):
+                return True
+
+        return False
+
+    def save_html(self, response, kind):
+        path = self.html_dir / kind / f"{response.meta['process_number']}.html"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(response.body)
+
+        self.saved += 1
+
+        return path
+
+    def discard(self, response, kind, messages):
+        record = {
             "process_number": response.meta["process_number"],
-            "form_action": response.meta["form_action"],
-            "input_name": response.meta["input_name"],
+            "iteration": response.meta["iteration"],
+            "attempt": response.meta["attempt"],
+            "status": response.status,
+            "tipo": kind,
+            "mensagens": messages,
         }
 
+        with open("descartados.jsonl", "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+    def result(self, response):
+        response = response.replace(encoding="iso-8859-1")
+
+        process_number = response.meta["process_number"]
+        iteration = response.meta["iteration"]
+        attempt = response.meta["attempt"]
+        captcha = response.meta["captcha"]
+
+        messages = self.read_messages(response)
+        kind = self.classify(response, messages)
+
+        if self.should_retry(kind, messages) and attempt + 1 < self.max_retries:
+            print(f"[{iteration}] {process_number} {kind} -> reintento {attempt + 1}")
+
+            yield self.search_request(
+                process_number=process_number,
+                iteration=iteration,
+                attempt=attempt + 1,
+                main_url=response.meta["main_url"],
+                legal_img=response.meta["legal_img"],
+                form_action=response.meta["form_action"],
+            )
+            return
+
+        html = self.save_html(response, kind)
+
+        print()
         print("=" * 60)
+        print(f"RESULTADO {self.saved}/{self.max_saved or 'todos'}")
+        print(f"iteration: {iteration}")
+        print(f"process_number: {process_number}")
+        print(f"captcha: {captcha}")
+        print(f"status: {response.status}")
+        print(f"tipo: {kind}")
+        for message in messages:
+            print(f"  [{message['tipo']}] {message['texto']}")
+        print(f"html: {html}")
+        print("=" * 60)
+
+        if kind == "dados_processo":
+            yield {
+                "process_number": process_number,
+                "iteration": iteration,
+                "url": response.url,
+                "html": str(html),
+                "mensagens": messages,
+            }
+        else:
+            self.discard(response, kind, messages)
+
+        if self.max_saved and self.saved >= self.max_saved:
+            raise CloseSpider(f"limite de {self.max_saved} html alcanzado")
